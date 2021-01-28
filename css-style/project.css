@@ -1,0 +1,188 @@
+#top-background {
+    background: black;
+    width: auto;
+    padding: 1%;
+}
+
+#top-background a:hover{
+    color: rgb(156, 156, 156);
+}
+
+
+.describe {
+    color: white;
+    font-size: 12px;    
+}
+
+
+.link1 {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    margin: 0px 5px;
+    padding: 8px;
+    display: inline-block;
+    /*background: rgba(128, 128, 128, 0.397);*/
+    border-radius: 10px;
+}
+
+.link2 {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    margin: 0px 5px;
+    padding: 8px;
+    display: inline-block;
+  /*background: rgba(128, 128, 128, 0.397);
+    border-radius: 10px; */
+}
+
+
+/* FLEX_TOP-BACKGROUND */
+
+#top-background{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.link2 img{
+    height: 15px;
+    width: 17px;
+    padding: 0px;
+}
+
+
+svg{
+    text-decoration-color: khaki;
+}
+
+
+.heart img{
+    height: 40px;
+    width: 40px;
+}
+
+
+/******* SECTION 2  **********/
+
+#top2-background{
+    background-color: black;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.flexchild-2 a{
+    color: white;
+    align-items: center;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.flexchild-2 a:hover{
+    color: rgb(43, 118, 168);
+}
+
+.search-place{
+    background: rgba(202, 202, 202, 0.281);
+    height: 30px;
+    width: 200px;
+    text-align: start;
+    border: 1px solid white;
+}
+
+/* SEARCH BUTTON */ 
+input[type=text]{
+    width:130px;
+    height: 30px;
+    border: 1px solid white;
+    border-radius: 5px;
+    margin: 15px;
+    background: rgba(43, 118, 168, 0.657);
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus{
+    width: 300px;
+}
+
+/*DROPDOWN_BUTTON*/
+
+
+.droplist {
+    position: relative;
+    display: inline-block;
+}
+
+.droplist-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1d0;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.397);
+    border: 1px solid white;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.droplist-content a {
+    text-decoration: none;
+    color:  rgb(43, 118, 168);
+    padding: 10px;
+    display: block;
+}
+
+.droplist-content a:hover {
+    background: grey;
+    border-radius: 20px;
+    color: white;
+}
+
+.droplist:hover .droplist-content {display: block;}
+
+
+/********** SECTION 3 ************
+***********************************/
+
+
+div.bg-picture1{
+    width: 100%;
+    height: 800px;
+    background-color: lightskyblue;
+    background-image: url(../objects/mattias-olsson-nQz49efZEFs-unsplash.jpg);
+    background-size: cover;
+}
+
+.bg-picture1 p{
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.287);
+    height: 200px;
+    width: 450px;
+    border-radius: 25px;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    position: absolute;
+    justify-content: center;
+    top: 250px;
+    left: 50px;
+}
+
+**********/
