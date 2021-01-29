@@ -1,0 +1,75 @@
+/**************************************
+************ SECTION 1 ***************/
+
+#nav-bar a {
+    text-decoration: none;
+}
+
+.right {
+    text-align: center;
+}
+
+#nav-bar {
+    width: 100%;
+    height: auto;
+    background: grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    flex-grow: 5;
+    flex-shrink: 1;
+}
+
+.right {
+    flex-grow: 1;
+    flex-shrink: 6;
+}
+
+/**** TEXT STYLE SECTION 1 ****/
+
+.left a {
+    color: white;
+    font-size: 60px;
+}
+
+.right a {
+    color: rgb(59, 59, 59);
+}
+
+.right a:hover {
+    color: white;
+}
+
+
+@media screen and (max-width: 750px){
+
+#nav-bar {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.left {
+    margin-bottom: 30px;
+}
+
+.left a {
+    font-size: 30px;
+}
+
+.right {
+    height: 30px;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.right:hover {
+    background: rgba(255, 253, 253, 0.335);
+}
+
+
+
+}
