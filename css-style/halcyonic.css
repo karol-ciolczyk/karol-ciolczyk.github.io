@@ -119,22 +119,31 @@ hr {
 
 
 #section3 {
-    background: grey;
     margin: 0px 100px;
     width: auto;
     display: flex;
-    flex-direction: row;;
-    justify-content:space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 #section3 div {
     padding-top: 15px;
     width: 280px;
+    color: rgb(204, 204, 204);
 }
 
+
 #section3 img {
-    max-width: 100%;
+    max-width: 95%;
+    border: 6px solid white;
 }
+
+
+
+
+
+
 
 
 @media screen and (max-width: 750px){
