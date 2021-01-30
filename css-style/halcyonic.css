@@ -10,9 +10,9 @@
 }
 
 #nav-bar {
-    width: 100%;
+    width: auto;
     height: 150px;
-    background: grey;
+    margin: 0px 100px;d: grey;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -28,7 +28,9 @@
     flex-shrink: 6;
 }
 
-/**** TEXT STYLE SECTION 1 ****/
+/**** text style section 1 ****/
+
+
 
 .left a {
     color: white;
@@ -45,11 +47,21 @@
 }
 
 
+/****  <hr> style   ****/
+
+hr {
+    color: black;
+    height: 2px;
+    background: black;
+}
+
+
 /**************************************
 ************ SECTION 2 ***************/
 
 #section2 {
-    width: 100%;
+    width: auto;
+    margin: 0px 100px;
     height: auto;
     display: flex;
     flex-direction: row;
