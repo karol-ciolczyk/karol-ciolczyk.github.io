@@ -1,0 +1,75 @@
+/************* left nav-bar *********
+*************************************/
+
+.nav-buttons a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    margin: 12px;
+    display: inline-block;
+}
+
+.nav-buttons{
+    background: rgb(95, 22, 214);
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+
+
+/***** left nav-bar "files-manage" *******
+****************************************/
+
+
+.files-manage ul{
+    margin-left: 15px;
+    border-radius: 15px;
+    padding: 13px;
+    font-size: 12px;
+    list-style-type: none;
+    background: rgba(255, 255, 255, 0.418);
+}
+
+.files-manage a{
+    text-decoration: none;
+    color: white;
+}
+
+.files-manage {
+    background: rgb(95, 22, 214);
+    display: flex;
+    align-items: flex-end;
+    height: 300px;
+}
+
+/***** "create-new" button *******
+****************************************/
+
+.button {
+    background: rgb(95, 22, 214);
+}
+
+.create-new-button {
+    background-color: #dba239; /* Green */
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 15px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+  
+  
+  .create-new-button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  }
