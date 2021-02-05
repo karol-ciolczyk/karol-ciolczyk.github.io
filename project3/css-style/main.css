@@ -8,6 +8,7 @@
 /************* left nav-bar *********/
 
 
+
 .nav-buttons a{
     text-decoration: none;
     color: white;
@@ -28,7 +29,6 @@
 
 
 /***** left nav-bar "files-manage" *****/
-
 
 
 .files-manage ul{
@@ -53,7 +53,7 @@
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    height: 300px;
+    ///////height: 400px;
 }
 
 /********** "create-new" button ************/
@@ -222,6 +222,13 @@
   color: rgb(143, 143, 143);
 }
 
+#top-windows {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  place-items: center center;
+}
+
 
 /********* middle-menu2 **************/
 
@@ -313,3 +320,62 @@ div.mcm > div > p > .material-icons {
 .group1 {
   grid-area: 1 / 2 / 2 / 3;
 }
+
+
+/************************************
+*************************************
+*************************************/
+
+#all-stuff {
+  display: grid;
+  grid-template: repeat(8, auto) / 1fr 4fr 2fr;
+}
+
+.logo {
+  grid-area: 1 / 1 / 3 / 2;
+}
+
+.nav-buttons {
+  grid-area: 3 / 1 / 6 / 2;
+}
+
+.files-manage {
+  grid-area: 6 / 1 / 8 / 2;
+}
+
+.button {
+  grid-area: 8 / 1 / 9 / 2;
+}
+
+.search-button {
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.middle-menu {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+#top-windows {
+  grid-area: 3 / 2 / 4 / 3;
+}
+
+.middle-menu2 {
+  grid-area: 4 / 2 / 5 / 3;
+}
+
+.middle-small-menu {
+  grid-area: 5 / 2 / 6 / 3;
+}
+
+.middle-color-menu {
+  grid-area: 6 / 2 / 7 / 3;
+}
+
+.bottom-header {
+  grid-area: 7 / 2 / 8 / 3;
+}
+
+#bottom-windows {
+  grid-area: 8 / 2 / 9 / 3;
+}
+
