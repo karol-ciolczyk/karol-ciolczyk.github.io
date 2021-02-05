@@ -31,6 +31,13 @@
 /***** left nav-bar "files-manage" *****/
 
 
+#left-nav-bar {
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
 .files-manage ul{
     border-radius: 15px;
     padding: 13px;
@@ -335,16 +342,8 @@ div.mcm > div > p > .material-icons {
   grid-area: 1 / 1 / 3 / 2;
 }
 
-.nav-buttons {
-  grid-area: 3 / 1 / 6 / 2;
-}
-
-.files-manage {
-  grid-area: 6 / 1 / 8 / 2;
-}
-
-.button {
-  grid-area: 8 / 1 / 9 / 2;
+#left-nav-bar {
+  grid-area: 3 / 1 / 9 / 2;
 }
 
 .search-button {
