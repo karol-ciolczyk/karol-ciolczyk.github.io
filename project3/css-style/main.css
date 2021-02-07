@@ -10,18 +10,29 @@
 
 
 .nav-buttons a{
-    text-decoration: none;
-    color: white;
-    font-size: 16px;
-    padding: 5px;
-    margin: 12px;
-    display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  margin: 12px;
+  display: inline-block;
+}
+
+.nav-buttons li:hover {
+  border-radius: 20px;
+  margin-right: 50px;
+  padding-left: 15px;
+  background: rgba(255, 255, 255, 0.363);
+  /* transition-delay: 30ms; */
+  transition-duration: 0.5s;
+  transition-property: background, margin-right, padding-left;
 }
 
 .nav-buttons{
-    background: rgb(95, 22, 214);
-    display: flex;
-    flex-direction: column;
+  list-style-type: none;
+  background: rgb(95, 22, 214);
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -39,28 +50,33 @@
 
 
 .files-manage ul{
-    border-radius: 15px;
-    padding: 13px;
-    font-size: 12px;
-    list-style-type: none;
-    background: rgba(255, 255, 255, 0.418);
+  border-radius: 15px;
+  padding: 13px;
+  font-size: 12px;
+  list-style-type: none;
+  background: rgba(255, 255, 255, 0.418);
 }
 
 .files-manage a{
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
+}
+
+.files-manage a:hover {
+  font-size: 14px;
+  color: #dba239;
 }
 
 .files-manage span{
-    vertical-align: middle;
+  vertical-align: middle;
 }
 
 .files-manage {
-    background: rgb(95, 22, 214);
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    ///////height: 400px;
+  background: rgb(95, 22, 214);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  ///////height: 400px;
 }
 
 /********** "create-new" button ************/
@@ -68,28 +84,28 @@
 
 
 .button {
-    background: rgb(95, 22, 214);
+  background: rgb(95, 22, 214);
 }
 
 .create-new-button {
-    background-color: #dba239; /* Green */
-    border: none;
-    border-radius: 10px;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
+  background-color: #dba239; /* Green */
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
   }
   
   
   .create-new-button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   }
 
 
@@ -99,20 +115,20 @@
   
 
   form.example input[type=text] {
-    padding: 10px;
-    font-size: 17px;
-    border: 1px solid grey;
-    border-radius: 10px;
-    float: left;
-    width: 80%;
-    background: #f1f1f1;
-    box-shadow:10px 10px 20px rgb(187, 47, 47); 
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  float: left;
+  width: 80%;
+  background: #f1f1f1;
+  box-shadow:10px 10px 20px rgb(187, 47, 47); 
   }
 
   form.example::after {
-    content: "";
-    clear: both;
-    display: table;
+  content: "";
+  clear: both;
+  display: table;
   }
   
 
@@ -124,6 +140,8 @@
   .middle-menu a{
       text-decoration: none;
       color: black;
+      font-size: 25px;
+      padding-right: 5px;
   }
 
   /********* Recently used *******************/
@@ -131,7 +149,9 @@
   .middle-menu {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0px 15px;
+    background-color:rgba(96, 22, 214, 0.116)
   }
 
 
@@ -141,8 +161,8 @@
 
 .first-window {
   background: white;
-  height: 120px;
-  width: 150px;
+  height: 200px;
+  width: 250px;
   border-radius: 5px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -185,8 +205,8 @@
 
 .second-window {
   background: white;
-  height: 120px;
-  width: 150px;
+  height: 200px;
+  width: 250px;
   border-radius: 5px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -208,8 +228,8 @@
 
 .third-window {
   background: white;
-  height: 120px;
-  width: 150px;
+  height: 200px;
+  width: 250px;
   border-radius: 5px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -234,6 +254,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr;
   place-items: center center;
+  background-color:rgba(96, 22, 214, 0.116)
 }
 
 
@@ -244,6 +265,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0px 15px;
+  background-color:rgba(96, 22, 214, 0.116)
 }
 
 
@@ -253,6 +275,7 @@
 .middle-small-menu {
   display: flex;
   justify-content: space-between;
+  background-color:rgba(96, 22, 214, 0.116)
 }
 
 .middle-small-menu h4 {
@@ -262,6 +285,10 @@
 
 /********* middle-color-menu **********/
 
+.middle-color-menu {
+  background-color:rgba(96, 22, 214, 0.116);
+  padding: 0px 50px;
+}
 
 div.middle-color-menu > div:nth-child(n+1) {
   display: grid;
@@ -275,6 +302,7 @@ div.mcm > div:nth-child(4){
 .mcm {
   background: white;
   border-radius: 15px;
+  margin: 15px 0px;
 }
 
 .mcm p {
@@ -283,6 +311,7 @@ div.mcm > div:nth-child(4){
 }
 
 .mcm span {
+  padding: 4px 4px 0px 0px;
   vertical-align: middle;
 }
 
@@ -299,16 +328,58 @@ div.mcm > div > p > .material-icons {
   display: flex;
   justify-content: space-between;
   padding: 0px 15px;
+  background-color:rgba(96, 22, 214, 0.116)
 }
 
 
 
 /*********** first second third window 1 *********/
 
+.first-window-1 {
+  background: white;
+  height: 130px;
+  width: 250px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 2px;
+  padding: 5px 15px;
+  }
+
+  .second-window-1 {
+    background: white;
+    height: 130px;
+    width: 250px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2px;
+    padding: 5px 15px;
+  }
+
+  .third-window-1 {
+    background: white;
+    height: 130px;
+    width: 250px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 2px;
+    padding: 5px 15px;
+  }
+
+  .text1 > h2, h3 {
+    margin: 10px 0px;
+  }
+
 
 #bottom-windows {
   display: grid;
   grid-template: 1fr / 3fr 3fr 3fr;
+  background-color:rgba(96, 22, 214, 0.116)
 }
 
 #bottom-windows > div {
@@ -321,10 +392,12 @@ div.mcm > div > p > .material-icons {
 }
 
 .file-copy1 {
+  place-self: center;
   grid-area: 1 / 1 / 2 / 2;
 }
 
 .group1 {
+  place-self: center;
   grid-area: 1 / 2 / 2 / 3;
 }
 
@@ -336,6 +409,7 @@ div.mcm > div > p > .material-icons {
 #all-stuff {
   display: grid;
   grid-template: repeat(8, auto) / 1fr 4fr 2fr;
+  grid-gap: 0px 30px;
 }
 
 .logo {
