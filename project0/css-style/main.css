@@ -6,6 +6,7 @@ body  {
 }
 
 
+
 #first-container {
     background: white;
     width: 0 auto;
@@ -59,9 +60,19 @@ body  {
    margin: 5px;
 }
 
+.third-ch {
+    margin-right: 40px;
+}
+
+.icon-basket, .icon-heart {
+    font-size: 20px;
+}
 
 /*******  SECTION 2  *********
 ******************************/
+
+
+
 
 #second-container {
     background: white;
@@ -116,21 +127,6 @@ body  {
     position: relative;
 }
 
-input[type=text]{
-    width:130px;
-    height: 30px;
-    border: 1px solid rgb(66, 124, 107);
-    border-radius: 10px;
-    margin: 15px;
-    background: rgb(66 124 107 / 75%);
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
-
-input[type=text]:focus{
-    width: 300px;
-}
-
 
 /*******  SECTION 3  *********
 ******************************/
@@ -158,13 +154,13 @@ input[type=text]:focus{
 
 #fourth-container {
     width: 0 auto;
-    height: 700px;
+    height: 800px;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content:center;
-    background-image: url(../objects/yann-allegre-8FG9tt8qZ-8-unsplash.jpg);
+    background-image: url(../yann-allegre-8FG9tt8qZ-8-unsplash.jpg);
     background-size: cover;
 }
 
@@ -202,4 +198,33 @@ input[type=text]:focus{
     text-decoration: none;
     color: white;
     font-weight: bold;
+}
+
+
+/********* Search-b **************/
+
+.t-child {
+
+border: 1px solid rgb(163, 162, 162);
+margin: 20px 40px 20px 0px;
+}
+
+
+form.search-b input[type=search] {
+    float: left;
+    font-size: 17px;
+    padding: 15px;
+    color: rgb(143, 143, 143);
+    border: none;
+}
+
+.search-b > button {
+    color: rgb(143, 143, 143);
+    float: left;
+    height: 52px;
+    font-size: 17px;
+    width: 52px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
 }
