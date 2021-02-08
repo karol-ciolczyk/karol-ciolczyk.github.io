@@ -131,7 +131,7 @@ nav {
   
   
   .create-new-button:hover {
-  box-shadow: 0px 0px 30px rgb(189, 189, 189);
+  box-shadow: 0px 0px 20px rgb(189, 189, 189);
   background-color:rgb(255, 170, 73);
   }
 
@@ -460,6 +460,50 @@ div.mcm > div > p > .material-icons {
 .group1 {
   place-self: center;
   grid-area: 1 / 2 / 2 / 3;
+}
+
+
+/*********************** Right area of the page *********************/
+
+.setts {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.list-ddl {
+  display: none;
+  position: absolute;
+  background-color: grey;
+  min-width: 150px;
+  box-shadow: 10px 10px 10px grey;
+  z-index: 1;
+}
+
+.list-ddl a {
+  color: white;
+  font-size: 20px;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.button-ddl {
+  font-size: 20px;
+  display: inline-block;
+}
+
+.dropdown:hover .list-ddl {
+  display: block;
+}
+
+.dropdown:hover .button-ddl {
+  background-color: blue;
 }
 
 
