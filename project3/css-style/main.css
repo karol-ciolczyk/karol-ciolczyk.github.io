@@ -125,32 +125,33 @@ nav {
   font-size: 20px;
   margin: 4px 2px;
   cursor: pointer;
-  -webkit-transition-duration: 0.4s; /* Safari */
-  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   }
   
   
   .create-new-button:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  box-shadow: 0px 0px 30px rgb(189, 189, 189);
+  background-color:rgb(255, 170, 73);
   }
 
 
 
 /******* Search button ***********/
 
-  form.example > input {
-    /* width: 100%; */
-    text-align: ;
-  }
+  form.example {
+    background-color:rgba(96, 22, 214, 0.116);
+    padding: 30px 40px 10px 40px;
+    }
 
-  form.example input[type=text] {
+  form.example input {
     padding: 10px 10px;
     font-size: 17px;
-    border: 1px solid grey;
+    border: none;
     border-radius: 10px;
-    width: 90%;
-    background: #f1f1f1;
-    box-shadow:10px 10px 20px rgb(187, 47, 47);
+    width: 100%;
+    background: #fff;
+    box-shadow: 7px 7px 15px rgb(184, 184, 184);
   }
 
   form.example::after {
@@ -480,7 +481,7 @@ div.mcm > div > p > .material-icons {
   grid-area: 3 / 1 / 9 / 2;
 }
 
-.search-button {
+.example {
   grid-area: 1 / 2 / 2 / 3;
 }
 
