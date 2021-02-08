@@ -74,6 +74,7 @@ nav {
   font-size: 16px;
   list-style-type: none;
   background: rgba(255, 255, 255, 0.418);
+  transition-duration: 0.3s;
 }
 
 .files-manage li {
@@ -83,12 +84,12 @@ nav {
 .files-manage a{
   text-decoration: none;
   color: white;
+  transition-duration: 0.2s;
 }
 
 
 .files-manage a:hover {
-  font-size: 14px;
-  color: #dba239;
+  color: rgb(255, 170, 73);
 }
 
 .files-manage span{
@@ -179,7 +180,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 15px;
+    padding: 30px 40px;
     background-color:rgba(96, 22, 214, 0.116)
   }
 
@@ -311,7 +312,7 @@ nav {
 .middle-menu2 {
   display: flex;
   justify-content: space-between;
-  padding: 50px 15px 0px 15px;
+  padding: 50px 40px 0px 40px;
   background-color:rgba(96, 22, 214, 0.116)
 }
 
@@ -323,11 +324,15 @@ nav {
   display: flex;
   justify-content: space-between;
   background-color:rgba(96, 22, 214, 0.116);
-  padding: 0px 15px;
+  padding: 0px 40px;
 }
 
 .middle-small-menu h4 {
   display:inline-block;
+}
+
+.middle-small-menu div:nth-child(2) > h4 {
+  padding-right: 200px;
 }
 
 
@@ -335,7 +340,7 @@ nav {
 
 .middle-color-menu {
   background-color:rgba(96, 22, 214, 0.116);
-  padding: 0px 50px;
+  padding: 0px 40px;
 }
 
 div.middle-color-menu > div:nth-child(n+1) {
@@ -343,8 +348,8 @@ div.middle-color-menu > div:nth-child(n+1) {
   grid-template: 1fr / 3fr repeat(2, 2fr) 1fr;
 }
 
-div.mcm > div:nth-child(4){
-  place-self: start end;
+div.mcm > div:nth-child(4), div:nth-child(3), div:nth-child(2) {
+  place-self: center start;
 }
 
 .mcm {
@@ -375,7 +380,7 @@ div.mcm > div > p > .material-icons {
 .bottom-header {
   display: flex;
   justify-content: space-between;
-  padding: 30px 15px;
+  padding: 30px 40px;
   background-color:rgba(96, 22, 214, 0.116)
 }
 
@@ -385,7 +390,7 @@ div.mcm > div > p > .material-icons {
 
 .first-window-1 {
   background: white;
-  height: 110px;
+  height: 120px;
   width: 250px;
   border-radius: 20px;
   box-shadow: 7px 7px 15px rgb(184, 184, 184);
@@ -398,7 +403,7 @@ div.mcm > div > p > .material-icons {
 
   .second-window-1 {
     background: white;
-    height: 110px;
+    height: 120px;
     width: 250px;
     border-radius: 20px;
     box-shadow: 7px 7px 15px rgb(184, 184, 184);
@@ -411,7 +416,7 @@ div.mcm > div > p > .material-icons {
 
   .third-window-1 {
     background: white;
-    height: 110px;
+    height: 120px;
     width: 250px;
     border-radius: 20px;
     box-shadow: 7px 7px 15px rgb(184, 184, 184);
@@ -421,6 +426,10 @@ div.mcm > div > p > .material-icons {
     grid-gap: 2px;
     padding: 5px 15px;
   }
+
+ #bottom-windows span {
+   font-size: 30px;
+ }
 
   .text1 > h2, h3 {
     margin: 10px 0px;
@@ -512,6 +521,7 @@ div.mcm > div > p > .material-icons {
 *************************************/
 
 #all-stuff {
+  margin: 0px 30px;
   display: grid;
   grid-template: repeat(8, auto) / 1fr 4fr 2fr;
   grid-gap: 0px 30px;
