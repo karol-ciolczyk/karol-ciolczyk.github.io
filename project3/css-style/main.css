@@ -4,15 +4,34 @@
 
 
 
+/************ Logo ******************/
+
+.logo i {
+  color:rgb(235, 146, 46);
+  font-size: 60px;
+}
+
+.logo > h1 {
+  color: #fff;
+  text-align: center;
+  margin: 60px 0px 10px 0px;
+}
+
+.logo {
+  background: rgb(66, 27, 129);
+}
+
 
 /************* left nav-bar *********/
 
-
+nav {
+  background: rgb(66, 27, 129);
+}
 
 .nav-buttons a{
   text-decoration: none;
   color: white;
-  font-size: 16px;
+  font-size: 17px;
   padding: 5px;
   margin: 12px;
   display: inline-block;
@@ -20,7 +39,7 @@
 
 .nav-buttons li:hover {
   border-radius: 20px;
-  margin-right: 50px;
+  margin-right: 25px;
   padding-left: 15px;
   background: rgba(255, 255, 255, 0.363);
   /* transition-delay: 30ms; */
@@ -30,7 +49,7 @@
 
 .nav-buttons{
   list-style-type: none;
-  background: rgb(95, 22, 214);
+  background: rgb(66, 27, 129);
   display: flex;
   flex-direction: column;
 }
@@ -51,16 +70,21 @@
 
 .files-manage ul{
   border-radius: 15px;
-  padding: 13px;
-  font-size: 12px;
+  padding: 20px 30px;
+  font-size: 16px;
   list-style-type: none;
   background: rgba(255, 255, 255, 0.418);
+}
+
+.files-manage li {
+  padding: 7px 0px;
 }
 
 .files-manage a{
   text-decoration: none;
   color: white;
 }
+
 
 .files-manage a:hover {
   font-size: 14px;
@@ -72,7 +96,7 @@
 }
 
 .files-manage {
-  background: rgb(95, 22, 214);
+  background: rgb(66, 27, 129);
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -84,19 +108,21 @@
 
 
 .button {
-  background: rgb(95, 22, 214);
+  background: rgb(66, 27, 129);
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .create-new-button {
-  background-color: #dba239; /* Green */
+  background-color:rgb(235, 146, 46);
   border: none;
   border-radius: 10px;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 20px;
   margin: 4px 2px;
   cursor: pointer;
   -webkit-transition-duration: 0.4s; /* Safari */
@@ -112,17 +138,19 @@
 
 /******* Search button ***********/
 
-  
+  form.example > input {
+    /* width: 100%; */
+    text-align: ;
+  }
 
   form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-radius: 10px;
-  float: left;
-  width: 80%;
-  background: #f1f1f1;
-  box-shadow:10px 10px 20px rgb(187, 47, 47); 
+    padding: 10px 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 90%;
+    background: #f1f1f1;
+    box-shadow:10px 10px 20px rgb(187, 47, 47);
   }
 
   form.example::after {
@@ -150,7 +178,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 15px;
+    padding: 30px 15px;
     background-color:rgba(96, 22, 214, 0.116)
   }
 
@@ -163,11 +191,16 @@
   background: white;
   height: 200px;
   width: 250px;
-  border-radius: 5px;
+  border-radius: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 2px;
+  box-shadow: 7px 7px 15px rgb(184, 184, 184);
+}
+
+.first-window > div > span {
+  font-size: 40px;
 }
 
 .text {
@@ -183,23 +216,26 @@
 .file-copy {
   grid-area: 1 / 1 / span 1 / span 1;
   place-self: end start;
-  padding-left: 7px;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
 .group {
   grid-area: 1 / 2 / span 1 / span 1;
   place-self: end start;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
 .first-window h2 {
-  font-size: 15px;
-  padding-left: 7px;
+  font-size: 20px;
+  padding-left: 20px;
 
 }
 
 .first-window h3 {
-  font-size: 10px;
-  padding-left: 7px;
+  font-size: 15px;
+  padding-left: 20px;
   color: rgb(143, 143, 143);
 }
 
@@ -207,22 +243,27 @@
   background: white;
   height: 200px;
   width: 250px;
-  border-radius: 5px;
+  border-radius: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 2px;
+  box-shadow: 7px 7px 15px rgb(184, 184, 184);
+}
+
+.second-window > div > span {
+  font-size: 40px;
 }
 
 .second-window h2 {
-  font-size: 15px;
-  padding-left: 7px;
+  font-size: 20px;
+  padding-left: 20px;
 
 }
 
 .second-window h3 {
-  font-size: 10px;
-  padding-left: 7px;
+  font-size: 15px;
+  padding-left: 20px;
   color: rgb(143, 143, 143);
 }
 
@@ -230,22 +271,27 @@
   background: white;
   height: 200px;
   width: 250px;
-  border-radius: 5px;
+  border-radius: 20px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-gap: 2px;
+  box-shadow: 7px 7px 15px rgb(184, 184, 184);
+}
+
+.third-window > div > span {
+  font-size: 40px;
 }
 
 .third-window h2 {
-  font-size: 15px;
-  padding-left: 7px;
+  font-size: 20px;
+  padding-left: 20px;
 
 }
 
 .third-window h3 {
-  font-size: 10px;
-  padding-left: 7px;
+  font-size: 15px;
+  padding-left: 20px;
   color: rgb(143, 143, 143);
 }
 
@@ -264,7 +310,7 @@
 .middle-menu2 {
   display: flex;
   justify-content: space-between;
-  padding: 0px 15px;
+  padding: 50px 15px 0px 15px;
   background-color:rgba(96, 22, 214, 0.116)
 }
 
@@ -275,7 +321,8 @@
 .middle-small-menu {
   display: flex;
   justify-content: space-between;
-  background-color:rgba(96, 22, 214, 0.116)
+  background-color:rgba(96, 22, 214, 0.116);
+  padding: 0px 15px;
 }
 
 .middle-small-menu h4 {
@@ -327,7 +374,7 @@ div.mcm > div > p > .material-icons {
 .bottom-header {
   display: flex;
   justify-content: space-between;
-  padding: 0px 15px;
+  padding: 30px 15px;
   background-color:rgba(96, 22, 214, 0.116)
 }
 
@@ -337,9 +384,10 @@ div.mcm > div > p > .material-icons {
 
 .first-window-1 {
   background: white;
-  height: 130px;
+  height: 110px;
   width: 250px;
-  border-radius: 5px;
+  border-radius: 20px;
+  box-shadow: 7px 7px 15px rgb(184, 184, 184);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -349,9 +397,10 @@ div.mcm > div > p > .material-icons {
 
   .second-window-1 {
     background: white;
-    height: 130px;
+    height: 110px;
     width: 250px;
-    border-radius: 5px;
+    border-radius: 20px;
+    box-shadow: 7px 7px 15px rgb(184, 184, 184);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -361,9 +410,10 @@ div.mcm > div > p > .material-icons {
 
   .third-window-1 {
     background: white;
-    height: 130px;
+    height: 110px;
     width: 250px;
-    border-radius: 5px;
+    border-radius: 20px;
+    box-shadow: 7px 7px 15px rgb(184, 184, 184);
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -375,11 +425,21 @@ div.mcm > div > p > .material-icons {
     margin: 10px 0px;
   }
 
+  .text1 > h2 {
+    font-size: 20px;
+  }
+
+  .text1 > h3 {
+    font-size: 12px;
+  }
+
 
 #bottom-windows {
   display: grid;
   grid-template: 1fr / 3fr 3fr 3fr;
-  background-color:rgba(96, 22, 214, 0.116)
+  background-color:rgba(96, 22, 214, 0.116);
+  place-items: center center;
+  padding-bottom: 50px;
 }
 
 #bottom-windows > div {
