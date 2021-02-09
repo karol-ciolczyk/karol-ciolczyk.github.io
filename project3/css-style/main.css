@@ -590,28 +590,32 @@ nav {
   padding: 10px;
   background-color: #fff;
   border-radius: 10px;
+  margin: 12px 0px;
 }
 
 .resources-2 div:last-child > h4 {
   padding: 10px;
   background-color: #fff;
   border-radius: 10px;
+  margin: 12px 0px;
 }
 
 .resources-3 div:last-child > h4 {
   padding: 10px;
   background-color: #fff;
   border-radius: 10px;
+  margin: 12px 0px;
 }
 
 .resources-4 div:last-child > h4 {
   padding: 10px;
   background-color: #fff;
   border-radius: 10px;
+  margin: 12px 0px;
 }
 
 .list {
-  padding-left: 15px;
+  padding-left: 10px;
 }
 
 hr {
@@ -622,6 +626,12 @@ hr {
   display: flex;
   justify-content: space-between;
 }
+
+.resources-1 div:first-child {
+  display: flex;
+  align-items: center;
+}
+
 
 .resources-1 > div > ul {
   display: inline-block;
@@ -635,6 +645,11 @@ hr {
 .resources-2 {
   display: flex;
   justify-content: space-between;
+}
+
+.resources-2 div:first-child {
+  display: flex;
+  align-items: center;
 }
 
 .resources-2 > div > ul {
@@ -651,6 +666,11 @@ hr {
   justify-content: space-between;
 }
 
+.resources-3 div:first-child {
+  display: flex;
+  align-items: center;
+}
+
 .resources-3 > div > ul {
   display: inline-block;
   list-style-type: none;
@@ -663,6 +683,11 @@ hr {
 .resources-4 {
   display: flex;
   justify-content: space-between;
+}
+
+.resources-4 div:first-child {
+  display: flex;
+  align-items: center;
 }
 
 .resources-4 > div > ul {
