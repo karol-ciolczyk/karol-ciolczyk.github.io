@@ -478,6 +478,9 @@ nav {
 /*********************** RIGHT AREA *********************
 ********************************************************/
 
+.right-menu {
+  background-color: rgba(96, 22, 214, 0.116)
+}
 
 /********* First Line **********/
 
@@ -525,7 +528,9 @@ nav {
 
 /********** Second line *************/
 
-
+.header-right-menu > h2 {
+  font-size: 30px;
+}
 
 
 /*********** Third line *************/
@@ -534,10 +539,34 @@ nav {
 .storage-svg {
   height: 200px;
   width: 200px;
+  display: block;
+  margin: auto;
 }
 
 
+/*********** Fourth line *************/
+
+.storage-usage {
+  text-align: center;
+  color: grey;
+  font-size: 14px;
+  padding: 13px 0px;
+}
+
 /*********** Fiveth line *************/
+
+.list li:last-child {
+  font-size: 13px;
+}
+
+.list li:first-child {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.list {
+  padding-left: 15px;
+}
 
 hr {
   margin: 0px;
@@ -553,6 +582,10 @@ hr {
   list-style-type: none;
 }
 
+.resources-1 img {
+  height: 40px;
+}
+
 .resources-2 {
   display: flex;
   justify-content: space-between;
@@ -561,6 +594,10 @@ hr {
 .resources-2 > div > ul {
   display: inline-block;
   list-style-type: none;
+}
+
+.resources-2 img {
+  height: 40px;
 }
 
 .resources-3 {
@@ -573,6 +610,10 @@ hr {
   list-style-type: none;
 }
 
+.resources-3 img {
+  height: 40px;
+}
+
 .resources-4 {
   display: flex;
   justify-content: space-between;
@@ -582,6 +623,68 @@ hr {
   display: inline-block;
   list-style-type: none;
 }
+
+.resources-4 img {
+  height: 40px;
+}
+
+
+/*********** Sixth line *************/
+
+.buy-space {
+  display: inline-block;
+  margin: auto;
+  margin-top: 70px;
+  background-color: white;
+  padding: 50px;
+  border-radius: 30px;
+  box-shadow: 7px 7px 15px rgb(184, 184, 184);
+}
+
+.buy-space > object {
+  display: block;
+  margin: auto;
+}
+
+.buy-space > h2, .buy-space > h3 {
+  text-align: center;
+}
+
+.buy-space > button {
+  display: block;
+  margin: auto;
+}
+
+.rocket {
+  height: 120px;
+}
+
+.buy-space > h3 {
+  color: grey;
+  font-size: 14px;
+}
+
+.upgrade-account {
+  background-color:#eb922e;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 16px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  }
+  
+  
+  .upgrade-account:hover {
+  box-shadow: 0px 0px 20px rgb(189, 189, 189);
+  background-color:rgb(255, 170, 73);
+  }
 
 
 /********** Right menu - GRID *********/
@@ -644,3 +747,6 @@ hr {
   grid-area: 8 / 2 / 9 / 3;
 }
 
+.right-menu {
+  grid-area: 1 / 3 / 9 / 4;
+}
