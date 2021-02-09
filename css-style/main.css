@@ -578,36 +578,11 @@ nav {
 
 .list li:last-child {
   font-size: 13px;
-  color: grey;
 }
 
 .list li:first-child {
   font-size: 17px;
   font-weight: bold;
-}
-
-.resources-1 div:last-child > h4 {
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 10px;
-}
-
-.resources-2 div:last-child > h4 {
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 10px;
-}
-
-.resources-3 div:last-child > h4 {
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 10px;
-}
-
-.resources-4 div:last-child > h4 {
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 10px;
 }
 
 .list {
