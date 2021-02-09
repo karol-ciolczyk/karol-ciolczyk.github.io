@@ -371,8 +371,20 @@ nav {
   vertical-align: middle;
 }
 
-.mcm > div > p > .material-icons {
-  color: orange;
+.if {
+  color: rgb(235, 146, 46)
+}
+
+.hd {
+  color: rgb(3, 151, 127);
+}
+
+.cc {
+  color: rgb(204, 55, 99);
+}
+
+.kk {
+  color: rgba(1, 99, 180, 0.993);
 }
 
 
@@ -496,7 +508,7 @@ nav {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  margin: 40px 0px;
+  margin: 40px;
 }
 
 .dropdown {
