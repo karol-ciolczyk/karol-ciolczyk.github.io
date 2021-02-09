@@ -201,10 +201,6 @@ nav {
   box-shadow: 7px 7px 15px rgb(184, 184, 184);
 }
 
-.first-window > div > span {
-  font-size: 40px;
-}
-
 .text {
   grid-area: 2 / 1 / span 1 / span 3;
 }
@@ -212,21 +208,17 @@ nav {
 .more-vert {
   grid-area: 1 / 3 / span 1 / span 1;
   place-self: start end;
-  padding: 7px 7px 0px 0px;
+  padding: 18px 7px 0px 0px;
 }
 
 .file-copy {
   grid-area: 1 / 1 / span 1 / span 1;
-  place-self: end start;
-  padding-left: 20px;
-  padding-bottom: 20px;
+  place-self: center center;
 }
 
 .group {
   grid-area: 1 / 2 / span 1 / span 1;
-  place-self: end start;
-  padding-left: 20px;
-  padding-bottom: 20px;
+  place-self: center center;
 }
 
 .first-window h2 {
@@ -253,10 +245,6 @@ nav {
   box-shadow: 7px 7px 15px rgb(184, 184, 184);
 }
 
-.second-window > div > span {
-  font-size: 40px;
-}
-
 .second-window h2 {
   font-size: 20px;
   padding-left: 20px;
@@ -281,9 +269,6 @@ nav {
   box-shadow: 7px 7px 15px rgb(184, 184, 184);
 }
 
-.third-window > div > span {
-  font-size: 40px;
-}
 
 .third-window h2 {
   font-size: 20px;
@@ -304,6 +289,20 @@ nav {
   place-items: center center;
   background-color:rgba(96, 22, 214, 0.116)
 }
+
+#top-windows .file-copy>span {
+  font-size: 35px;
+}
+
+#top-windows .group>span {
+  font-size: 35px;
+}
+
+#top-windows .more-vert>span {
+  font-size: 28px;
+  color: grey;
+}
+
 
 
 /********* middle-menu2 **************/
@@ -343,13 +342,17 @@ nav {
   padding: 0px 40px;
 }
 
-div.middle-color-menu > div:nth-child(n+1) {
+.middle-color-menu > div:nth-child(n+1) {
   display: grid;
   grid-template: 1fr / 3fr repeat(2, 2fr) 1fr;
 }
 
-div.mcm > div:nth-child(4), div:nth-child(3), div:nth-child(2) {
+.mcm > div:nth-child(4),.mcm > div:nth-child(3),.mcm > div:nth-child(2) {
   place-self: center start;
+}
+
+.mcm div:nth-child(1) span {
+  font-size: 40px;
 }
 
 .mcm {
@@ -368,7 +371,7 @@ div.mcm > div:nth-child(4), div:nth-child(3), div:nth-child(2) {
   vertical-align: middle;
 }
 
-div.mcm > div > p > .material-icons {
+.mcm > div > p > .material-icons {
   color: orange;
 }
 
@@ -472,7 +475,11 @@ div.mcm > div > p > .material-icons {
 }
 
 
-/*********************** Right area of the page *********************/
+/*********************** RIGHT AREA *********************
+********************************************************/
+
+
+/********* First Line **********/
 
 .setts {
   display: flex;
@@ -516,8 +523,78 @@ div.mcm > div > p > .material-icons {
 }
 
 
+/********** Second line *************/
+
+
+
+
+/*********** Third line *************/
+
+
+.storage-svg {
+  height: 200px;
+  width: 200px;
+}
+
+
+/*********** Fiveth line *************/
+
+hr {
+  margin: 0px;
+}
+
+.resources-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resources-1 > div > ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.resources-2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resources-2 > div > ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.resources-3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resources-3 > div > ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
+.resources-4 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.resources-4 > div > ul {
+  display: inline-block;
+  list-style-type: none;
+}
+
+
+/********** Right menu - GRID *********/
+
+.right-menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, auto);
+  padding: 50px 50px 20px 50px;
+}
+
 /************************************
-*************************************
+*************GRID FOR ALL************
 *************************************/
 
 #all-stuff {
