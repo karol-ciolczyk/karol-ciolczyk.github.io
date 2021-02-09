@@ -484,10 +484,19 @@ nav {
 
 /********* First Line **********/
 
+.setts > div > a {
+  padding-right: 10px;
+}
+
+.setts > div > a > i {
+  font-size: 35px;
+}
+
 .setts {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  margin: 40px 0px;
 }
 
 .dropdown {
