@@ -11,13 +11,13 @@
 
 .describe {
     color: white;
-    font-size: 12px;    
+    font-size: 15px;    
 }
 
 
 .link1 {
     text-decoration: none;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     color: white;
     margin: 0px 5px;
@@ -29,7 +29,7 @@
 
 .link2 {
     text-decoration: none;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     color: white;
     margin: 0px 5px;
@@ -37,6 +37,10 @@
     display: inline-block;
   /*background: rgba(128, 128, 128, 0.397);
     border-radius: 10px; */
+}
+
+#top-background .flexbcg:nth-child(1) {
+    margin-left: 25px;
 }
 
 
@@ -89,7 +93,7 @@ svg{
     display: inline-block;
     text-decoration: none;
     font-weight: 600;
-    font-size: 15px;
+    font-size: 20px;
     padding: 5px;
     margin: 5px;
 }
@@ -98,28 +102,19 @@ svg{
     color: rgb(43, 118, 168);
 }
 
-.search-place{
-    background: rgba(202, 202, 202, 0.281);
-    height: 30px;
-    width: 200px;
-    text-align: start;
-    border: 1px solid white;
-}
 
 /* SEARCH BUTTON */ 
 input[type=text]{
-    width:130px;
-    height: 30px;
-    border: 1px solid white;
-    border-radius: 5px;
+    width: 250px;
+    height: 50px;
+    border: 1px solid black;
     margin: 15px;
-    background: rgba(43, 118, 168, 0.657);
-    -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
+    margin-right: 70px;
+    background: rgba(151, 151, 151, 0.226);
 }
 
-input[type=text]:focus{
-    width: 300px;
+.flexchild-2 .droplist:nth-child(1) a{
+    margin: 50px;
 }
 
 /*DROPDOWN_BUTTON*/
