@@ -50,16 +50,16 @@ button.addEventListener('click', () =>{
 });
 
 
-// const items = document.querySelectorAll('.nav-buttons li');
+const items = document.querySelectorAll('.nav-buttons li');
 
-// console.log(items);
+console.log(items);
 
-// items.forEach(item => {
-//     item.addEventListener('click', e => {
-//         console.log(e.target);
-//         e.target.style.textDecoration = 'line-through'
-//     });
-// });
+items.forEach(item => {
+    item.addEventListener('click', e => {
+        console.log(e.target);
+        e.target.style.textDecoration = 'line-through'
+    });
+});
 
 /******************************************************/
 
@@ -89,17 +89,14 @@ const background = document.querySelector('.promotion');
 const close = document.querySelector('.x');
 
 button2.addEventListener('click', () =>{
-    console.log('yo are dupoa')
     background.style.display = 'block';
 });
 
 close.addEventListener('click', () =>{
-    console.log('yo are dupoa')
     background.style.display = 'none';
 });
 
 background.addEventListener('click', () =>{
-    console.log('yo are dupoa')
     background.style.display = 'none';
 });
 
@@ -108,15 +105,34 @@ background.addEventListener('click', () =>{
 const gbFiles = document.querySelectorAll('.files-weight h4');
 const storageUsage = document.querySelector('.storage-usage h3');
 const inCircleNum = document.querySelector('.circle h3');
+const buttonPercent = document.querySelector('.button-percent');
 
-inCircleNum.textContent = `${''} %`
+// inCircleNum.textContent = `${''} %`
+// console.log(gbFiles);
 
-console.log(inCircleNum.textContent);
+buttonPercent.addEventListener('click', () =>{
+
+    inCircleNum.textContent = `${''}`
+    gbFiles.forEach( e =>{
+        let number = e.textContent.match(/(\d+)/)[0];
+        let valNum = parseFloat(number);
+        inCircleNum.textContent += `${valNum}+`;
+
+    });
+    const inCircleNumSum = document.querySelector('.circle h3');
+    let sumAll = inCircleNumSum.textContent + '0'
+    let valNum = eval(sumAll);
+    inCircleNum.textContent = `${Math.round(valNum/1285*100)}%`
+    
+});
+
+
+
 
 gbFiles.forEach( (e) =>{
     e.addEventListener('click', (el) =>{
-        console.log(el.target.textContent);
-        storageUsage.textContent = `${el.target.textContent} of 1000 GB used`;
+        // console.log(el.target.textContent);
+        storageUsage.textContent = `${el.target.textContent} of 1285 GB used`;
         
     });
     // storagaUsage.textContent = `${}`
@@ -128,12 +144,11 @@ gbFiles.forEach((e) =>{
 
         let number = el.target.textContent.match(/(\d+)/)[0];
         let pointNum = parseFloat(number);
-        console.log(pointNum);
+        // console.log(pointNum);
         let x = pointNum;
 
-        inCircleNum.textContent = `${x/1000*100}%`
+        inCircleNum.textContent = `${Math.round(x/1285*100)}%`
 
-        console.log(x/1000*100)
     });
     // storagaUsage.textContent = `${}`
 });
