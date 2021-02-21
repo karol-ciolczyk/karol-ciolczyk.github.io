@@ -934,3 +934,15 @@ hr {
   right: 0.6em;
   cursor: pointer;
 }
+
+
+/*************************************************************/
+
+
+.baad {
+  background-color: tomato;
+}
+
+.good {
+  background-color: limegreen;
+}
