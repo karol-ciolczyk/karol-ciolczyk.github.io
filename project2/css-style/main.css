@@ -124,6 +124,7 @@ hr {
 
 #section3 {
     margin: 0px 150px;
+    padding-top: 50px;
     width: auto;
     display: flex;
     flex-direction: row;
@@ -131,16 +132,22 @@ hr {
     justify-content: space-between;
 }
 
+
 #section3 div {
     padding-top: 15px;
-    width: 280px;
+    width: 360px;
     color: rgb(204, 204, 204);
 }
 
+#section3 a {
+    display: inline-block;
+    height: 140px;
+    border: 15px solid #fff;
+}
 
 #section3 img {
-    max-width: 95%;
-    border: 6px solid white;
+    width: 100%;
+    height: 100%;
 }
 
 #section3 p {
