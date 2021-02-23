@@ -373,16 +373,18 @@ span.icon-south {
   grid-template: 1fr / 3fr repeat(2, 2fr) 1fr;
 }
 
-.mcm > div:nth-child(4),.mcm > div:nth-child(3),.mcm > div:nth-child(2) {
-  place-self: center start;
-}
-
 .mcm div:nth-child(1) span {
   font-size: 40px;
 }
 
 .mcm>div~div {
+  place-self: center start;
   color: grey;
+}
+
+.mcm div:nth-child(4) {
+  justify-self: end;
+  padding-right: 20px
 }
 
 .mcm {
