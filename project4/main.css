@@ -1,0 +1,142 @@
+/************* GRID CONTAINER ***********/
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 130px 4fr 2fr;
+    grid-template-rows: repeat(7, auto);
+}
+
+.nav-aside {
+    grid-area: 1/1/8/2; 
+}
+
+.horizontal-nav {
+    grid-area: 1/2/2/4;
+}
+
+.dashboard {
+    grid-area: 2/2/3/3/;
+}
+
+.section-1 {
+    grid-area: 3/2/4/3;
+}
+
+
+
+
+/************LEFT NAV*************/
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.top-nav>ul {
+    list-style-type: none;
+}
+
+.bottom-nav>ul {
+    list-style-type: none;
+}
+
+.logo {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: relative;
+}
+
+.logo >span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+
+/**************TOP NAV***************/
+
+.horizontal-nav {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-left>ul {
+    padding-left: 15px;
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-left>ul li {
+    font-size: 1rem;
+    margin: 0px 5px;
+    padding: 10px;
+    background-color: green;
+}
+
+.nav-left>ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-right>ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.nav-right>ul a {
+    height: 50px;
+    line-height: 50px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 0px 30px;
+}
+
+.nav-right>ul span {
+    line-height: 1.5;
+    font-size: 2rem;
+}
+
+.nav-right li {
+    border-left: 1px solid black;
+}
+
+
+/*************DASHBOARD****************/
+
+.dashboard {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard h2 {
+    font-size: 1.3rem;
+}
+
+
+/*************SECTION 1*****************/
+
+.section-1 {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+}
+
+.section-1 div {
+    display: flex;
+}
+
+.section-1 span {
+    line-height: 1.5;
+    font-size: 3.5rem;
+}
+
+.section-1 ul {
+    list-style-type: none;
+}
+
