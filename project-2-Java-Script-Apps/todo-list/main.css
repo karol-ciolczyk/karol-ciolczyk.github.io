@@ -1,0 +1,184 @@
+.matrix {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.box {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.selected {
+    background-color: red;
+}
+
+
+/*TODO LIST*/
+
+.app-container {
+    display: flex;
+}
+
+.todoList{
+    margin-right: 10px;
+    height: 500px;
+    width: 500px;
+    border: solid grey;
+    display: inline-block;
+}
+
+.todoList div {
+    background-color: rgba(80, 170, 206, 0.698);
+    margin: 5px 0px;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+.todoList input {
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+.todoList label {
+    display: block;
+}
+
+.cases {
+    height: 500px;
+    width: 800px;
+    border: solid grey;
+    display: inline-flex;
+    flex-direction: row;
+}
+
+.cases li{
+    height: 46px;
+    font-size: 1.4rem;
+}
+
+.whatCases, .whenCases, .whereCases, .checkbox-container{
+    line-height: 42px;
+    border: 1px solid black;
+    flex-grow: 10;
+}
+
+.cases>.checkbox-container {
+    flex-grow: 1;
+}
+
+.checkbox{
+    display: inline;
+}
+
+.checkedlist {
+    padding: 0px;
+}
+
+.trash {
+    display: inline;
+    margin-left: 20px;
+}
+
+button {
+    color: white;
+    border: 1px solid rgb(129, 148, 255);
+    font-size: 1.5rem;
+    padding: 5px;
+    background-color: rgb(0, 104, 136);
+    border-radius: 0.6rem;
+}
+
+button:hover {
+    background-color: rgba(0, 99, 129, 0.739);
+}
+
+.remove {
+    transition: all 0.5s;
+    color: rgb(218, 218, 218);
+    text-decoration: line-through;
+    background-color: rgb(172, 0, 0);
+}
+
+.changeText, .changeDate {
+    cursor: pointer;
+}
+
+.changeText:hover, .changeDate:hover {
+    background-color: rgba(145, 255, 0, 0.226);
+}
+
+.text-container-1 {
+    transition: all 1s;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 300px;
+    width: 400px;
+    border: 1px solid black;
+}
+
+.text-container-2{
+    transition: all 1s;
+    height: 1000px;
+    width: 500px;
+    border: 1px solid black;
+}
+
+.delete-information {
+    text-align: center;
+    color:rgb(172, 0, 0);
+    height: auto;
+    width: 150px;
+    display: none;
+}
+
+.delete-information-position {
+    display: block;
+    position: absolute;
+    transform: translate3d(-50%,-50%,0);
+    background-color:rgb(177, 189, 255);
+}
+
+.link{
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 30px;
+    width: 50px;
+    background-color:rgb(2, 141, 184);
+    display: inline-block;
+    margin: 10px
+}
+
+.link a{
+    line-height: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+
+
+/*////////////////////////////////////////////////////*/
+
+.todo-container{
+    min-height: 100px;
+    width: 500px;
+    background-color:rgba(129, 148, 255, 0.561);
+    border: 3px solid blue;
+
+    padding: 40px;
+    margin: 50px;
+
+    font-size: 20px;
+    border-radius: 13px;
+}
+
+.todo-container div{
+    margin: 5px;
+    padding: 7px;
+    border: 2px solid black;
+    border-radius: 13px;
+}
