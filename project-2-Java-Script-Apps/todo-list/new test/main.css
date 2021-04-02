@@ -1,0 +1,123 @@
+/* TODO LIST */
+body{
+    font-family: 'Roboto', sans-serif;
+    color: rgb(0, 17, 58);
+    background-color: #657AA2;
+}
+
+.formTodo{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    width: 70%;
+    margin: auto;
+}
+
+.app-container {
+    display: flex;
+}
+
+.todoList{
+    width: 100%;
+    margin: 100px 0px;
+}
+
+.todoList div {
+    margin: 5px 0px;
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+.todoList input {
+    font-size: 1.5rem;
+    display: inline-block;
+}
+
+
+button {
+    color: white;
+    border: 2px solid #ffffff;
+    font-size: 1.5rem;
+    margin: 5px;
+    padding: 10px;
+    background-color: #cca627;
+}
+
+button:hover {
+    background-color: #cc2777;
+}
+
+
+
+
+/* .delete-information {
+    text-align: center;
+    color:rgb(172, 0, 0);
+    height: auto;
+    width: 150px;
+    display: none;
+}
+
+.delete-information-position {
+    display: block;
+    position: absolute;
+    transform: translate3d(-50%,-50%,0);
+    background-color:rgb(177, 189, 255);
+}
+
+.link{
+    text-align: center;
+    cursor: pointer;
+    border-radius: 10px;
+    height: 30px;
+    width: 50px;
+    background-color:rgb(2, 141, 184);
+    display: inline-block;
+    margin: 10px
+}
+
+.link a{
+    line-height: 30px;
+    text-decoration: none;
+    color: white;
+} */
+
+
+
+/*////////////////////////////////////////////////////*/
+
+.todo-container{
+    min-height: 100%;
+    width: 70%;
+    margin: auto;
+    background-color:#9AAED9;
+    border: 1px solid rgb(0, 130, 190);
+    padding: 50px 0px;
+    font-size: 20px; 
+    box-shadow: 5px 5px 21px 3px rgba(0,0,0,0.76);
+}
+
+.todo-container h1{
+    margin-top: 0px;
+    text-align: center;
+}
+
+.todo-container div{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 100px;
+    padding: 7px;
+    border: 1px solid black;
+    background-color: #E1F1FF;
+    box-shadow: 5px 3px 9px -2px #000000;
+}
+
+.todo-container span{
+    min-width: 200px;
+    margin: 7px 0px;
+}
+
+span.material-icons{
+    min-width: 10px;
+    margin-right: 15px;
+}

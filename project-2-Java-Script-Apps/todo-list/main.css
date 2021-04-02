@@ -177,8 +177,14 @@ button:hover {
 }
 
 .todo-container div{
+    display: flex;
+    justify-content: space-between;
     margin: 5px;
     padding: 7px;
     border: 2px solid black;
     border-radius: 13px;
+}
+
+.todo-container span{
+    min-width: 100px;
 }
