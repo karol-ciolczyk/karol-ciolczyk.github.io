@@ -104,6 +104,19 @@ const showHideImg = function (img){
         return img.style.opacity === `1`;
     });
 
+    // add animation to image when clicked
+    const divElement = document.createElement('div');
+    divElement.style.zIndex = '0';
+    divElement.classList.add('frame');
+    console.log(divElement);
+
+    img.target.before(divElement);
+    img.target.classList.add(`bounce`);
+    setTimeout(()=>{
+        img.target.classList.remove(`bounce`);
+        divElement.remove();
+    },1000)
+    //////////////////////////////////////
 
    console.log(newA);
 
@@ -141,7 +154,7 @@ const showHideImg = function (img){
             if(arrayOfImgs.every(element=> element.tagName === 'DIV')){
                 alert(`YOU WIN - your score is: ${counter.textContent}`)
             }
-        }, 1000)
+        }, 1300)
     }
     
 
@@ -151,29 +164,3 @@ const showHideImg = function (img){
 arrayOfImgs.forEach(img=>{
     img.addEventListener('click', showHideImg) 
 })
-
-
-
-
-function ala(){
-    for(let i=1; i<2000; i++){
-        console.log('123');
-    }
-}
-console.log(`start set Time out`)
-setTimeout(function(){
-    console.log(`wykonałem po 2200 sec`)
-},2200)
-console.log(1);
-console.log(2);
-console.log(3);
-ala();
-console.log(4);
-
-console.log(5);
-setTimeout(function(){
-    console.log(`wykonałem po 2000 sec`)
-}, 2000)
-console.log(6);
-console.log(7);
-console.log(8);
