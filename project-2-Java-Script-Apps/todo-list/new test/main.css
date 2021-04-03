@@ -137,3 +137,7 @@ button:hover {
 span.material-icons{
     min-width: 10px;
 }
+
+.todo-list-input{
+    max-width: 200px;
+}

@@ -70,6 +70,14 @@ const spanTextElement = document.querySelectorAll('.todo-list-item p');
 spanTextElement.forEach(element=>{
     element.addEventListener('click', event=>{
         console.log(event.target);
+        const newInput = document.createElement('input');
+        newInput.setAttribute('type', 'text')
+        newInput.setAttribute('value', `${event.target.textContent}`)
+        newInput.classList.add('todo-list-input');
+        event.target.textContent = ``;
+        event.target.prepend(newInput);
+        newInput.focus();
+        console.log(newInput);
     })
 })
 
