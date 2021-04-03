@@ -24,7 +24,8 @@ todoForm.addEventListener('submit', event=>{
     //place new item in todo-container
     const todoContainer = document.querySelector('.todo-container');
     let div = document.createElement('div');
-    div.innerHTML = `<span>${newObject.task}</span><span>${newObject.date}</span><span>${newObject.place}</span> <span class="material-icons">delete</span>`
+    div.classList.add('todo-list-item')
+    div.innerHTML = `<p>${newObject.task}</p><p>${newObject.date}</p><p>${newObject.place}</p> <span class="material-icons">delete</span>`
     todoContainer.append(div);
 })
 
@@ -54,6 +55,24 @@ itemsFromLS.forEach(object=>{
     const todoContainer = document.querySelector('.todo-container');
 
     let div = document.createElement('div');
-    div.innerHTML = `<span>${object.task}</span><span>${object.date}</span><span>${object.place}</span><span class="material-icons">delete</span>`
+    div.classList.add('todo-list-item')
+    div.innerHTML = `<p>${object.task}</p><p>${object.date}</p><p>${object.place}</p><span class="material-icons">delete</span>`
     todoContainer.append(div);
 })
+
+
+
+
+// Add event listener to list-item.
+
+const spanTextElement = document.querySelectorAll('.todo-list-item p');
+
+spanTextElement.forEach(element=>{
+    element.addEventListener('click', event=>{
+        console.log(event.target);
+    })
+})
+
+
+
+
