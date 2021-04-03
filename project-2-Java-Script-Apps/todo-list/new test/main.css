@@ -52,7 +52,7 @@ button.add-new-item span{
 }
 
 button:hover {
-    background-color: #cc2777;
+    background-color: #A26A76;
     cursor: pointer;
 }
 
@@ -96,6 +96,7 @@ button:hover {
 /*////////////////////////////////////////////////////*/
 
 .todo-container{
+    position: relative;
     min-height: 100%;
     width: 70%;
     margin: auto;
@@ -142,3 +143,29 @@ span.material-icons{
 .todo-list-input{
     max-width: 200px;
 }
+
+.search-button{
+    position: absolute;
+    top: 10px;
+    left: 10px
+}
+
+.search-container input{
+    border: 0px solid black;
+    color: white;
+    font-size: 1.5rem;
+    position: absolute;
+    top: -10px;
+    left: 10px;
+    height: 70px;
+    width: 30%;
+    margin: auto;
+    background-color: #6d3a46;
+    line-height: 70px;
+    box-shadow: 3px 3px 10px 1px #000000c2;
+}
+
+::placeholder {
+    color: rgba(255, 255, 255, 0.548);
+    opacity: 1; /* Firefox */
+  }
