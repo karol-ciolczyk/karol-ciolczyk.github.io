@@ -25,7 +25,7 @@ todoForm.addEventListener('submit', event=>{
     const todoContainer = document.querySelector('.todo-container');
     let div = document.createElement('div');
     div.classList.add('todo-list-item')
-    div.innerHTML = `<p>${newObject.task}</p><p>${newObject.date}</p><p>${newObject.place}</p> <span class="material-icons">delete</span>`
+    div.innerHTML = `<p>${newObject.task}</p><p class="p-tag-date">${newObject.date}</p><p>${newObject.place}</p> <span class="material-icons">delete</span>`
     todoContainer.append(div);
 })
 
@@ -56,7 +56,7 @@ itemsFromLS.forEach(object=>{
 
     let div = document.createElement('div');
     div.classList.add('todo-list-item')
-    div.innerHTML = `<p>${object.task}</p><p>${object.date}</p><p>${object.place}</p><span class="material-icons">delete</span>`
+    div.innerHTML = `<p>${object.task}</p><p class="p-tag-date">${object.date}</p><p>${object.place}</p><span class="material-icons">delete</span>`
     todoContainer.append(div);
 })
 
@@ -69,25 +69,52 @@ const spanTextElement = document.querySelectorAll('.todo-list-item p');
 
 spanTextElement.forEach(element=>{
     element.addEventListener('click', event=>{
-        console.log(event.target);
-        // Change text to input afterd click
-        const newInput = document.createElement('input');
-        newInput.setAttribute('type', 'text')
-        newInput.setAttribute('value', `${event.target.textContent}`)
-        newInput.classList.add('todo-list-input');
-        event.target.textContent = ``;
-        event.target.prepend(newInput);
-        newInput.focus();
+        console.log(event.target.className)
 
-         //MULTIPLE EVENTLISTENER FOR TEXT CONTENT
-        // THERE IS AN ERROR WHEN BLUR AND CHANGE EVENTLISTENER EXIST TOGETHER
+        if(event.target.className === 'p-tag-date'){
+            
+            const newInput = document.createElement('input');
+            newInput.setAttribute('type', 'date')
+            newInput.setAttribute('value', `${event.target.textContent}`)
+            newInput.classList.add('todo-list-input');
+            event.target.textContent = ``;
+            event.target.prepend(newInput);
+            newInput.focus();
 
-        const changeContent = e=>{
-            event.target.textContent = `${e.target.value}`;
-            e.stopPropagation();
-        }
+            //MULTIPLE EVENTLISTENER FOR TEXT CONTENT
+            // THERE IS AN ERROR WHEN BLUR AND CHANGE EVENTLISTENER EXIST TOGETHER
+
+            const changeContent = e=>{
+                event.target.textContent = `${e.target.value}`;
+                e.stopPropagation();
+            }
         newInput.addEventListener('blur', changeContent, false);
         newInput.addEventListener('change', changeContent, false);
+        } else {
+            // Change text to input afterd click
+            const newInput = document.createElement('input');
+            newInput.setAttribute('type', 'text')
+            newInput.setAttribute('value', `${event.target.textContent}`)
+            newInput.classList.add('todo-list-input');
+            event.target.textContent = ``;
+            event.target.prepend(newInput);
+            newInput.focus();
+
+            //MULTIPLE EVENTLISTENER FOR TEXT CONTENT
+            // THERE IS AN ERROR WHEN BLUR AND CHANGE EVENTLISTENER EXIST TOGETHER
+
+            const changeContent = e=>{
+                event.target.textContent = `${e.target.value}`;
+                e.stopPropagation();
+            }
+            newInput.addEventListener('blur', changeContent, false);
+            newInput.addEventListener('change', changeContent, false);
+        }
+
+
+
+        
+        
     })
 })
 

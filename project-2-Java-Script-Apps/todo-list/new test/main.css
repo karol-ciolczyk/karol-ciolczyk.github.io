@@ -126,10 +126,11 @@ button:hover {
     margin: 0px;
     padding-left: 6px;
     line-height: 54px;
+    transition: 300ms;
 }
 
 .todo-container p:hover{
-    background-color: #cca627;
+    background-color: #cca527;
     color: white;
     cursor: pointer;
 }
