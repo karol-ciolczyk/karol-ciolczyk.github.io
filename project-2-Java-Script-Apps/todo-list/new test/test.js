@@ -70,6 +70,7 @@ const spanTextElement = document.querySelectorAll('.todo-list-item p');
 spanTextElement.forEach(element=>{
     element.addEventListener('click', event=>{
         console.log(event.target);
+        // Change text to input afterd click
         const newInput = document.createElement('input');
         newInput.setAttribute('type', 'text')
         newInput.setAttribute('value', `${event.target.textContent}`)
@@ -77,7 +78,16 @@ spanTextElement.forEach(element=>{
         event.target.textContent = ``;
         event.target.prepend(newInput);
         newInput.focus();
-        console.log(newInput);
+
+         //MULTIPLE EVENTLISTENER FOR TEXT CONTENT
+        // THERE IS AN ERROR WHEN BLUR AND CHANGE EVENTLISTENER EXIST TOGETHER
+
+        const changeContent = e=>{
+            event.target.textContent = `${e.target.value}`;
+            e.stopPropagation();
+        }
+        newInput.addEventListener('blur', changeContent, false);
+        newInput.addEventListener('change', changeContent, false);
     })
 })
 
