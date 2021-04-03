@@ -5,6 +5,7 @@ const taskDate = todoForm.when;
 const taskPlace = todoForm.where;
 
 
+
 todoForm.addEventListener('submit', event=>{
     event.preventDefault();
     console.log(taskInput.value);
@@ -27,6 +28,9 @@ todoForm.addEventListener('submit', event=>{
     todoContainer.append(div);
 })
 
+
+
+
 // Function gets objects from LocalStorage and place to array then place to todo-container
 const getItemsFromLocalStorage = function(){
     let array = [];
@@ -38,6 +42,9 @@ const getItemsFromLocalStorage = function(){
     }
     return array;
 }
+
+
+
 
 // Take elements from array and create then put new item in todo-container
 const itemsFromLS = getItemsFromLocalStorage();

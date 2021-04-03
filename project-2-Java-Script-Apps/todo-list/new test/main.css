@@ -9,8 +9,8 @@ body{
     display: flex;
     justify-content: space-between;
     padding: 5px;
-    width: 70%;
-    margin: auto;
+    /* width: 70%;
+    margin: auto; */
 }
 
 .app-container {
@@ -18,8 +18,11 @@ body{
 }
 
 .todoList{
-    width: 100%;
-    margin: 100px 0px;
+    width: 70%;
+    margin: auto;
+    margin: 70px auto;
+    background-color: #9AAED9;
+    box-shadow: 5px 5px 21px 3px rgba(0,0,0,0.6)
 }
 
 .todoList div {
@@ -28,7 +31,7 @@ body{
     padding: 5px;
 }
 
-.todoList input {
+.input {
     font-size: 1.5rem;
     display: inline-block;
 }
@@ -36,15 +39,21 @@ body{
 
 button {
     color: white;
-    border: 2px solid #ffffff;
+    border: 1px solid #ffffff;
     font-size: 1.5rem;
     margin: 5px;
-    padding: 10px;
     background-color: #cca627;
+}
+
+button.add-new-item span{
+    margin-top: 5px;
+    font-size: 30px;
+    padding: 0px 15px;
 }
 
 button:hover {
     background-color: #cc2777;
+    cursor: pointer;
 }
 
 
@@ -94,7 +103,7 @@ button:hover {
     border: 1px solid rgb(0, 130, 190);
     padding: 50px 0px;
     font-size: 20px; 
-    box-shadow: 5px 5px 21px 3px rgba(0,0,0,0.76);
+    box-shadow: 5px 5px 21px 3px rgba(0,0,0,0.6);
 }
 
 .todo-container h1{
@@ -105,7 +114,7 @@ button:hover {
 .todo-container div{
     display: flex;
     justify-content: space-between;
-    margin: 20px 100px;
+    margin: 20px 150px;
     padding: 7px;
     border: 1px solid black;
     background-color: #E1F1FF;
@@ -119,5 +128,4 @@ button:hover {
 
 span.material-icons{
     min-width: 10px;
-    margin-right: 15px;
 }
