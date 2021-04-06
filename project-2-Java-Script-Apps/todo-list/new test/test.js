@@ -1,5 +1,5 @@
 const todoForm = document.forms.formTodo;
-// inputs of Form ToDo
+// inputs of ToDo Form
 const taskInput = todoForm.case;
 const taskDate = todoForm.when;
 const taskPlace = todoForm.where;
@@ -7,7 +7,7 @@ const taskPlace = todoForm.where;
 
 
 todoForm.addEventListener('submit', event=>{
-    event.preventDefault();
+    // event.preventDefault();
     console.log(taskInput.value);
     console.log(taskDate.value);
     console.log(taskPlace.value);
@@ -26,13 +26,13 @@ todoForm.addEventListener('submit', event=>{
     let div = document.createElement('div');
     div.classList.add('todo-list-item')
     div.innerHTML = `<p>${newObject.task}</p><p class="p-tag-date">${newObject.date}</p><p>${newObject.place}</p> <span class="material-icons">delete</span>`
-    todoContainer.append(div);
+    todoContainer.prepend(div);
 })
 
 
 
 
-// Function gets objects from LocalStorage and place to array then place to todo-container
+// Function gets objects from LocalStorage and return array
 const getItemsFromLocalStorage = function(){
     let array = [];
 
@@ -58,12 +58,13 @@ itemsFromLS.forEach(object=>{
     div.classList.add('todo-list-item')
     div.innerHTML = `<p>${object.task}</p><p class="p-tag-date">${object.date}</p><p>${object.place}</p><span class="material-icons">delete</span>`
     todoContainer.append(div);
+
 })
 
 
 
 
-// Add event listener to list-item.
+// Add event listener to list-items.
 
 const spanTextElement = document.querySelectorAll('.todo-list-item p');
 
@@ -109,19 +110,32 @@ spanTextElement.forEach(element=>{
             }
             newInput.addEventListener('blur', changeContent, false);
             newInput.addEventListener('change', changeContent, false);
-        }
-
-
-
-        
-        
+        }  
     })
 })
 
 
-
+// ACTIONS FOR SEARCH BUTTON AND SEARCHING ELEMENTS
 const searchButton = document.querySelector('.search-button');
 const searchInput = document.querySelector('.search-container input');
+
+// function to filter search-elements;
+const filterItems = (string)=>{
+    const taskContainers = document.querySelectorAll('.todo-list-item p:first-child')
+
+    Array.from(taskContainers).filter(element=>{
+        return !element.innerText.includes(string);
+    }).forEach(filtered=>{
+        filtered.parentNode.style.display = 'none';
+    })
+    Array.from(taskContainers).filter(element=>{
+        return element.innerText.includes(string);
+    }).forEach(filtered=>{
+        filtered.parentNode.style.display = '';
+    })
+}
+
+
 
 searchButton.addEventListener('click', ()=>{
     searchInput.style.display = 'block';
@@ -135,6 +149,7 @@ searchInput.addEventListener('blur', ()=>{
 })
 
 searchInput.addEventListener('keyup', event=>{
-    console.log(event);
-    console.log(searchInput.value)
+    const term = searchInput.value.trim();
+
+    filterItems(term);
 })

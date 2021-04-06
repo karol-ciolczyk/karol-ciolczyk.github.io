@@ -172,7 +172,7 @@ span.material-icons:hover{
 .search-button:hover{
     background-color: #ebb735;
     cursor: pointer;
-    transform: scale(0.95);
+    transform: scale(0.75);
 }
 
 
@@ -190,7 +190,7 @@ span.material-icons:hover{
 .trash-button:hover{
     background-color: #ebb735;
     cursor: pointer;
-    transform: scale(0.95);
+    transform: scale(0.75);
 }
 /**********************************************/
 
