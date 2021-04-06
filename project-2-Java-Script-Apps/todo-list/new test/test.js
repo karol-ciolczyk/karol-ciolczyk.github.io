@@ -120,4 +120,21 @@ spanTextElement.forEach(element=>{
 
 
 
+const searchButton = document.querySelector('.search-button');
+const searchInput = document.querySelector('.search-container input');
 
+searchButton.addEventListener('click', ()=>{
+    searchInput.style.display = 'block';
+    setTimeout(()=>{
+        searchInput.focus();
+    },350)
+})
+
+searchInput.addEventListener('blur', ()=>{
+    searchInput.style.display = 'none';
+})
+
+searchInput.addEventListener('keyup', event=>{
+    console.log(event);
+    console.log(searchInput.value)
+})
