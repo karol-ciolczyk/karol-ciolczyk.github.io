@@ -22,7 +22,7 @@ const clickAndChange = (element)=>{
             }
         newInput.addEventListener('blur', changeContent, false);
         newInput.addEventListener('change', changeContent, false);
-        } else {
+        } else if(event.target.tagName === `P`){
             // Change text to input afterd click
             const newInput = document.createElement('input');
             newInput.setAttribute('type', 'text')

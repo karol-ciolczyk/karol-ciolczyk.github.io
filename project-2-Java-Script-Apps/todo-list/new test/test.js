@@ -14,9 +14,6 @@ todoForm.addEventListener('submit', event=>{
     let presentDate = new Date();
     let presentTime = presentDate.toLocaleString()
 
-    console.log(taskInput.value);
-    console.log(taskDate.value);
-    console.log(taskPlace.value);
     const task = taskInput.value;
     const date = taskDate.value;
     const place = taskPlace.value;
