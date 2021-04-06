@@ -11,18 +11,25 @@ const taskPlace = todoForm.where;
 
 todoForm.addEventListener('submit', event=>{
     event.preventDefault();
+    let presentDate = new Date();
+    let presentTime = presentDate.toLocaleString()
+
     console.log(taskInput.value);
     console.log(taskDate.value);
     console.log(taskPlace.value);
+    const task = taskInput.value;
+    const date = taskDate.value;
+    const place = taskPlace.value;
+
 
     let newObject = {
-        task: taskInput.value,
-        date: taskDate.value,
-        place: taskPlace.value
+        task: task,
+        date: date,
+        place: place,
+        utc: presentTime
     }
-
     // json to localStorage
-    localStorage.setItem(`${newObject.task}`, JSON.stringify(newObject))
+    localStorage.setItem(`${newObject.task}, ${newObject.utc}`, JSON.stringify(newObject))
 
     //place new item in todo-container
     const todoContainer = document.querySelector('.todo-container');
@@ -31,6 +38,8 @@ todoForm.addEventListener('submit', event=>{
     div.innerHTML = `<p>${newObject.task}</p><p class="p-tag-date">${newObject.date}</p><p>${newObject.place}</p> <span class="material-icons trash">delete</span>`
     clickAndChange(div);
     todoContainer.prepend(div);
+
+    todoForm.reset();
 })
 
 
