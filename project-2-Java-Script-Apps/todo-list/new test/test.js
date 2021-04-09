@@ -1,5 +1,6 @@
 import {clickAndChange} from "./modules/clickAndChange.js";
 import {createTodoListItems} from "./modules/createListItemFromLocalStorage.js"
+import { objectFromLS } from "./modules/functionObjectFromLS.js";
 
 const todoForm = document.forms.formTodo;
 // inputs of ToDo Form
@@ -26,7 +27,7 @@ todoForm.addEventListener('submit', event=>{
         utc: presentTime
     }
     // json to localStorage
-    localStorage.setItem(`${newObject.task}, ${newObject.utc}`, JSON.stringify(newObject))
+    localStorage.setItem(`${newObject.utc}`, JSON.stringify(newObject))
 
     //place new item in todo-container
     const todoContainer = document.querySelector('.todo-container');
@@ -36,7 +37,7 @@ todoForm.addEventListener('submit', event=>{
     clickAndChange(div);
     todoContainer.prepend(div);
 
-    todoForm.reset();
+    // todoForm.reset();
 })
 
 
@@ -99,16 +100,25 @@ searchInput.addEventListener('keyup', ()=>{
 
 const trashArea = document.querySelector('.trash-area');
 const trash = document.querySelectorAll('.trash');
-console.log(trash);
+
 trash.forEach(element=>{
     element.addEventListener('click', event=>{
-        const task = event.target;
+        const task = event.target.parentNode;
+        const taskName = task.lastChild.textContent;
+        
+        task.childNodes[3].textContent = 'restore_from_trash'  // change icons name = change icon
 
-        trashArea.append(task.parentNode);
-        // task.parentNode.remove();
+        const taskObject = objectFromLS(taskName)
+        taskObject.moved = true;
+        localStorage.setItem(taskName, JSON.stringify(taskObject) )
+
+        trashArea.append(task);
+
     })
 })
 
+
+//  Trash-button event. Show/Hide trash-section
 
 const trashSection = document.querySelector('.trash-section');
 const trashButton = document.querySelector('.trash-button');
