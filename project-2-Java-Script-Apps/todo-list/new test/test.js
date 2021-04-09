@@ -97,13 +97,30 @@ searchInput.addEventListener('keyup', ()=>{
 
 // Event listener - trash button in list-items
 
+const trashArea = document.querySelector('.trash-area');
 const trash = document.querySelectorAll('.trash');
 console.log(trash);
 trash.forEach(element=>{
     element.addEventListener('click', event=>{
-        console.log(event.target.parentNode)
-        event.target.parentNode.remove();
+        const task = event.target;
+
+        trashArea.append(task.parentNode);
+        // task.parentNode.remove();
     })
 })
 
 
+const trashSection = document.querySelector('.trash-section');
+const trashButton = document.querySelector('.trash-button');
+
+trashButton.addEventListener('click', event=>{
+    trashSection.style.display = 'block';
+
+    trashSection.addEventListener('click', event=>{
+        console.log(event.target);
+
+        if(event.target.tagName === `SECTION`){
+            trashSection.style.display = '';
+        }
+    })
+})

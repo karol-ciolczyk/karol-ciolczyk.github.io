@@ -10,7 +10,7 @@ const createTodoListItems = function(){
         array.push(jsonToObject);
     }
 
-    // Take elements from array and create then put new item in todo-container
+    // Take object from array and create new item then place in todo-container
     array.forEach(object=>{
         const todoContainer = document.querySelector('.todo-container');
 
