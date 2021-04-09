@@ -242,6 +242,22 @@ span.material-icons:hover{
 
   /*****      TRASH-AREA     ******/
 
+  .trash-section{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.527);
+
+    display: none;
+    position: absolute;
+    top: 0px;
+    animation: trashArea 400ms linear;
+}
+
+@keyFrames trashArea {
+    0% { opacity: 0}
+    100% { opacity: 1}
+}
+
 .trash-area{
     width: 50%;
     min-height: 500px;
@@ -252,21 +268,14 @@ span.material-icons:hover{
     position: absolute;
     top: 100px;
     left: 50%;
-    transform: translate(-50%, -0%)
-}
-
-.trash-section{
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.349);
-
-    display: none;
-    position: absolute;
-    top: 0px;
+    transform: translate(-50%, -0%);
     animation: drop 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 @keyFrames drop {
     0% {top: -900px;}
-    100% {top: 0px;}
+    100% {top: 100px;}
 }
+
+
+
