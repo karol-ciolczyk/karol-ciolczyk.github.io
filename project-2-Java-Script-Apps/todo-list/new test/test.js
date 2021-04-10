@@ -1,6 +1,9 @@
 import {clickAndChange} from "./modules/clickAndChange.js";
 import {createTodoListItems} from "./modules/createListItemFromLocalStorage.js"
 import { objectFromLS } from "./modules/functionObjectFromLS.js";
+import {filterItems} from "./modules/filterItemsFunction.js";
+import {trashEventFunction} from "./modules/trashEventFunction.js"
+import {restoreItemFunction} from "./modules/restoreTrashEventFunction.js"
 
 const todoForm = document.forms.formTodo;
 // inputs of ToDo Form
@@ -60,23 +63,6 @@ spanTextElement.forEach(element=>{
 const searchButton = document.querySelector('.search-button');
 const searchInput = document.querySelector('.search-container input');
 
-// function to filter search-elements;
-const filterItems = (string)=>{
-    const taskContainers = document.querySelectorAll('.todo-list-item p:first-child')
-
-    Array.from(taskContainers).filter(element=>{
-        return !element.innerText.includes(string);
-    }).forEach(filtered=>{
-        filtered.parentNode.style.display = 'none';
-    })
-    Array.from(taskContainers).filter(element=>{
-        return element.innerText.includes(string);
-    }).forEach(filtered=>{
-        filtered.parentNode.style.display = '';
-    })
-}
-
-
 
 searchButton.addEventListener('click', ()=>{
     searchInput.style.display = 'block';
@@ -98,23 +84,10 @@ searchInput.addEventListener('keyup', ()=>{
 
 // Event listener - trash button in list-items
 
-const trashArea = document.querySelector('.trash-area');
 const trash = document.querySelectorAll('.trash');
 
 trash.forEach(element=>{
-    element.addEventListener('click', event=>{
-        const task = event.target.parentNode;
-        const taskName = task.lastChild.textContent;
-        
-        task.childNodes[3].textContent = 'restore_from_trash'  // change icons name = change icon
-
-        const taskObject = objectFromLS(taskName)
-        taskObject.moved = true;
-        localStorage.setItem(taskName, JSON.stringify(taskObject) )
-
-        trashArea.append(task);
-
-    })
+    element.addEventListener('click', trashEventFunction)
 })
 
 
@@ -123,7 +96,7 @@ trash.forEach(element=>{
 const trashSection = document.querySelector('.trash-section');
 const trashButton = document.querySelector('.trash-button');
 
-trashButton.addEventListener('click', event=>{
+trashButton.addEventListener('click', ()=>{
     trashSection.style.display = 'block';
 
     trashSection.addEventListener('click', event=>{
@@ -134,3 +107,12 @@ trashButton.addEventListener('click', event=>{
         }
     })
 })
+
+
+const restoreTrashButtons = document.querySelectorAll('.restore');
+
+restoreTrashButtons.forEach(element=>{
+    element.addEventListener('click', restoreItemFunction);
+})
+
+

@@ -15,7 +15,7 @@ const createTodoListItems = function(){
     const todoContainer = document.querySelector('.todo-container');
 
     array.forEach(object=>{
-        const whichIcon = object.moved ? `<span class="material-icons trash">restore_from_trash</span>` : `<span class="material-icons trash">delete</span>`
+        const whichIcon = object.moved ? `<span class="material-icons restore">restore_from_trash</span>` : `<span class="material-icons trash">delete</span>`
 
         let div = document.createElement('div');
         div.classList.add('todo-list-item')
