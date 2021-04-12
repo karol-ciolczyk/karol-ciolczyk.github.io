@@ -24,6 +24,7 @@ todoForm.addEventListener('submit', event=>{
 
 
     let newObject = {
+        moved: false,
         task: task,
         date: date,
         place: place,
