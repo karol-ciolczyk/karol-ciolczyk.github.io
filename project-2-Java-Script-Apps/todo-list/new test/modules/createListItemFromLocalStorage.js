@@ -28,7 +28,3 @@ export const createTodoListItems = function(){
 
     })
 }
-
-
-
-

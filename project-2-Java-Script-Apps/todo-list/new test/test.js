@@ -4,6 +4,7 @@ import { objectFromLS } from "./modules/functionObjectFromLS.js";
 import {filterItems} from "./modules/filterItemsFunction.js";
 import {trashItemFunction} from "./modules/trashEventFunction.js"
 import {restoreItemFunction} from "./modules/restoreTrashEventFunction.js"
+import { createItems } from "./modules/createItemsFromFirebase.js";
 
 const todoForm = document.forms.formTodo;
 // inputs of ToDo Form
@@ -49,15 +50,14 @@ todoForm.addEventListener('submit', event=>{
 
 
 
-// Function gets objects from LocalStorage and create Todo-List items
-createTodoListItems()
-
+// Function gets objects from Firebase and create Todo-List items
+createItems();
 
 // Add event listener to list-items. - (functionality click and change value)
 
-const spanTextElement = document.querySelectorAll('.todo-list-item p');
+const textElements = document.querySelectorAll('.todo-list-item p');
 
-spanTextElement.forEach(element=>{
+textElements.forEach(element=>{
     clickAndChange(element);
 })
 
@@ -103,7 +103,6 @@ trashButton.addEventListener('click', ()=>{
     trashSection.style.display = 'block';
 
     trashSection.addEventListener('click', event=>{
-        console.log(event.target);
 
         if(event.target.tagName === `SECTION`){
             trashSection.style.display = '';
