@@ -1,7 +1,6 @@
-export {createTodoListItems};
 
 // Function gets objects from LocalStorage and create Todo-List items
-const createTodoListItems = function(){
+export const createTodoListItems = function(){
     let array = [];
 
     for(let i=0; i<localStorage.length; i++){

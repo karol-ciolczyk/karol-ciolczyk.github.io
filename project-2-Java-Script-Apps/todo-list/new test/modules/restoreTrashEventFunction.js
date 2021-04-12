@@ -1,7 +1,9 @@
 import { objectFromLS } from "./functionObjectFromLS.js";
+import { trashItemFunction } from "./trashEventFunction.js";
 
 export const restoreItemFunction = (event)=>{
 
+    const restoreButton = event.target;
     const todoContainer = document.querySelector('.todo-container');
     const task = event.target.parentNode;
     const taskName = task.lastChild.textContent;
@@ -16,5 +18,6 @@ export const restoreItemFunction = (event)=>{
     
     todoContainer.append(task);
 
-    event.target.removeEventListener('click', restoreItemFunction);
+    restoreButton.removeEventListener('click', restoreItemFunction);  // restoreFunction off
+    restoreButton.addEventListener('click', trashItemFunction)        // trashFunction on
 }

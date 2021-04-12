@@ -1,7 +1,9 @@
 import { objectFromLS } from "./functionObjectFromLS.js";
+import { restoreItemFunction } from "./restoreTrashEventFunction.js";
 
-export const trashEventFunction = (event)=>{
+export const trashItemFunction = (event)=>{
 
+    const trashButton = event.target;
     const trashArea = document.querySelector('.trash-area');
     const task = event.target.parentNode;
     const taskName = task.lastChild.textContent;
@@ -11,11 +13,13 @@ export const trashEventFunction = (event)=>{
     
     // add new key/value to object in localStorage = moved: true;
     const taskObject = objectFromLS(taskName)
+    console.log(taskObject);
     taskObject.moved = true;
     localStorage.setItem(taskName, JSON.stringify(taskObject) )
     
     trashArea.append(task);
 
-    event.target.removeEventListener('click', trashEventFunction);
+    trashButton.removeEventListener('click', trashItemFunction);  // trashFunction off
+    trashButton.addEventListener('click', restoreItemFunction);   // restoreFunction on
 }
 

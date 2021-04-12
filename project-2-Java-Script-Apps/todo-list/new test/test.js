@@ -2,7 +2,7 @@ import {clickAndChange} from "./modules/clickAndChange.js";
 import {createTodoListItems} from "./modules/createListItemFromLocalStorage.js"
 import { objectFromLS } from "./modules/functionObjectFromLS.js";
 import {filterItems} from "./modules/filterItemsFunction.js";
-import {trashEventFunction} from "./modules/trashEventFunction.js"
+import {trashItemFunction} from "./modules/trashEventFunction.js"
 import {restoreItemFunction} from "./modules/restoreTrashEventFunction.js"
 
 const todoForm = document.forms.formTodo;
@@ -34,9 +34,11 @@ todoForm.addEventListener('submit', event=>{
 
     //place new item in todo-container
     const todoContainer = document.querySelector('.todo-container');
-    let div = document.createElement('div');
+    const div = document.createElement('div');
     div.classList.add('todo-list-item')
-    div.innerHTML = `<p>${newObject.task}</p><p class="p-tag-date">${newObject.date}</p><p>${newObject.place}</p> <span class="material-icons trash">delete</span>`
+    div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons trash">delete</span><p hidden>${presentTime}</p>`
+    console.log(div.childNodes)
+    div.childNodes[3].addEventListener('click', trashItemFunction)  // for trashButton - trashFunction on
     clickAndChange(div);
     todoContainer.prepend(div);
 
@@ -87,7 +89,7 @@ searchInput.addEventListener('keyup', ()=>{
 const trash = document.querySelectorAll('.trash');
 
 trash.forEach(element=>{
-    element.addEventListener('click', trashEventFunction)
+    element.addEventListener('click', trashItemFunction)
 })
 
 
