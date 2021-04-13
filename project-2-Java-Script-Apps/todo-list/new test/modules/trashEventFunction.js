@@ -1,4 +1,5 @@
 import { changeItem } from "./changeItemFiebase.js";
+import { isEmpty } from "./isEmptyTrashContainer.js";
 import { restoreItemFunction } from "./restoreTrashEventFunction.js";
 
 export const trashItemFunction = (event)=>{
@@ -18,4 +19,6 @@ export const trashItemFunction = (event)=>{
     trashArea.append(task);
     trashButton.removeEventListener('click', trashItemFunction);  // trashFunction off
     trashButton.addEventListener('click', restoreItemFunction);   // restoreFunction on
+
+    isEmpty(); // change trash-icon if needed
 }
