@@ -7,6 +7,7 @@ import {createItems} from "./modules/createItemsFromFirebase.js";
 import {addItem} from './modules/addItemFrebase.js'
 import { getItems } from "./modules/getItemsFirebase.js";
 import { removeItem } from "./modules/removeItemFitebase.js";
+import { isEmpty } from "./modules/isEmptyTrashContainer.js";
 
 const todoForm = document.forms.formTodo;
 // inputs of ToDo Form
@@ -130,14 +131,14 @@ restoreTrashButtons.forEach(element=>{
 
 // delete-button: trash-area
 
-const deleteButton = document.querySelector('.delete-button');
+const cleanButton = document.querySelector('.clean-button');
 
-deleteButton.addEventListener('click', ()=>{
+cleanButton.addEventListener('click', ()=>{
     const items = document.querySelectorAll('.trash-area .todo-list-item');
     const array = Array.from(items).map(div => div.lastChild.textContent)
     items.forEach( item=> item.remove() )
     array.forEach( id => removeItem(id) )
     console.log(array);
 
-    
+    isEmpty();
 })

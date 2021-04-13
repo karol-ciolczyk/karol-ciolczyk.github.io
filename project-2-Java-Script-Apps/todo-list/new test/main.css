@@ -301,7 +301,7 @@ span.material-icons:hover{
 }
 
 
-.delete-button{
+.clean-button{
     color: white;
     height: 40px;
     width: 120px;
@@ -316,7 +316,7 @@ span.material-icons:hover{
     transition: 200ms;
 }
 
-.delete-button:hover{
+.clean-button:hover{
     cursor: pointer;
     background-color: #fd6225;
     box-shadow: 0px 0px 10px 0px white;
