@@ -1,10 +1,11 @@
 import {clickAndChange} from "./modules/clickAndChange.js";
 import {createTodoListItems} from "./modules/createListItemFromLocalStorage.js"
-import { objectFromLS } from "./modules/functionObjectFromLS.js";
 import {filterItems} from "./modules/filterItemsFunction.js";
 import {trashItemFunction} from "./modules/trashEventFunction.js"
 import {restoreItemFunction} from "./modules/restoreTrashEventFunction.js"
-import { createItems } from "./modules/createItemsFromFirebase.js";
+import {createItems} from "./modules/createItemsFromFirebase.js";
+import {addItem} from './modules/addItemFrebase.js'
+import { getItems } from "./modules/getItemsFirebase.js";
 
 const todoForm = document.forms.formTodo;
 // inputs of ToDo Form
@@ -16,8 +17,6 @@ const taskPlace = todoForm.where;
 
 todoForm.addEventListener('submit', event=>{
     event.preventDefault();
-    let presentDate = new Date();
-    let presentTime = presentDate.toLocaleString()
 
     const task = taskInput.value;
     const date = taskDate.value;
@@ -29,21 +28,30 @@ todoForm.addEventListener('submit', event=>{
         task: task,
         date: date,
         place: place,
-        utc: presentTime
     }
-    // json to localStorage
-    localStorage.setItem(`${newObject.utc}`, JSON.stringify(newObject))
 
-    //place new item in todo-container
-    const todoContainer = document.querySelector('.todo-container');
-    const div = document.createElement('div');
-    div.classList.add('todo-list-item')
-    div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons trash">delete</span><p hidden>${presentTime}</p>`
-    console.log(div.childNodes)
-    div.childNodes[3].addEventListener('click', trashItemFunction)  // for trashButton - trashFunction on
-    clickAndChange(div);
-    todoContainer.prepend(div);
+    // add new item to Firebase
+    addItem(newObject)
+    // // json to localStorage
+    // localStorage.setItem(`${newObject.utc}`, JSON.stringify(newObject))
 
+    getItems()
+    .then(data => {
+        const array = Object.keys(data);
+        const lastElement = array[array.length-1];
+
+        //place new item in todo-container
+        const todoContainer = document.querySelector('.todo-container');
+        const div = document.createElement('div');
+        div.classList.add('todo-list-item')
+        div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons trash">delete</span><p hidden>${lastElement}</p>`
+        const trashButton = div.childNodes[3];
+        trashButton.addEventListener('click', trashItemFunction)  // for trashButton - trashFunction on
+        clickAndChange(div);
+        todoContainer.prepend(div);
+    })
+    .catch(err=>console.log(err));
+    
     // todoForm.reset();
 })
 

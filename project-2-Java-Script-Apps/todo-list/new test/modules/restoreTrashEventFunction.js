@@ -1,5 +1,5 @@
-import { objectFromLS } from "./functionObjectFromLS.js";
 import { trashItemFunction } from "./trashEventFunction.js";
+import { changeItem }from "./changeItemFiebase.js"
 
 export const restoreItemFunction = (event)=>{
 
@@ -13,9 +13,7 @@ export const restoreItemFunction = (event)=>{
     task.childNodes[3].textContent = 'delete'  // change icons name = change icon in DOM
     
     // add new key/value to object in localStorage = moved: true;
-    const taskObject = objectFromLS(taskName)
-    taskObject.moved = false;
-    localStorage.setItem(taskName, JSON.stringify(taskObject) )
+    changeItem(taskName, true)
     
     todoContainer.append(task);
 
