@@ -126,3 +126,12 @@ restoreTrashButtons.forEach(element=>{
 })
 
 
+// delete-button: trash-area
+
+const deleteButton = document.querySelector('.delete-button');
+
+deleteButton.addEventListener('click', ()=>{
+    const items = document.querySelectorAll('.trash-area .todo-list-item');
+    const array = Array.from(items).map(div => div.lastChild.textContent)
+    console.log(array);
+})
