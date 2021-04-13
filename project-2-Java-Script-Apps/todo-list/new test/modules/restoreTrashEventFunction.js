@@ -13,7 +13,7 @@ export const restoreItemFunction = (event)=>{
     task.childNodes[3].textContent = 'delete'  // change icons name = change icon in DOM
     
     // add new key/value to object in localStorage = moved: true;
-    changeItem(taskName, true)
+    changeItem(taskName, false)
     
     todoContainer.append(task);
 
