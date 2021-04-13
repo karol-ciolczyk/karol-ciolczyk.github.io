@@ -2,6 +2,7 @@ import { clickAndChange } from "./clickAndChange.js";
 import { getItems } from "./getItemsFirebase.js";
 import { trashItemFunction } from "./trashEventFunction.js";
 import { restoreItemFunction } from "./restoreTrashEventFunction.js";
+import { isEmpty } from "./isEmptyTrashContainer.js";
 
 export const createItems = function(){
     getItems()
@@ -45,7 +46,10 @@ export const createItems = function(){
             clickAndChange(element);
         })
 
+
+        isEmpty();
         
     })
     .catch(err => console.log(err))
+
 };

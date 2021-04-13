@@ -54,6 +54,7 @@ todoForm.addEventListener('submit', event=>{
     .catch(err=>console.log(err));
     
     // todoForm.reset();
+
 })
 
 
