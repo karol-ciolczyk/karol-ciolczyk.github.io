@@ -8,6 +8,8 @@ import {addItem} from './modules/addItemFrebase.js'
 import { getItems } from "./modules/getItemsFirebase.js";
 import { removeItem } from "./modules/removeItemFitebase.js";
 import { isEmpty } from "./modules/isEmptyTrashContainer.js";
+import { getLocation } from "./modules/weatherApp/getLocation.js";
+
 
 const todoForm = document.forms.formTodo;
 // inputs of ToDo Form
@@ -142,3 +144,5 @@ cleanButton.addEventListener('click', ()=>{
 
     isEmpty();
 })
+
+// getLocation(`Alwernia`);
