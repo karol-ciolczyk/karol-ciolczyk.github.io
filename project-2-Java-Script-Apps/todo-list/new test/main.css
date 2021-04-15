@@ -326,10 +326,17 @@ span.material-icons:hover{
 
 /************** WEATHER APP **********************/
 
+.whatCity{
+    padding-bottom: 100px;
+}
+
 .weatherApp-container{
-    width: 640px;
-    height: 853px;
+    color: white;
+    width: 520px;
+    height: 690px;
     border: 1px solid black;
+    background: url('./img/timothee-duran-ilfsT5p_qvA-unsplash.jpg');
+    background-size: cover;
 }
 
 .list{
@@ -338,7 +345,8 @@ span.material-icons:hover{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding: 0px;
 }
 
 .list li{
@@ -352,6 +360,11 @@ span.material-icons:hover{
 }
 
 .temperature{
-    font-size: 55px;
+    font-weight:200;
+    letter-spacing: -10px;
+    font-size: 100px;
     padding-bottom: 80px;
 }
+
+
+

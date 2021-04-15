@@ -1,7 +1,7 @@
 import { getWeatherConditions } from "./getWeatherConditions.js";
 
 export const getLocation = (city)=>{
-    fetch(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=2HjTBrGn6KjzzlHbNbFhg8N4XIk74bRx&q=${city}`)
+    fetch(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=1c7TBu4MybMcEKxCr30xDolto2UWRYDl&q=${city}`)
     .then(response => response.json())
     .then(data => {
         const newObject = {};

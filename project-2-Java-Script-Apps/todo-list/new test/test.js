@@ -167,5 +167,3 @@ whatCity.addEventListener('submit', (event)=>{
 
 getLocation(city);
 })
-
-// getLocation(`Alwernia`);
