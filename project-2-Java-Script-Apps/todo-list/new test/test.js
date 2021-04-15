@@ -1,15 +1,12 @@
 import {clickAndChange} from "./modules/clickAndChange.js";
-import {createTodoListItems} from "./modules/createListItemFromLocalStorage.js"
 import {filterItems} from "./modules/filterItemsFunction.js";
-import {trashItemFunction} from "./modules/trashEventFunction.js"
+import {trashItem} from "./modules/trashItemFunction.js"
 import {restoreItemFunction} from "./modules/restoreTrashEventFunction.js"
 import {createItems} from "./modules/createItemsFromFirebase.js";
 import {addItem} from './modules/addItemFrebase.js'
 import { getItems } from "./modules/getItemsFirebase.js";
-import { removeItem } from "./modules/removeItemFitebase.js";
-import { isEmpty } from "./modules/isEmptyTrashContainer.js";
 import { getLocation } from "./modules/weatherApp/getLocation.js";
-import { addTrashListener } from "./modules/listenerTrashButton.js";
+import { cleanTrashArea } from "./modules/cleanTrashArea+Firebse.js";
 
 
 const todoForm = document.forms.formTodo;
@@ -37,9 +34,8 @@ todoForm.addEventListener('submit', event=>{
 
     // add new item to Firebase
     addItem(newObject)
-    // // json to localStorage
-    // localStorage.setItem(`${newObject.utc}`, JSON.stringify(newObject))
 
+    // take items from Firebase and place into todo-list
     getItems()
     .then(data => {
         const array = Object.keys(data);
@@ -49,9 +45,7 @@ todoForm.addEventListener('submit', event=>{
         const todoContainer = document.querySelector('.todo-container');
         const div = document.createElement('div');
         div.classList.add('todo-list-item')
-        div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons trash">delete</span><p hidden>${lastElement}</p>`
-        const trashButton = div.childNodes[3];
-        trashButton.addEventListener('click', trashItemFunction)  // for trashButton - trashFunction on
+        div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons garbage">delete</span><p hidden>${lastElement}</p>`
         clickAndChange(div);
         todoContainer.prepend(div);
     })
@@ -101,12 +95,6 @@ searchInput.addEventListener('keyup', ()=>{
 
 // Event listener - trash button in list-items
 
-const trash = document.querySelectorAll('.trash');
-
-trash.forEach(element=>{
-    element.addEventListener('click', trashItemFunction)
-})
-
 
 //  Trash-button event. Show/Hide trash-section
 
@@ -137,14 +125,37 @@ restoreTrashButtons.forEach(element=>{
 const cleanButton = document.querySelector('.clean-button');
 
 cleanButton.addEventListener('click', ()=>{
-    const items = document.querySelectorAll('.trash-area .todo-list-item');
-    const array = Array.from(items).map(div => div.lastChild.textContent)
-    items.forEach( item=> item.remove() )
-    array.forEach( id => removeItem(id) )
-    console.log(array);
-
-    isEmpty();
+    cleanTrashArea();
 })
+
+
+
+// listener for todo-container - in order to remove todo's item
+const todoContainer = document.querySelector('.todo-container');
+
+todoContainer.addEventListener('click', event=>{
+
+    if(event.target.className.includes(`garbage`)){
+        trashItem(event)
+    }
+})
+
+// listener for trash-container - in order to restore todo's item back
+const trashArea = document.querySelector('.trash-area');
+
+trashArea.addEventListener('click', event=>{
+    console.log(event.target)
+    if(event.target.className.includes('garbage')){
+        restoreItemFunction(event);
+    }
+})
+
+
+
+
+////////////////////////////////////////////////
+
+
 
 const whatCity = document.querySelector('.whatCity');
 const inp = document.querySelector('.whatCity input')
@@ -158,5 +169,3 @@ getLocation(city);
 })
 
 // getLocation(`Alwernia`);
-
-addTrashListener();

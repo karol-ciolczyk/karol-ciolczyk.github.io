@@ -1,7 +1,5 @@
 import { clickAndChange } from "./clickAndChange.js";
 import { getItems } from "./getItemsFirebase.js";
-import { trashItemFunction } from "./trashEventFunction.js";
-import { restoreItemFunction } from "./restoreTrashEventFunction.js";
 import { isEmpty } from "./isEmptyTrashContainer.js";
 
 export const createItems = function(){
@@ -21,21 +19,17 @@ export const createItems = function(){
         const todoContainer = document.querySelector('.todo-container');
 
         nextArray.forEach(object=>{
-            const whichIcon = object.moved ? `<span class="material-icons restore">restore_from_trash</span>` : `<span class="material-icons trash">delete</span>`
+            const whichIcon = object.moved ? `<span class="material-icons garbage">restore_from_trash</span>` : `<span class="material-icons garbage">delete</span>`
 
             let div = document.createElement('div');
             div.classList.add('todo-list-item')
             div.innerHTML = `<p>${object.task}</p><p class="p-tag-date">${object.date}</p><p>${object.place}</p>${whichIcon}<p hidden>${object.id}</p>`
 
 
-            const trashButton = div.childNodes[3];
-
             if(object.moved === true){
                 trashArea.append(div)
-                trashButton.addEventListener('click', restoreItemFunction)
             } else {
                 todoContainer.append(div);
-                trashButton.addEventListener('click', trashItemFunction)
             }
 
         })
