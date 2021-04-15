@@ -9,6 +9,7 @@ import { getItems } from "./modules/getItemsFirebase.js";
 import { removeItem } from "./modules/removeItemFitebase.js";
 import { isEmpty } from "./modules/isEmptyTrashContainer.js";
 import { getLocation } from "./modules/weatherApp/getLocation.js";
+import { addTrashListener } from "./modules/listenerTrashButton.js";
 
 
 const todoForm = document.forms.formTodo;
@@ -157,3 +158,5 @@ getLocation(city);
 })
 
 // getLocation(`Alwernia`);
+
+addTrashListener();
