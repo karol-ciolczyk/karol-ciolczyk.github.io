@@ -327,7 +327,7 @@ span.material-icons:hover{
 /************** WEATHER APP **********************/
 
 .whatCity{
-    padding-bottom: 80px;
+    padding-bottom: 70px;
     padding-top: 20px;
 }
 
@@ -342,8 +342,8 @@ span.material-icons:hover{
     width: 520px;
     height: 690px;
     border: 1px solid black;
-    background: url('./img/timothee-duran-ilfsT5p_qvA-unsplash.jpg');
-    background-size: cover;
+    /* background: url('./img/true.jpg'); */
+    /* background-size: cover; */
 }
 
 .list{
@@ -363,13 +363,13 @@ span.material-icons:hover{
 
 .city{
     font-weight:200;
-    font-size: 50px;
-    padding-bottom: 60px;
+    font-size: 45px;
+    padding-bottom: 50px;
 }
 
 .temperature{
     font-weight:200;
-    letter-spacing: -10px;
+    letter-spacing: -5px;
     font-size: 100px;
     padding-bottom: 35px;
 }
@@ -383,7 +383,7 @@ span.material-icons:hover{
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.431);
+    background-color: rgb(255, 255, 255);
 }
 
 
