@@ -3,8 +3,6 @@ import { getItems } from "./getItemsFirebase.js";
 import { isEmpty } from "./isEmptyTrashContainer.js";
 
 export const createItems = function(data){
-    getItems()
-    .then(data => {
         
         const array = Object.keys(data);    // create array of id-values
         console.log(array);
@@ -42,8 +40,4 @@ export const createItems = function(data){
 
 
         isEmpty();
-        
-    })
-    .catch(err => console.log(err))
-
 };

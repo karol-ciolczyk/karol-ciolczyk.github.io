@@ -59,7 +59,9 @@ todoForm.addEventListener('submit', event=>{
 
 
 // Function gets objects from Firebase and create Todo-List items
-createItems();
+getItems()
+  .then(createItems)
+  .catch(console.log);
 
 // Add event listener to list-items. - (functionality click and change value)
 
