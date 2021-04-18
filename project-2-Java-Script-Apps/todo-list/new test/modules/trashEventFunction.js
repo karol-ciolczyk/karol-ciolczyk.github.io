@@ -7,10 +7,11 @@ export const trashItemFunction = (event)=>{
     const trashArea = document.querySelector('.trash-area');
     const task = event.target.parentNode;
     const taskName = task.lastChild.textContent;
+    const iconName = task.childNodes[3];
     console.log(taskName);
 
     event.target.className = `material-icons restore`;
-    task.childNodes[3].textContent = 'restore_from_trash'  // change icons name = change icon
+    iconName.textContent = 'restore_from_trash'  // change icons name = change icon
     
     // add new key/value to object in localStorage = moved: true;
     changeItem(taskName, true)

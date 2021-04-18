@@ -1,5 +1,4 @@
 import {clickAndChange} from "./modules/clickAndChange.js";
-import {createTodoListItems} from "./modules/createListItemFromLocalStorage.js"
 import {filterItems} from "./modules/filterItemsFunction.js";
 import {trashItemFunction} from "./modules/trashEventFunction.js"
 import {restoreItemFunction} from "./modules/restoreTrashEventFunction.js"
@@ -58,9 +57,8 @@ todoForm.addEventListener('submit', event=>{
 
 
 
-
 // Function gets objects from Firebase and create Todo-List items
-createItems();
+getItems().then(createItems)
 
 // Add event listener to list-items. - (functionality click and change value)
 

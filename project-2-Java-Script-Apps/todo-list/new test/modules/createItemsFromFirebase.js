@@ -1,11 +1,8 @@
 import { clickAndChange } from "./clickAndChange.js";
-import { getItems } from "./getItemsFirebase.js";
 import { trashItemFunction } from "./trashEventFunction.js";
 import { restoreItemFunction } from "./restoreTrashEventFunction.js";
 
-export const createItems = function(){
-    getItems()
-    .then(data => {
+export const createItems = function(data){
         
         const array = Object.keys(data);    // create array of id-values
         console.log(array);
@@ -44,8 +41,4 @@ export const createItems = function(){
         textElements.forEach(element=>{
             clickAndChange(element);
         })
-
-        
-    })
-    .catch(err => console.log(err))
 };

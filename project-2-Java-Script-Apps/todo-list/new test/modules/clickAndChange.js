@@ -1,6 +1,4 @@
-export {clickAndChange};
-
-const clickAndChange = (element)=>{
+export const clickAndChange = (element)=>{
     element.addEventListener('click', event=>{
 
         if(event.target.className === 'p-tag-date'){
