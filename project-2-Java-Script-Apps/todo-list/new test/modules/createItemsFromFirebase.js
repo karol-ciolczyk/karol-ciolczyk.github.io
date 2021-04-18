@@ -1,5 +1,4 @@
 import { clickAndChange } from "./clickAndChange.js";
-import { getItems } from "./getItemsFirebase.js";
 import { isEmpty } from "./isEmptyTrashContainer.js";
 
 export const createItems = function(data){
@@ -37,7 +36,5 @@ export const createItems = function(data){
         textElements.forEach(element=>{
             clickAndChange(element);
         })
-
-
-        isEmpty();
+     isEmpty();
 };

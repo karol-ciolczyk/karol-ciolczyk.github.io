@@ -6,8 +6,11 @@ export const restoreItemFunction = (event)=>{
     const todoContainer = document.querySelector('.todo-container');
     const task = event.target.parentNode;
     const taskName = task.lastChild.textContent;
+    const iconName = task.childNodes[3];
+    console.log(event); 
     
-    task.childNodes[3].textContent = 'delete'  // change icons name = change icon in DOM
+    event.target.className = `material-icons trash`;
+    iconName.textContent = 'delete'  // change icons name = change icon in DOM
     
     // add new key/value to object in localStorage = moved: true;
     changeItem(taskName, false)
