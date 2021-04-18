@@ -2,7 +2,7 @@ import { clickAndChange } from "./clickAndChange.js";
 import { getItems } from "./getItemsFirebase.js";
 import { isEmpty } from "./isEmptyTrashContainer.js";
 
-export const createItems = function(){
+export const createItems = function(data){
     getItems()
     .then(data => {
         
