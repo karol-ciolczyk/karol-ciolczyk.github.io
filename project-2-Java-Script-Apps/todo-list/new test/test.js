@@ -37,7 +37,7 @@ getCollection(`tasks`).onSnapshot((items)=>{
             div.classList.add('todo-list-item')
             div.setAttribute('data-id', `${itemId}`)
             if(!isMoved){
-                div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons garbage">delete</span>`
+                div.innerHTML = `<p task>${task}</p><p class="p-tag-date">${date}</p><p place>${place}</p><span class="material-icons garbage">delete</span>`
                 clickAndChange(div);
                 todoContainer.prepend(div);
             } else {

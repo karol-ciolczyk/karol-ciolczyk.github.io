@@ -1,3 +1,5 @@
+import { changeValue } from "./firebase/changeValue-Firestore.js";
+
 export const clickAndChange = (element)=>{
     element.addEventListener('click', event=>{
 
@@ -14,8 +16,13 @@ export const clickAndChange = (element)=>{
             //MULTIPLE EVENTLISTENER FOR TEXT CONTENT
             // THERE IS AN ERROR WHEN BLUR AND CHANGE EVENTLISTENER EXIST TOGETHER
 
-            const changeContent = e=>{
-                event.target.textContent = `${e.target.value}`;
+            const changeContent = (e)=>{
+                const inputValue = e.target.value;
+                const object = {date: `${inputValue}`};
+                const id = e.target.parentNode.parentNode.getAttribute('data-id');
+
+                event.target.textContent = `${inputValue}`;
+                changeValue(id, object);
                 e.stopPropagation();
             }
         newInput.addEventListener('blur', changeContent, false);
@@ -33,8 +40,9 @@ export const clickAndChange = (element)=>{
             //MULTIPLE EVENTLISTENER FOR TEXT CONTENT
             // THERE IS AN ERROR WHEN BLUR AND CHANGE EVENTLISTENER EXIST TOGETHER
 
-            const changeContent = e=>{
+            const changeContent = (e)=>{
                 event.target.textContent = `${e.target.value}`;
+                console.log(event.target)
                 e.stopPropagation();
             }
             newInput.addEventListener('blur', changeContent, false);
