@@ -2,8 +2,6 @@ import {clickAndChange} from "./modules/clickAndChange.js";
 import {filterItems} from "./modules/filterItemsFunction.js";
 import {trashItem} from "./modules/trashItemFunction.js"
 import {restoreItemFunction} from "./modules/restoreTrashEventFunction.js"
-import {createItems} from "./modules/createItemsFromFirebase.js";
-import { getItems } from "./modules/getItemsFirebase.js";
 import { getLocation } from "./modules/weatherApp/getLocation.js";
 import { cleanTrashArea } from "./modules/cleanTrashArea+Firebse.js";
 import { addDocument } from "./modules/firebase/addDocument-Firestore.js";
