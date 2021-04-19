@@ -1,12 +1,14 @@
 import {isEmpty} from "./isEmptyTrashContainer.js"
-import {removeItem} from "./removeItemFitebase.js";
+import {removeDocument} from "./firebase/removeDocument-Firebase.js"
 
 export const cleanTrashArea = function(){
     
     const items = document.querySelectorAll('.trash-area .todo-list-item');
-    const array = Array.from(items).map(div => div.lastChild.textContent)
-    items.forEach( item => item.remove() )
-    array.forEach( id => removeItem(id) )
+    items.forEach(item =>{
+        const id = item.getAttribute(`data-id`);
+        removeDocument(id);
+        
+    })
 
     isEmpty();
 }

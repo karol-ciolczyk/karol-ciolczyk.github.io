@@ -134,7 +134,7 @@ trashButton.addEventListener('click', ()=>{
 // })
 
 
-// delete-button: trash-area
+// clean-button: trash-area
 
 const cleanButton = document.querySelector('.clean-button');
 

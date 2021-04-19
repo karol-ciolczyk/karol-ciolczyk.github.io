@@ -1,4 +1,4 @@
-// function for searching for task in Todo-List;
+// function to searching for task in Todo-List;
 export const filterItems = (string)=>{
     const taskContainers = document.querySelectorAll('.todo-list-item p:first-child')
 
