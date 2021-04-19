@@ -41,8 +41,17 @@ export const clickAndChange = (element)=>{
             // THERE IS AN ERROR WHEN BLUR AND CHANGE EVENTLISTENER EXIST TOGETHER
 
             const changeContent = (e)=>{
-                event.target.textContent = `${e.target.value}`;
-                console.log(event.target)
+                const inputValue = e.target.value;
+                const id = event.target.parentNode.getAttribute('data-id')
+                const attributeName = event.target.getAttributeNames()[0]  // attribute name to identify element
+                event.target.textContent = `${inputValue}`;
+                if(attributeName === `place`){
+                    const object = {place: inputValue}
+                    changeValue(id, object);
+                } else if (attributeName === `task`){
+                    const object = {task: inputValue}
+                    changeValue(id, object);
+                }
                 e.stopPropagation();
             }
             newInput.addEventListener('blur', changeContent, false);
