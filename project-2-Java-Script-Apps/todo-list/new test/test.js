@@ -6,8 +6,8 @@ import {createItems} from "./modules/createItemsFromFirebase.js";
 import { getItems } from "./modules/getItemsFirebase.js";
 import { getLocation } from "./modules/weatherApp/getLocation.js";
 import { cleanTrashArea } from "./modules/cleanTrashArea+Firebse.js";
-import { addDocument } from "./modules/firebase/addDocument-Firebase.js";
-import { getCollection } from "./modules/firebase/getCollectionFirebase.js";
+import { addDocument } from "./modules/firebase/addDocument-Firestore.js";
+import { getCollection } from "./modules/firebase/getCollectionFirestore.js";
 
 
 const todoForm = document.forms.formTodo;
@@ -21,9 +21,9 @@ const taskPlace = todoForm.where;
 
 getCollection(`tasks`).onSnapshot((items)=>{
     items.docChanges().forEach(item => {
-        console.log(item);
-        console.log(item.doc);
-        console.log(item.doc.data());
+        // console.log(item);
+        // console.log(item.doc);
+        // console.log(item.doc.data());
 
         const itemId = item.doc.id;
         const task = item.doc.data().task;
@@ -120,11 +120,11 @@ trashButton.addEventListener('click', ()=>{
 })
 
 
-const restoreTrashButtons = document.querySelectorAll('.restore');
+// const restoreTrashButtons = document.querySelectorAll('.restore');
 
-restoreTrashButtons.forEach(element=>{
-    element.addEventListener('click', restoreItemFunction);
-})
+// restoreTrashButtons.forEach(element=>{
+//     element.addEventListener('click', restoreItemFunction);
+// })
 
 
 // delete-button: trash-area
@@ -141,7 +141,6 @@ cleanButton.addEventListener('click', ()=>{
 const todoContainer = document.querySelector('.todo-container');
 
 todoContainer.addEventListener('click', event=>{
-
     if(event.target.className.includes(`garbage`)){
         trashItem(event)
     }
@@ -151,7 +150,6 @@ todoContainer.addEventListener('click', event=>{
 const trashArea = document.querySelector('.trash-area');
 
 trashArea.addEventListener('click', event=>{
-    console.log(event.target)
     if(event.target.className.includes('garbage')){
         restoreItemFunction(event);
     }
@@ -183,3 +181,11 @@ getCollection(`tasks`)
       snapshot.forEach(doc=>{
       })
   });
+
+
+
+
+  getCollection(`tasks`).doc(`E5vdxE2Ti3uwiPUl4tbL`).update({
+      moved: true,
+      date: `10/10/10`
+  })

@@ -1,4 +1,4 @@
-import {getCollection} from "./getCollectionFirebase.js";
+import {getCollection} from "./getCollectionFirestore.js";
 
 export const addDocument = (object)=>{
     getCollection(`tasks`).add(object);
