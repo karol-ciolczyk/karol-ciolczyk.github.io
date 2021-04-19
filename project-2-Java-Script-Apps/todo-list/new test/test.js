@@ -50,7 +50,7 @@ todoForm.addEventListener('submit', event=>{
         todoContainer.prepend(div);
     })
     .catch(err=>console.log(err));
-    
+
     // todoForm.reset();
 
 })
