@@ -8,6 +8,7 @@ import { getLocation } from "./modules/weatherApp/getLocation.js";
 import { cleanTrashArea } from "./modules/cleanTrashArea+Firebse.js";
 import { addDocument } from "./modules/firebase/addDocument-Firestore.js";
 import { getCollection } from "./modules/firebase/getCollectionFirestore.js";
+import { isEmpty } from "./modules/isEmptyTrashContainer.js";
 
 
 const todoForm = document.forms.formTodo;
@@ -23,7 +24,7 @@ getCollection(`tasks`).onSnapshot((items)=>{
     items.docChanges().forEach(item => {
         // console.log(item);
         // console.log(item.doc);
-        // console.log(item.doc.data());
+        // console.log(item.doc.data().moved);
 
         const itemId = item.doc.id;
         const task = item.doc.data().task;
@@ -37,14 +38,22 @@ getCollection(`tasks`).onSnapshot((items)=>{
             const div = document.createElement('div');
             div.classList.add('todo-list-item')
             div.setAttribute('data-id', `${itemId}`)
-            div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons garbage">delete</span>`
-            clickAndChange(div);
-            todoContainer.prepend(div);
+            if(!isMoved){
+                div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons garbage">delete</span>`
+                clickAndChange(div);
+                todoContainer.prepend(div);
+            } else {
+                div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons garbage">restore_from_trash</span>`
+                clickAndChange(div);
+              trashArea.append(div)
+            }
         } else if(item.type === `removed`){
             const listElement = document.querySelector(`div[data-id="${itemId}"]`)
             listElement.remove();
         }
     })
+
+    isEmpty();  // it checks if trash-area is empty and change icon if needed
 })
 
 
@@ -181,11 +190,3 @@ getCollection(`tasks`)
       snapshot.forEach(doc=>{
       })
   });
-
-
-
-
-  getCollection(`tasks`).doc(`E5vdxE2Ti3uwiPUl4tbL`).update({
-      moved: true,
-      date: `10/10/10`
-  })
