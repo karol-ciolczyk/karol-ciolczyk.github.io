@@ -1,3 +1,6 @@
+import {isEmpty} from "./isEmptyTrashContainer.js"
+import {removeItem} from "./removeItemFitebase.js";
+
 export const cleanTrashArea = function(){
     
     const items = document.querySelectorAll('.trash-area .todo-list-item');
