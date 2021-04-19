@@ -18,6 +18,30 @@ const taskDate = todoForm.when;
 const taskPlace = todoForm.where;
 
 
+getCollection(`tasks`).onSnapshot((items)=>{
+    items.docChanges().forEach(item => {
+        console.log(item);
+        console.log(item.doc);
+        console.log(item.doc.data());
+
+        const itemId = item.doc.id;
+        const task = item.doc.data().task;
+        const date = item.doc.data().date;
+        const place = item.doc.data().place;
+        const isMoved = item.doc.data().moved;
+        
+        //place new item in todo-container
+        const todoContainer = document.querySelector('.todo-container');
+        const div = document.createElement('div');
+        div.classList.add('todo-list-item')
+        div.setAttribute('data-id', `${itemId}`)
+        div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons garbage">delete</span>`
+        
+        clickAndChange(div);
+        todoContainer.prepend(div);
+    })
+})
+
 
 todoForm.addEventListener('submit', event=>{
     event.preventDefault();
@@ -36,25 +60,6 @@ todoForm.addEventListener('submit', event=>{
 
     // ADD DOCUMENT TO FIRESTORE
     addDocument(newObject);
-
-    // take items from Firebase and place into todo-list
-    getItems()
-    .then(data => {
-        const array = Object.keys(data);
-        const lastElement = array[array.length-1];
-
-        //place new item in todo-container
-        const todoContainer = document.querySelector('.todo-container');
-        const div = document.createElement('div');
-        div.classList.add('todo-list-item')
-        div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons garbage">delete</span><p hidden>${lastElement}</p>`
-        clickAndChange(div);
-        todoContainer.prepend(div);
-    })
-    .catch(err=>console.log(err));
-
-    // todoForm.reset();
-
 })
 
 
@@ -178,7 +183,3 @@ getCollection(`tasks`)
       })
   });
 
-getCollection(`tasks`).onSnapshot((items)=>{
-    items.docChanges().forEach(item=>console.log(item.doc.data()))
-
-})
