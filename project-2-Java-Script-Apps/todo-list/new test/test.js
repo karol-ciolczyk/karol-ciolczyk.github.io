@@ -7,6 +7,8 @@ import {addItem} from './modules/addItemFrebase.js'
 import { getItems } from "./modules/getItemsFirebase.js";
 import { getLocation } from "./modules/weatherApp/getLocation.js";
 import { cleanTrashArea } from "./modules/cleanTrashArea+Firebse.js";
+import { addDocument } from "./modules/firebase/addDocument-Firebase.js";
+import { getCollection } from "./modules/firebase/getCollectionFirebase.js";
 
 
 const todoForm = document.forms.formTodo;
@@ -32,8 +34,8 @@ todoForm.addEventListener('submit', event=>{
         place: place,
     }
 
-    // add new item to Firebase
-    addItem(newObject)
+    // ADD DOCUMENT TO FIRESTORE
+    addDocument(newObject);
 
     // take items from Firebase and place into todo-list
     getItems()
@@ -168,3 +170,15 @@ getLocation(city);
 })
 
 // getLocation(`Alwernia`);
+
+getCollection(`tasks`)
+  .get()
+  .then(snapshot => {
+      snapshot.forEach(doc=>{
+      })
+  });
+
+getCollection(`tasks`).onSnapshot((items)=>{
+    items.docChanges().forEach(item=>console.log(item.doc.data()))
+
+})
