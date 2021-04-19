@@ -3,7 +3,6 @@ import {filterItems} from "./modules/filterItemsFunction.js";
 import {trashItem} from "./modules/trashItemFunction.js"
 import {restoreItemFunction} from "./modules/restoreTrashEventFunction.js"
 import {createItems} from "./modules/createItemsFromFirebase.js";
-import {addItem} from './modules/addItemFrebase.js'
 import { getItems } from "./modules/getItemsFirebase.js";
 import { getLocation } from "./modules/weatherApp/getLocation.js";
 import { cleanTrashArea } from "./modules/cleanTrashArea+Firebse.js";
@@ -18,6 +17,8 @@ const taskDate = todoForm.when;
 const taskPlace = todoForm.where;
 
 
+
+
 getCollection(`tasks`).onSnapshot((items)=>{
     items.docChanges().forEach(item => {
         console.log(item);
@@ -29,16 +30,20 @@ getCollection(`tasks`).onSnapshot((items)=>{
         const date = item.doc.data().date;
         const place = item.doc.data().place;
         const isMoved = item.doc.data().moved;
-        
-        //place new item in todo-container
-        const todoContainer = document.querySelector('.todo-container');
-        const div = document.createElement('div');
-        div.classList.add('todo-list-item')
-        div.setAttribute('data-id', `${itemId}`)
-        div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons garbage">delete</span>`
-        
-        clickAndChange(div);
-        todoContainer.prepend(div);
+
+        if(item.type === `added`){
+            //place new item in todo-container
+            const todoContainer = document.querySelector('.todo-container');
+            const div = document.createElement('div');
+            div.classList.add('todo-list-item')
+            div.setAttribute('data-id', `${itemId}`)
+            div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons garbage">delete</span>`
+            clickAndChange(div);
+            todoContainer.prepend(div);
+        } else if(item.type === `removed`){
+            const listElement = document.querySelector(`div[data-id="${itemId}"]`)
+            listElement.remove();
+        }
     })
 })
 
@@ -62,10 +67,6 @@ todoForm.addEventListener('submit', event=>{
     addDocument(newObject);
 })
 
-
-
-// Function gets objects from Firebase and create Todo-List items
-getItems().then(createItems)
 
 // Add event listener to list-items. - (functionality click and change value)
 
@@ -182,4 +183,3 @@ getCollection(`tasks`)
       snapshot.forEach(doc=>{
       })
   });
-
