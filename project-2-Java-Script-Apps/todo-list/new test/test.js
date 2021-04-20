@@ -3,10 +3,10 @@ import {filterItems} from "./modules/filterItemsFunction.js";
 import {trashItem} from "./modules/trashItemFunction.js"
 import {restoreItemFunction} from "./modules/restoreTrashEventFunction.js"
 import { getLocation } from "./modules/weatherApp/getLocation.js";
-import { cleanTrashArea } from "./modules/cleanTrashArea+Firebse.js";
 import { addDocument } from "./modules/firebase/addDocument-Firestore.js";
 import { getCollection } from "./modules/firebase/getCollectionFirestore.js";
 import { isEmpty } from "./modules/isEmptyTrashContainer.js";
+import { removeDocument } from "./modules/firebase/removeDocument-Firebase.js";
 
 
 const todoForm = document.forms.formTodo;
@@ -20,9 +20,6 @@ const taskPlace = todoForm.where;
 
 getCollection(`tasks`).onSnapshot((items)=>{
     items.docChanges().forEach(item => {
-        // console.log(item);
-        // console.log(item.doc);
-        // console.log(item.doc.data().moved);
 
         const itemId = item.doc.id;
         const task = item.doc.data().task;
@@ -55,6 +52,7 @@ getCollection(`tasks`).onSnapshot((items)=>{
 })
 
 
+// Add document to firestor collection:
 todoForm.addEventListener('submit', event=>{
     event.preventDefault();
 
@@ -70,13 +68,12 @@ todoForm.addEventListener('submit', event=>{
         place: place,
     }
 
-    // ADD DOCUMENT TO FIRESTORE
+    // ADD DOCUMENT TO Collection
     addDocument(newObject);
 })
 
 
 // Add event listener to list-items. - (functionality click and change value)
-
 const textElements = document.querySelectorAll('.todo-list-item p');
 
 textElements.forEach(element=>{
@@ -107,10 +104,7 @@ searchInput.addEventListener('keyup', ()=>{
 })
 
 
-// Event listener - trash button in list-items
-
-
-//  Trash-button event. Show/Hide trash-section
+// Trash-button event. Show/Hide trash-section
 
 const trashSection = document.querySelector('.trash-section');
 const trashButton = document.querySelector('.trash-button');
@@ -126,20 +120,16 @@ trashButton.addEventListener('click', ()=>{
     })
 })
 
-
-// const restoreTrashButtons = document.querySelectorAll('.restore');
-
-// restoreTrashButtons.forEach(element=>{
-//     element.addEventListener('click', restoreItemFunction);
-// })
-
-
-// clean-button: trash-area
+// clean-button in trash-area:
 
 const cleanButton = document.querySelector('.clean-button');
-
 cleanButton.addEventListener('click', ()=>{
-    cleanTrashArea();
+    const elements = document.querySelectorAll('.trash-area .todo-list-item');
+    elements.forEach(element => {
+        const id = element.getAttribute(`data-id`);
+        removeDocument(id);
+    })
+    isEmpty();
 })
 
 
