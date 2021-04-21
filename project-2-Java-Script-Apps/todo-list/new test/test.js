@@ -1,7 +1,7 @@
-import {clickAndChange} from "./modules/clickAndChange.js";
-import {filterItems} from "./modules/filterItemsFunction.js";
-import {trashItem} from "./modules/trashItemFunction.js"
-import {restoreItemFunction} from "./modules/restoreTrashEventFunction.js"
+import { clickAndChange } from "./modules/clickAndChange.js";
+import { filterItems } from "./modules/filterItemsFunction.js";
+import { trashItem } from "./modules/trashItemFunction.js"
+import { restoreItemFunction } from "./modules/restoreTrashEventFunction.js"
 import { getLocation } from "./modules/weatherApp/getLocation.js";
 import { addDocument } from "./modules/firebase/addDocument-Firestore.js";
 import { getCollection } from "./modules/firebase/getCollectionFirestore.js";
@@ -18,7 +18,7 @@ const taskPlace = todoForm.where;
 
 
 
-getCollection(`tasks`).onSnapshot((items)=>{
+getCollection(`tasks`).onSnapshot((items) => {
     items.docChanges().forEach(item => {
 
         const itemId = item.doc.id;
@@ -27,22 +27,22 @@ getCollection(`tasks`).onSnapshot((items)=>{
         const place = item.doc.data().place;
         const isMoved = item.doc.data().moved;
 
-        if(item.type === `added`){
+        if (item.type === `added`) {
             //place new item in todo-container
             const todoContainer = document.querySelector('.todo-container');
             const div = document.createElement('div');
             div.classList.add('todo-list-item')
             div.setAttribute('data-id', `${itemId}`)
-            if(!isMoved){
+            if (!isMoved) {
                 div.innerHTML = `<p task>${task}</p><p class="p-tag-date">${date}</p><p place>${place}</p><span class="material-icons garbage">delete</span>`
                 clickAndChange(div);
                 todoContainer.prepend(div);
             } else {
                 div.innerHTML = `<p>${task}</p><p class="p-tag-date">${date}</p><p>${place}</p><span class="material-icons garbage">restore_from_trash</span>`
                 clickAndChange(div);
-              trashArea.append(div)
+                trashArea.append(div)
             }
-        } else if(item.type === `removed`){
+        } else if (item.type === `removed`) {
             const listElement = document.querySelector(`div[data-id="${itemId}"]`)
             listElement.remove();
         }
@@ -53,7 +53,7 @@ getCollection(`tasks`).onSnapshot((items)=>{
 
 
 // Add document to firestor collection:
-todoForm.addEventListener('submit', event=>{
+todoForm.addEventListener('submit', event => {
     event.preventDefault();
 
     const task = taskInput.value;
@@ -76,7 +76,7 @@ todoForm.addEventListener('submit', event=>{
 // Add event listener to list-items. - (functionality click and change value)
 const textElements = document.querySelectorAll('.todo-list-item p');
 
-textElements.forEach(element=>{
+textElements.forEach(element => {
     clickAndChange(element);
 })
 
@@ -86,18 +86,18 @@ const searchButton = document.querySelector('.search-button');
 const searchInput = document.querySelector('.search-container input');
 
 
-searchButton.addEventListener('click', ()=>{
+searchButton.addEventListener('click', () => {
     searchInput.style.display = 'block';
-    setTimeout(()=>{
+    setTimeout(() => {
         searchInput.focus();
-    },350)
+    }, 350)
 })
 
-searchInput.addEventListener('blur', ()=>{
+searchInput.addEventListener('blur', () => {
     searchInput.style.display = 'none';
 })
 
-searchInput.addEventListener('keyup', ()=>{
+searchInput.addEventListener('keyup', () => {
     const term = searchInput.value.trim();
 
     filterItems(term);
@@ -109,12 +109,12 @@ searchInput.addEventListener('keyup', ()=>{
 const trashSection = document.querySelector('.trash-section');
 const trashButton = document.querySelector('.trash-button');
 
-trashButton.addEventListener('click', ()=>{
+trashButton.addEventListener('click', () => {
     trashSection.style.display = 'block';
 
-    trashSection.addEventListener('click', event=>{
+    trashSection.addEventListener('click', event => {
 
-        if(event.target.tagName === `SECTION`){
+        if (event.target.tagName === `SECTION`) {
             trashSection.style.display = '';
         }
     })
@@ -123,7 +123,7 @@ trashButton.addEventListener('click', ()=>{
 // clean-button in trash-area:
 
 const cleanButton = document.querySelector('.clean-button');
-cleanButton.addEventListener('click', ()=>{
+cleanButton.addEventListener('click', () => {
     const elements = document.querySelectorAll('.trash-area .todo-list-item');
     elements.forEach(element => {
         const id = element.getAttribute(`data-id`);
@@ -137,8 +137,8 @@ cleanButton.addEventListener('click', ()=>{
 // listener for todo-container - in order to remove todo's item
 const todoContainer = document.querySelector('.todo-container');
 
-todoContainer.addEventListener('click', event=>{
-    if(event.target.className.includes(`garbage`)){
+todoContainer.addEventListener('click', event => {
+    if (event.target.className.includes(`garbage`)) {
         trashItem(event)
     }
 })
@@ -146,8 +146,8 @@ todoContainer.addEventListener('click', event=>{
 // listener for trash-container - in order to restore todo's item back
 const trashArea = document.querySelector('.trash-area');
 
-trashArea.addEventListener('click', event=>{
-    if(event.target.className.includes('garbage')){
+trashArea.addEventListener('click', event => {
+    if (event.target.className.includes('garbage')) {
         restoreItemFunction(event);
     }
 })
@@ -161,20 +161,20 @@ trashArea.addEventListener('click', event=>{
 
 const whatCity = document.querySelector('.whatCity');
 const inp = document.querySelector('.whatCity input')
-whatCity.addEventListener('submit', (event)=>{
+whatCity.addEventListener('submit', (event) => {
     event.preventDefault()
     console.log(inp.value);
     let city = inp.value;
 
 
-getLocation(city);
+    getLocation(city);
 })
 
 // getLocation(`Alwernia`);
 
 getCollection(`tasks`)
-  .get()
-  .then(snapshot => {
-      snapshot.forEach(doc=>{
-      })
-  });
+    .get()
+    .then(snapshot => {
+        snapshot.forEach(doc => {
+        })
+    });
