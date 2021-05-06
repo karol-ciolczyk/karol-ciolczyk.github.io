@@ -1,7 +1,7 @@
 import { getWeatherConditions } from "./getWeatherConditions.js";
 
 export const getLocation = (city)=>{
-    fetch(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=1c7TBu4MybMcEKxCr30xDolto2UWRYDl&q=${city}`)
+   fetch(`http://dataservice.accuweather.com/locations/v1/cities/search?apikey=1c7TBu4MybMcEKxCr30xDolto2UWRYDl&q=${city}`)
     .then(response => response.json())
     .then(data => {
         const weatherObject = {};
@@ -59,7 +59,6 @@ export const getLocation = (city)=>{
                 appContainer.style.background = `url('./img/night-frost.jpg')`;
             }
         })
-
     })
     .catch(err => console.log(err))
 }
