@@ -167,14 +167,5 @@ whatCity.addEventListener('submit', (event) => {
     let city = inp.value;
 
 
-    getLocation(city);
+getLocation(city);
 })
-
-// getLocation(`Alwernia`);
-
-getCollection(`tasks`)
-    .get()
-    .then(snapshot => {
-        snapshot.forEach(doc => {
-        })
-    });
