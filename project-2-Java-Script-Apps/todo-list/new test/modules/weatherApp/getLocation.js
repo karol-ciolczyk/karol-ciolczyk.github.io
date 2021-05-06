@@ -40,10 +40,24 @@ export const getLocation = (city)=>{
             temperature.textContent = `${temp}`;
             condition.textContent = `${cond}`;
             icon.setAttribute(`src`, `./img/icons/${iconNumber}.svg`);
-            appContainer.style.background = `url('./img/${isDay}.jpg')`;
+            // appContainer.style.background = `url('./img/${isDay}.jpg')`;
             appContainer.style.backgroundSize = `cover`;
 
-
+            if(iconNumber < 6){
+                appContainer.style.background = `url('./img/day.jpg')`;
+            } else if (iconNumber > 5 && iconNumber < 12){
+                appContainer.style.background = `url('./img/day-cloudy.jpg')`;
+            } else if (iconNumber > 11 && iconNumber < 20) {
+                appContainer.style.background = `url('./img/day-rain.jpg')`;
+            } else if (iconNumber > 19 && iconNumber < 30) {
+                appContainer.style.background = `url('./img/day-frost.jpg')`;
+            } else if (iconNumber > 32 && iconNumber < 38) {
+                appContainer.style.background = `url('./img/nigth-clear.jpg')`;
+            } else if (iconNumber > 37 && iconNumber < 43) {
+                appContainer.style.background = `url('./img/night-rain.jpg')`;
+            } else if (iconNumber > 42 && iconNumber <= 44) {
+                appContainer.style.background = `url('./img/night-frost.jpg')`;
+            }
         })
 
     })
