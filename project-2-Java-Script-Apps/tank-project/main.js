@@ -29,7 +29,7 @@ body.addEventListener('keydown', (event) => {
 
   // console.log(keysPressed, 'keyup:', event.keyCode);
 
-  if (keysPressed['39'] && keysPressed['40'] && intervalId_0 < 27) {
+  if (keysPressed['39'] === true && keysPressed['40'] === true && intervalId_0 < 27) {
     const setInt0 = setInterval(() => {
       console.log(`here`)
 
@@ -41,11 +41,11 @@ body.addEventListener('keydown', (event) => {
       figure.style.left += `${moveHorizontal}px`
     }, 10)
     intervalId_0 = setInt0;
-  } else if (!keysPressed['39'] || !keysPressed['40']) {
+  } else if (keysPressed['39'] === false || keysPressed['40'] === false) {
     clearInterval(intervalId_0);
     intervalId_0 = 0;
   }
-  if (keysPressed['37'] && keysPressed['38'] && intervalId_1 < 27) {
+  if (keysPressed['37'] === true && keysPressed['38'] === true && intervalId_1 < 27) {
     const setInt1 = setInterval(() => {
       moveVertival -= 2;
       figure.style.top = '';
@@ -55,11 +55,11 @@ body.addEventListener('keydown', (event) => {
       figure.style.left += `${moveHorizontal}px`
     }, 10)
     intervalId_1 = setInt1;
-  } else if (!keysPressed['37'] || !keysPressed['38']) {
+  } else if (keysPressed['37'] === false || keysPressed['38'] === false) {
     clearInterval(intervalId_1);
     intervalId_1 = 0;
   }
-  if (keysPressed['38'] && keysPressed['39'] && intervalId_2 < 27) {
+  if (keysPressed['38'] === true && keysPressed['39'] === true && intervalId_2 < 27) {
     const setInt2 = setInterval(() => {
       moveVertival -= 2;
       figure.style.top = '';
@@ -69,11 +69,11 @@ body.addEventListener('keydown', (event) => {
       figure.style.left += `${moveHorizontal}px`
     }, 10)
     intervalId_2 = setInt2;
-  } else if (!keysPressed['38'] || !keysPressed['39']) {
+  } else if (keysPressed['38'] === false || keysPressed['39'] === false) {
     clearInterval(intervalId_2);
     intervalId_2 = 0;
   }
-  if (keysPressed['37'] && keysPressed['40'] && intervalId_3 < 27) {
+  if (keysPressed['37'] === true && keysPressed['40'] === true && intervalId_3 < 27) {
     const setInt3 = setInterval(() => {
       moveVertival += 2;
       figure.style.top = '';
@@ -83,7 +83,7 @@ body.addEventListener('keydown', (event) => {
       figure.style.left += `${moveHorizontal}px`
     }, 10)
     intervalId_3 = setInt3;
-  } else if (!keysPressed['37'] || !keysPressed['40']) {
+  } else if (keysPressed['37'] === false || keysPressed['40'] === false) {
     clearInterval(intervalId_3);
     intervalId_3 = 0;
   }
