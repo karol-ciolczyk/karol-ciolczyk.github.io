@@ -51,7 +51,7 @@ body {
   width: 10px;
   border-radius: 50%;
   background-color: black;
-  animation: shoot 2000ms linear forwards;
+  animation: shoot 700ms linear forwards;
 }
 
 @keyframes shoot {

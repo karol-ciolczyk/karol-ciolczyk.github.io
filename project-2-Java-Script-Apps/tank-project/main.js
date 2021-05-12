@@ -1,14 +1,15 @@
 const body = document.querySelector('body');
 const figure = document.querySelector('.tank');
 
+// settings:
 let keysSpecification = {
   moveLeft: '37',
   moveUp: '38',
   moveRight: '39',
   moveDown: '40',
   shoot: '32',
-  speed: 1,
 };
+let tankSpeed = {speed: 1}
 
 // which key
 const left = keysSpecification.moveLeft;
@@ -29,6 +30,7 @@ let intervalId_4 = 0;
 let intervalId_5 = 0;
 let intervalId_6 = 0;
 let intervalId_7 = 0;
+
 let howManyClicked = 0;
 
 
@@ -38,7 +40,7 @@ body.addEventListener('keydown', (event) => {
   // console.log(keysPressed, 'keyCode is:', event.keyCode);
 
   // tanks speed
-  let speed = keysSpecification.speed;
+  let speed = tankSpeed.speed;
 
 
   // this needed to one-key movement as second condition to the code
@@ -235,7 +237,7 @@ body.addEventListener('keydown', event => {
     setTimeout(function () {
       div.remove();
       container.remove();
-    }, 2000)
+    }, 700)
     positionTop = 0;
     positionLeft = 0;
   }
@@ -247,7 +249,7 @@ body.addEventListener('keyup', event => {
   console.log(keysPressed, 'keyup:', event.keyCode)
 
   // tanks speed
-  let speed = keysSpecification.speed;
+  let speed = tankSpeed.speed;
 
   // this needed to one-key movement as second condition to the code
   const isClicked = [keysPressed[left], keysPressed[up], keysPressed[right], keysPressed[down]];
@@ -257,35 +259,35 @@ body.addEventListener('keyup', event => {
   ///////////////////////////////////////////////////////////////////////////////////////////////
 
   // stop move:
-  if (event.keyCode === 39 || event.keyCode === 40) {
+  if (event.keyCode == right || event.keyCode == down) {
     clearInterval(intervalId_0);
     intervalId_0 = 0;
   }
-  if (event.keyCode === 37 || event.keyCode === 38) {
+  if (event.keyCode == left || event.keyCode == up) {
     clearInterval(intervalId_1);
     intervalId_1 = 0;
   }
-  if (event.keyCode === 38 || event.keyCode === 39) {
+  if (event.keyCode == up || event.keyCode == right) {
     clearInterval(intervalId_2);
     intervalId_2 = 0;
   }
-  if (event.keyCode === 37 || event.keyCode === 40) {
+  if (event.keyCode == left || event.keyCode == down) {
     clearInterval(intervalId_3);
     intervalId_3 = 0;
   }
-  if (event.keyCode === 40) {
+  if (event.keyCode == down) {
     clearInterval(intervalId_4);
     intervalId_4 = 0;
   }
-  if (event.keyCode === 38) {
+  if (event.keyCode == up) {
     clearInterval(intervalId_5);
     intervalId_5 = 0;
   }
-  if (event.keyCode === 39) {
+  if (event.keyCode == right) {
     clearInterval(intervalId_6);
     intervalId_6 = 0;
   }
-  if (event.keyCode === 37) {
+  if (event.keyCode == left) {
     clearInterval(intervalId_7);
     intervalId_7 = 0;
   }
