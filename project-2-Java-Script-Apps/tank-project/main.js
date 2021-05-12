@@ -199,8 +199,7 @@ let platformIntervalId_1 = 0;
 
 
 body.addEventListener('keydown', event => {
-  // console.log(counter)
-  // console.log('hehehehrhr ', figure.offsetLeft, figure.offsetTop)
+  // console.log(counter)\
   if (event.keyCode === 88 /*x*/ && platformIntervalId_0 < 27) {
     const setInt0 = setInterval(function () {
       counter += 2;
@@ -233,11 +232,34 @@ body.addEventListener('keydown', event => {
     div.classList.add('bomb');
     container.append(div);
     body.append(container);
+    console.log(div, container)
 
     setTimeout(function () {
       div.remove();
       container.remove();
     }, 700)
+    positionTop = 0;
+    positionLeft = 0;
+  }
+  // granade
+  if(event.keyCode === 67){
+    console.log(`ssss`)
+    positionTop = figure.offsetTop - 5;
+    positionLeft = figure.offsetLeft - 5;
+    const container = document.createElement('div');
+    const div = document.createElement('div');
+    container.style.transform = `rotateZ(${counter}deg) translateX(50px)`;
+    container.style.top = `${positionTop}px`;
+    container.style.left = `${positionLeft}px`;
+    container.classList.add('cont-2');
+    div.classList.add('granade');
+    container.append(div);
+    body.append(container);
+
+    setTimeout(function () {
+      div.remove();
+      container.remove();
+    }, 1000)
     positionTop = 0;
     positionLeft = 0;
   }
