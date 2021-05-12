@@ -8,7 +8,7 @@ body {
 .tank {
   height: 60px;
   width: 60px;
-  background-color: cornflowerblue;
+  background-color: rgb(66, 110, 66);
   position: absolute;
   top: 50px;
   left: 50px;
@@ -17,6 +17,7 @@ body {
 
 .platform {
   position: relative;
+  background-color: rgb(1, 163, 1);
   border: 1px solid black;
   height: 20px;
   width: 20px;

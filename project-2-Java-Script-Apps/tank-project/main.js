@@ -16,12 +16,7 @@ const up = keysSpecification.moveUp;
 const right = keysSpecification.moveRight;
 const down = keysSpecification.moveDown;
 
-let keysPressed = {
-  37: false,
-  38: false,
-  39: false,
-  40: false,
-};
+let keysPressed = {};
 
 let moveVertical = 0;
 let moveHorizontal = 0;
