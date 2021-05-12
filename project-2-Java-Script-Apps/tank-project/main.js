@@ -4,7 +4,7 @@ const figure = document.querySelector('.tank');
 let keysSpecification = {
   moveLeft: '37',
   moveUp: '38',
-  moveRigth: '39',
+  moveRight: '39',
   moveDown: '40',
   shoot: '32',
   speed: 1,
@@ -42,7 +42,7 @@ body.addEventListener('keydown', (event) => {
 
 
   // this needed to one-key movement as second condition to the code
-  const isClicked = [keysPressed['37'], keysPressed['38'], keysPressed['39'], keysPressed['40']];
+  const isClicked = [keysPressed[left], keysPressed[up], keysPressed[right], keysPressed[down]];
   howManyClicked = isClicked.filter(boolean => {
     return boolean === true;
   }).length;
@@ -58,7 +58,7 @@ body.addEventListener('keydown', (event) => {
 
   // console.log(keysPressed, 'keyup:', event.keyCode);
 
-  if (keysPressed['39'] === true && keysPressed['40'] === true && intervalId_0 < 27) {
+  if (keysPressed[right] === true && keysPressed[down] === true && intervalId_0 < 27) {
     const setInt0 = setInterval(() => {
       console.log(`here`)
 
@@ -70,11 +70,11 @@ body.addEventListener('keydown', (event) => {
       figure.style.left += `${moveHorizontal}px`
     }, 10)
     intervalId_0 = setInt0;
-  } else if (keysPressed['39'] === false || keysPressed['40'] === false) {
+  } else if (keysPressed[right] === false || keysPressed[down] === false) {
     clearInterval(intervalId_0);
     intervalId_0 = 0;
   }
-  if (keysPressed['37'] === true && keysPressed['38'] === true && intervalId_1 < 27) {
+  if (keysPressed[left] === true && keysPressed[up] === true && intervalId_1 < 27) {
     const setInt1 = setInterval(() => {
       moveVertical -= speed;
       figure.style.top = '';
@@ -84,11 +84,11 @@ body.addEventListener('keydown', (event) => {
       figure.style.left += `${moveHorizontal}px`
     }, 10)
     intervalId_1 = setInt1;
-  } else if (keysPressed['37'] === false || keysPressed['38'] === false) {
+  } else if (keysPressed[left] === false || keysPressed[up] === false) {
     clearInterval(intervalId_1);
     intervalId_1 = 0;
   }
-  if (keysPressed['38'] === true && keysPressed['39'] === true && intervalId_2 < 27) {
+  if (keysPressed[up] === true && keysPressed[right] === true && intervalId_2 < 27) {
     const setInt2 = setInterval(() => {
       moveVertical -= speed;
       figure.style.top = '';
@@ -98,11 +98,11 @@ body.addEventListener('keydown', (event) => {
       figure.style.left += `${moveHorizontal}px`
     }, 10)
     intervalId_2 = setInt2;
-  } else if (keysPressed['38'] === false || keysPressed['39'] === false) {
+  } else if (keysPressed[up] === false || keysPressed[right] === false) {
     clearInterval(intervalId_2);
     intervalId_2 = 0;
   }
-  if (keysPressed['37'] === true && keysPressed['40'] === true && intervalId_3 < 27) {
+  if (keysPressed[left] === true && keysPressed[down] === true && intervalId_3 < 27) {
     const setInt3 = setInterval(() => {
       moveVertical += speed;
       figure.style.top = '';
@@ -112,11 +112,11 @@ body.addEventListener('keydown', (event) => {
       figure.style.left += `${moveHorizontal}px`
     }, 10)
     intervalId_3 = setInt3;
-  } else if (keysPressed['37'] === false || keysPressed['40'] === false) {
+  } else if (keysPressed[left] === false || keysPressed[down] === false) {
     clearInterval(intervalId_3);
     intervalId_3 = 0;
   }
-  if (keysPressed['40'] && howManyClicked === 1 && intervalId_4 < 27) {
+  if (keysPressed[down] && howManyClicked === 1 && intervalId_4 < 27) {
     const setInt4 = setInterval(function () {
       moveVertical += speed;
       figure.style.top = '';
@@ -126,7 +126,7 @@ body.addEventListener('keydown', (event) => {
   } else if (howManyClicked > 1) {
     clearInterval(intervalId_4);
   }
-  if (keysPressed['38'] && howManyClicked === 1 && intervalId_5 < 27) {
+  if (keysPressed[up] && howManyClicked === 1 && intervalId_5 < 27) {
     const setInt5 = setInterval(function () {
       moveVertical -= speed;
       figure.style.top = '';
@@ -136,7 +136,7 @@ body.addEventListener('keydown', (event) => {
   } else if (howManyClicked > 1) {
     clearInterval(intervalId_5);
   }
-  if (keysPressed['39'] && howManyClicked === 1 && intervalId_6 < 27) {
+  if (keysPressed[right] && howManyClicked === 1 && intervalId_6 < 27) {
     const setInt6 = setInterval(function () {
       moveHorizontal += speed;
       figure.style.left = '';
@@ -146,7 +146,7 @@ body.addEventListener('keydown', (event) => {
   } else if (howManyClicked > 1) {
     clearInterval(intervalId_6);
   }
-  if (keysPressed['37'] && howManyClicked === 1 && intervalId_7 < 27) {
+  if (keysPressed[left] && howManyClicked === 1 && intervalId_7 < 27) {
     const setInt7 = setInterval(function () {
       moveHorizontal -= speed;
       figure.style.left = '';
@@ -250,7 +250,7 @@ body.addEventListener('keyup', event => {
   let speed = keysSpecification.speed;
 
   // this needed to one-key movement as second condition to the code
-  const isClicked = [keysPressed[`37`], keysPressed[`38`], keysPressed[`39`], keysPressed[`40`]];
+  const isClicked = [keysPressed[left], keysPressed[up], keysPressed[right], keysPressed[down]];
   howManyClicked = isClicked.filter(boolean => {
     return boolean === true;
   }).length;
@@ -294,7 +294,7 @@ body.addEventListener('keyup', event => {
   console.log(howManyClicked)
 
   clearInterval(intervalId_4); // for down movement
-  if (keysPressed['40'] === true && howManyClicked === 1) {
+  if (keysPressed[down] === true && howManyClicked === 1) {
     const setInt4 = setInterval(function () {
       moveVertical += speed;
       figure.style.top = '';
@@ -307,7 +307,7 @@ body.addEventListener('keyup', event => {
   }
 
   clearInterval(intervalId_5); // for up movement
-  if (keysPressed['38'] && howManyClicked === 1) {
+  if (keysPressed[up] && howManyClicked === 1) {
     const setInt5 = setInterval(function () {
       moveVertical -= speed;
       figure.style.top = '';
@@ -321,7 +321,7 @@ body.addEventListener('keyup', event => {
   }
 
   clearInterval(intervalId_6); // for right movement
-  if (keysPressed['39'] && howManyClicked === 1) {
+  if (keysPressed[right] && howManyClicked === 1) {
     const setInt6 = setInterval(function () {
       moveHorizontal += speed;
       figure.style.left = '';
@@ -335,7 +335,7 @@ body.addEventListener('keyup', event => {
   }
 
   clearInterval(intervalId_7); // for left movement
-  if (keysPressed['37'] && howManyClicked === 1) {
+  if (keysPressed[left] && howManyClicked === 1) {
     const setInt7 = setInterval(function () {
       moveHorizontal -= speed;
       figure.style.left = '';
