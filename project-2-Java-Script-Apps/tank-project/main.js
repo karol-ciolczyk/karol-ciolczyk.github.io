@@ -17,7 +17,7 @@ let intervalId_4 = 0;
 let intervalId_5 = 0;
 let intervalId_6 = 0;
 let intervalId_7 = 0;
-let howManyClicked = [];
+let howManyClicked = 0;
 
 
 ////////////////////////////////////////////////////////////////////////// vehicle stering //
@@ -29,7 +29,7 @@ body.addEventListener('keydown', (event) => {
   const isClicked = [keysPressed[`37`], keysPressed[`38`], keysPressed[`39`], keysPressed[`40`]];
   howManyClicked = isClicked.filter(boolean => {
     return boolean === true;
-  })
+  }).length;
   ///////////////////////////////////////////////////////////////////////////////////////////////
 
   if (event.keyCode === 32) {
@@ -100,44 +100,44 @@ body.addEventListener('keydown', (event) => {
     clearInterval(intervalId_3);
     intervalId_3 = 0;
   }
-  if (keysPressed['40'] && howManyClicked.length === 1 && intervalId_4 < 27) {
+  if (keysPressed['40'] && howManyClicked === 1 && intervalId_4 < 27) {
     const setInt4 = setInterval(function () {
       moveVertival += 2;
       figure.style.top = '';
       figure.style.top += `${moveVertival}px`
     }, 10)
     intervalId_4 = setInt4;
-  } else if (howManyClicked.length > 1) {
+  } else if (howManyClicked > 1) {
     clearInterval(intervalId_4);
   }
-  if (keysPressed['38'] && howManyClicked.length === 1 && intervalId_5 < 27) {
+  if (keysPressed['38'] && howManyClicked === 1 && intervalId_5 < 27) {
     const setInt5 = setInterval(function () {
       moveVertival -= 2;
       figure.style.top = '';
       figure.style.top += `${moveVertival}px`
     }, 10)
     intervalId_5 = setInt5;
-  } else if (howManyClicked.length > 1) {
+  } else if (howManyClicked > 1) {
     clearInterval(intervalId_5);
   }
-  if (keysPressed['39'] && howManyClicked.length === 1 && intervalId_6 < 27) {
+  if (keysPressed['39'] && howManyClicked === 1 && intervalId_6 < 27) {
     const setInt6 = setInterval(function () {
       moveHorizontal += 2;
       figure.style.left = '';
       figure.style.left += `${moveHorizontal}px`
     }, 10)
     intervalId_6 = setInt6;
-  } else if (howManyClicked.length > 1) {
+  } else if (howManyClicked > 1) {
     clearInterval(intervalId_6);
   }
-  if (keysPressed['37'] && howManyClicked.length === 1 && intervalId_7 < 27) {
+  if (keysPressed['37'] && howManyClicked === 1 && intervalId_7 < 27) {
     const setInt7 = setInterval(function () {
       moveHorizontal -= 2;
       figure.style.left = '';
       figure.style.left += `${moveHorizontal}px`
     }, 10)
     intervalId_7 = setInt7;
-  } else if (howManyClicked.length > 1) {
+  } else if (howManyClicked > 1) {
     clearInterval(intervalId_7);
   }
 })
@@ -230,6 +230,11 @@ body.addEventListener('keyup', event => {
   keysPressed[event.keyCode] = false;
   console.log(keysPressed, 'keyup:', event.keyCode)
 
+  const isClicked = [keysPressed[`37`], keysPressed[`38`], keysPressed[`39`], keysPressed[`40`]];
+  howManyClicked = isClicked.filter(boolean => {
+    return boolean === true;
+  }).length;
+
   // stop move:
   if (event.keyCode === 39 || event.keyCode === 40) {
     clearInterval(intervalId_0);
@@ -265,22 +270,23 @@ body.addEventListener('keyup', event => {
   }
 
   // motion still works when one of keys will be unclicked - (when erlier was diagonal movement - 2 keys was clicked)
+  console.log(howManyClicked)
 
   clearInterval(intervalId_4);      // for down movement
-  if (keysPressed['40'] === true) {
+  if (keysPressed['40'] === true && howManyClicked === 1) {
     const setInt4 = setInterval(function () {
       moveVertival += 2;
       figure.style.top = '';
       figure.style.top += `${moveVertival}px`
     }, 10)
     intervalId_4 = setInt4;
-  } else if (howManyClicked.length > 1) {
+  } else if (howManyClicked > 1) {
     clearInterval(intervalId_4);
     intervalId_4 = 0;
   }
 
   clearInterval(intervalId_5); // for up movement
-  if (keysPressed['38']) {
+  if (keysPressed['38'] && howManyClicked === 1) {
     const setInt5 = setInterval(function () {
       moveVertival -= 2;
       figure.style.top = '';
@@ -288,13 +294,13 @@ body.addEventListener('keyup', event => {
     }, 10)
     console.log(setInt5)
     intervalId_5 = setInt5;
-  } else if (howManyClicked.length > 1) {
+  } else if (howManyClicked > 1) {
     clearInterval(intervalId_5);
     intervalId_5= 0;
   }
 
   clearInterval(intervalId_6); // for right movement
-  if (keysPressed['39']) {
+  if (keysPressed['39'] && howManyClicked === 1) {
     const setInt6 = setInterval(function () {
       moveHorizontal += 2;
       figure.style.left = '';
@@ -302,13 +308,13 @@ body.addEventListener('keyup', event => {
     }, 10)
     console.log(setInt6)
     intervalId_6 = setInt6;
-  } else if (howManyClicked.length > 1) {
+  } else if (howManyClicked > 1) {
     clearInterval(intervalId_6);
     intervalId_6 = 0;
   }
 
   clearInterval(intervalId_7); // for left movement
-  if (keysPressed['37']) {
+  if (keysPressed['37'] && howManyClicked === 1) {
     const setInt7 = setInterval(function () {
       moveHorizontal -= 2;
       figure.style.left = '';
@@ -316,7 +322,7 @@ body.addEventListener('keyup', event => {
     }, 10)
     console.log(setInt7)
     intervalId_7 = setInt7;
-  } else if (howManyClicked.length > 1) {
+  } else if (howManyClicked > 1) {
     clearInterval(intervalId_7);
     intervalId_7 = 0;
   }
