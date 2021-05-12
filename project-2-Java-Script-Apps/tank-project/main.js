@@ -31,6 +31,8 @@ body.addEventListener('keydown', (event) => {
 
   if (keysPressed['39'] && keysPressed['40'] && intervalId_0 < 27) {
     const setInt0 = setInterval(() => {
+      console.log(`here`)
+
       moveVertival += 2;
       figure.style.top = '';
       figure.style.top += `${moveVertival}px`
@@ -213,7 +215,7 @@ body.addEventListener('keydown', event => {
 
 body.addEventListener('keyup', event => {
   delete keysPressed[event.keyCode];
-  // console.log(keysPressed, 'keyup:', event.keyCode)
+  console.log(keysPressed, 'keyup:', event.keyCode)
 
   // stop move:
   if (event.keyCode === 39 || event.keyCode === 40) {
@@ -248,9 +250,11 @@ body.addEventListener('keyup', event => {
     clearInterval(intervalId_7);
     intervalId_7 = 0;
   }
-  clearInterval(intervalId_4);
-  console.log(clearInterval(intervalId_4));
-  if (keysPressed['40'] && intervalId_4 < 50) {
+
+  // motion still works when one of keys will be unclicked - (when erlier was diagonal movement - 2 keys was clicked)
+
+  clearInterval(intervalId_4);      // for down movement
+  if (keysPressed['40']) {
     const setInt4 = setInterval(function () {
       moveVertival += 2;
       figure.style.top = '';
@@ -259,7 +263,53 @@ body.addEventListener('keyup', event => {
     intervalId_4 = setInt4;
   } else if (Object.keys(keysPressed).length > 1) {
     clearInterval(intervalId_4);
+    intervalId_4 = 0;
   }
+
+  clearInterval(intervalId_5); // for up movement
+  if (keysPressed['38']) {
+    const setInt5 = setInterval(function () {
+      moveVertival -= 2;
+      figure.style.top = '';
+      figure.style.top += `${moveVertival}px`
+    }, 10)
+    console.log(setInt5)
+    intervalId_5 = setInt5;
+  } else if (Object.keys(keysPressed).length > 1) {
+    clearInterval(intervalId_5);
+    intervalId_5= 0;
+  }
+
+  clearInterval(intervalId_6); // for right movement
+  if (keysPressed['39']) {
+    const setInt6 = setInterval(function () {
+      moveHorizontal += 2;
+      figure.style.left = '';
+      figure.style.left += `${moveHorizontal}px`
+    }, 10)
+    console.log(setInt6)
+    intervalId_6 = setInt6;
+  } else if (Object.keys(keysPressed).length > 1) {
+    clearInterval(intervalId_6);
+    intervalId_6 = 0;
+  }
+
+  clearInterval(intervalId_7); // for left movement
+  if (keysPressed['37']) {
+    const setInt7 = setInterval(function () {
+      moveHorizontal -= 2;
+      figure.style.left = '';
+      figure.style.left += `${moveHorizontal}px`
+    }, 10)
+    console.log(setInt7)
+    intervalId_7 = setInt7;
+  } else if (Object.keys(keysPressed).length > 1) {
+    clearInterval(intervalId_7);
+    intervalId_7 = 0;
+  }
+
+
+
 
   // // stop platform rotate:
   if (event.keyCode === 88) {
