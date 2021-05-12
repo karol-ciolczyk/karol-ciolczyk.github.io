@@ -37,7 +37,7 @@ let howManyClicked = 0;
 ////////////////////////////////////////////////////////////////////////// vehicle stering //
 body.addEventListener('keydown', (event) => {
   keysPressed[event.keyCode] = true;
-  // console.log(keysPressed, 'keyCode is:', event.keyCode);
+  // console.log(keysPressed);
 
   // tanks speed
   let speed = tankSpeed.speed;
@@ -243,12 +243,11 @@ body.addEventListener('keydown', event => {
   }
   // granade
   if(event.keyCode === 67){
-    console.log(`ssss`)
-    positionTop = figure.offsetTop - 5;
-    positionLeft = figure.offsetLeft - 5;
+    positionTop = figure.offsetTop;
+    positionLeft = figure.offsetLeft - 40;
     const container = document.createElement('div');
     const div = document.createElement('div');
-    container.style.transform = `rotateZ(${counter}deg) translateX(50px)`;
+    container.style.transform = `rotateZ(${counter}deg)`;
     container.style.top = `${positionTop}px`;
     container.style.left = `${positionLeft}px`;
     container.classList.add('cont-2');
@@ -259,7 +258,7 @@ body.addEventListener('keydown', event => {
     setTimeout(function () {
       div.remove();
       container.remove();
-    }, 1000)
+    }, 2000)
     positionTop = 0;
     positionLeft = 0;
   }
@@ -268,7 +267,7 @@ body.addEventListener('keydown', event => {
 
 body.addEventListener('keyup', event => {
   keysPressed[event.keyCode] = false;
-  console.log(keysPressed, 'keyup:', event.keyCode)
+  // console.log(keysPressed, 'keyup:', event.keyCode)
 
   // tanks speed
   let speed = tankSpeed.speed;

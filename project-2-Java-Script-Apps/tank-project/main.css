@@ -61,8 +61,8 @@ body {
   }
 
   100% {
-    transform: translateX(500px) scale(4.5);
-    opacity: 0;
+    transform: translateX(500px) scale(3.5);
+    opacity: 0.7;
   }
 }
 
@@ -70,7 +70,15 @@ body {
   position: absolute;
   width: 10px;
   height: 10px;
-  border: 1px solid black;
+}
+
+.launcher{
+  position: absolute;
+  top: 43px;
+  left: 5px;
+  height: 8px;
+  width: 8px;
+  background-color: black;
 }
 
 .granade {
@@ -78,18 +86,29 @@ body {
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  background-color: rgb(4, 97, 1);
-  animation: granade 700ms linear forwards;
+  background-color: rgb(116, 47, 1);
+  animation: granade 2000ms linear forwards;
 }
 
 @keyframes granade {
+  10%{
+    transform: translateX(10px) scale(2);
+  }
+  50%{
+    transform: translateX(250px) scale(8);
+  }
   90% {
     transform: translateX(495px) scale(1);
     opacity: 1;
+    background-color: rgb(116, 47, 1);
+  }
+  97%{
+    background-color: red;
   }
 
   100% {
-    transform: translateX(500px) scale(4.5);
-    opacity: 0;
+    transform: translateX(500px) scale(15);
+    opacity: 0.5;
+    background-color: yellow;
   }
 }
