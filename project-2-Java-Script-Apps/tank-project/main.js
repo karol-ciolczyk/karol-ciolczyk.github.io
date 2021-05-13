@@ -3,10 +3,10 @@ const figure = document.querySelector('.tank');
 
 // settings:
 let keysSpecification = {
-  moveLeft: '37',
-  moveUp: '38',
-  moveRight: '39',
-  moveDown: '40',
+  moveLeft: '65',
+  moveUp: '87',
+  moveRight: '68',
+  moveDown: '83',
   shoot: '32',
 };
 let tankSpeed = {speed: 1}
@@ -232,7 +232,6 @@ body.addEventListener('keydown', event => {
     div.classList.add('bomb');
     container.append(div);
     body.append(container);
-    console.log(div, container)
 
     setTimeout(function () {
       div.remove();
@@ -427,3 +426,62 @@ body.addEventListener('keyup', event => {
 // figure.addEventListener(`mouseup`, () => {
 //     body.removeEventListener('mousemove', grabObject)
 // });
+
+
+body.addEventListener('keydown', event=>{
+  if(event.keyCode === 71 /*"g"*/){
+    const random1 = Math.floor(Math.random() * 800);
+    const random2 = Math.floor(Math.random() * 1000);
+    const randomRotate = Math.floor(Math.random() * 360);
+
+    const div = document.createElement('div');
+    div.classList.add('rock');
+
+
+    div.style.top = `${random1}px`;
+    div.style.left = `${random2}px`;
+    div.style.transform = `rotateZ(${randomRotate}deg) rotateX(${randomRotate}deg)`
+    body.append(div);
+
+    console.log(`position is:`, div.offsetTop, div.offsetLeft);
+    console.log(`size is:`, div.offsetWidth, div.offsetHeight);
+
+
+    const div2 = document.createElement('div');
+    div2.classList.add('cont');
+    div2.style.top = `${div.offsetTop}px`;
+    div2.style.left = `${div.offsetLeft}px`;
+    // div2.style.width = `${div.offsetWidth}px`;
+    // div2.style.height = `${div.offsetHeight}px`;
+
+    body.append(div2);
+
+    let obj = {
+      topStart: div.offsetTop,
+      topEnd: div.offsetTop + div.offsetHeight,
+      leftStart: div.offsetLeft,
+      leftEnd: div.offsetLeft + div.offsetWidth
+    }
+
+    console.log(obj);
+
+
+
+    // a rock's fly
+    // let counter1 = random1;
+    // let conuter2 = random2;
+    // setInterval(function () {
+    //   // console.log(`position is:`, div.style.top, div.style.left);
+    //   counter1 += 0.3
+    //   conuter2 += 0.5
+    //   div.style.top = '';
+    //   div.style.top += `${counter1}px`;
+    //   div.style.left = '';
+    //   div.style.left += `${conuter2}px`;
+    // }, 10);
+  }
+})
+
+body.addEventListener('mousemove', event=>{
+  // console.log(event)
+})

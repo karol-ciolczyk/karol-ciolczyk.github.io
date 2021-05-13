@@ -42,7 +42,7 @@ body {
   width: 20px;
   height: 20px;
   /* border: 1px solid black; */
-  /* background-color: red; */
+  background-color: rgba(255, 0, 0, 0.527);
 }
 
 .bomb {
@@ -95,7 +95,7 @@ body {
     transform: translateX(10px) scale(2);
   }
   50%{
-    transform: translateX(250px) scale(8);
+    transform: translateX(250px) scale(10);
   }
   90% {
     transform: translateX(495px) scale(1);
@@ -112,3 +112,27 @@ body {
     background-color: yellow;
   }
 }
+
+
+.rock {
+  position: absolute;
+  width: 50px;
+  height: 65px;
+  background-color: grey;
+  animation: rock 4000ms linear forwards;
+}
+
+/* @keyframes rock {
+  0%{
+    transform: rotate3d(0deg, 0deg, 0deg)
+  }
+  30%{
+    transform: rotate3d(360deg, 0deg, 360deg);
+  }
+  70% {
+    transform: rotate3d(-180deg, 0deg, -190deg);
+  }
+  100%{
+    transform: rotateX(360deg) rotateZ(360deg);
+  }
+} */
