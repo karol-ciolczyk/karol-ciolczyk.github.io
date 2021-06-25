@@ -9,6 +9,7 @@ import {
 import teal from "@material-ui/core/colors/teal";
 import { createMuiTheme } from "@material-ui/core";
 import { ThemeProvider } from "@material-ui/styles";
+import { amber } from "@material-ui/core/colors";
 
 const defaultMaterialTheme = createMuiTheme({
   palette: {
@@ -25,6 +26,7 @@ const defaultMaterialTheme = createMuiTheme({
     //   contrastText: "#fff",
     // },
     primary: teal,
+    secondary: amber,
   },
 });
 

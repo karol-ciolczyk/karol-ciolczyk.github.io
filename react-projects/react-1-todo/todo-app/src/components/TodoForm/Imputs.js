@@ -1,8 +1,10 @@
 import React, {useState} from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+  makeStyles,
+} from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import MyDatePicker from "./MyDatePicker";
-import { Button, Icon } from "@material-ui/core";
+import ButtonAddItem from "./ButtonAddItem";
 
 
 
@@ -12,10 +14,6 @@ const useStyles = makeStyles((theme) => ({
       margin: theme.spacing(1),
       width: "25ch",
     },
-  },
-  button: {
-    backgroundColor: "#007887",
-    padding: '15px'
   },
 }));
 
@@ -34,10 +32,11 @@ export default function Imputs() {
     });
   }
 
-  console.log(dataObject)
+
   return (
     <form className={classes.root} noValidate autoComplete="off">
       <TextField
+        className={classes.text}
         name="task"
         id="outlined-basic"
         label="Add Task"
@@ -52,15 +51,7 @@ export default function Imputs() {
         onChange={dataHandler}
       />
       <MyDatePicker />
-      <Button
-        className={classes.button}
-        variant="contained"
-        color="secondary"
-        size="large"
-        endIcon={<Icon>addchart</Icon>}
-      >
-        Secondary
-      </Button>
+      <ButtonAddItem />
     </form>
   );
 }
