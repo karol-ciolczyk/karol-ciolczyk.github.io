@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
       width: "auto",
       height: "auto",
       padding: theme.spacing(3),
-      backgroundColor: "#33ab9f",
+      backgroundColor: "white",
     },
   },
 }));

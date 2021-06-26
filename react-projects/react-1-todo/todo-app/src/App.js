@@ -64,8 +64,8 @@ function App() {
       </MuiPickersUtilsProvider>
       <TodoItemContainer>
         {todoObject.map((todo) => (
-          <Grid item xs={3}>
-            <TodoItem task={todo.task} place={todo.place} time={todo.time}/>
+          <Grid item xs={12} md={6} lg={3}>
+            <TodoItem task={todo.task} place={todo.place} time={todo.time} />
           </Grid>
         ))}
       </TodoItemContainer>

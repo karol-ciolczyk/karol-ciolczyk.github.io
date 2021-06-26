@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: "auto",
     margin: "20px 200px",
-    flexGrow: 1,
+    flexGrow: 1 ,
   },
 }));
 
