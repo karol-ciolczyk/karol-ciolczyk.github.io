@@ -1,95 +1,125 @@
-.game-container{
-    background: rgb(46,228,236);
-    background: linear-gradient(0deg, rgba(46,228,236,1) 0%, rgba(253,45,100,1) 100%);
-    height: 1000px;
-    width: 1000px;
-    margin: auto;
-    border: 2px solid black;
-    display: grid;
-    grid-gap: 1px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr)
+.game-container {
+  background: rgb(46, 228, 236);
+  background: linear-gradient(
+    0deg,
+    rgba(46, 228, 236, 1) 0%,
+    rgba(253, 45, 100, 1) 100%
+  );
+  height: 1000px;
+  width: 1000px;
+  margin: auto;
+  border: 2px solid black;
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
 
-.element{
-    position: relative;
-    border: 1px solid black;
+.element {
+  position: relative;
+  border: 1px solid black;
 }
 
-.element:hover{
-    cursor: pointer;
-    background-color:rgba(165, 218, 253, 0.671)
+.element:hover {
+  cursor: pointer;
+  background-color: rgba(165, 218, 253, 0.671);
 }
 
-img{
-    position: absolute;
-    width:100%;
-    height: 100%;
+img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
-.counter-of-movements{
-    width: 100px;
-    height: 100px;
-    border: 2px solid red;
-    /* display: inline-block; */
+.counter-of-movements {
+  width: 100px;
+  height: 100px;
+  border: 2px solid red;
+  /* display: inline-block; */
 }
 
 .counter-of-movements h1 {
-    text-align: center;
-    margin-top: 30px;
+  text-align: center;
+  margin-top: 30px;
 }
 
-.choose-pictures-container{
-    border: 3px solid grey;
-    /* display: inline-block; */
-    padding: 20px;
+.choose-pictures-container {
+  border: 3px solid grey;
+  /* display: inline-block; */
+  padding: 20px;
 }
 
-.ele{
-    border: 3px solid tomato;
-    height: 70px;
-    width: 70px;
-    display: inline-block;
-    line-height: 70px;
-    text-align: center;
-    font-size: 50px;
+.ele {
+  border: 3px solid tomato;
+  height: 70px;
+  width: 70px;
+  display: inline-block;
+  line-height: 70px;
+  text-align: center;
+  font-size: 50px;
 }
 
-
-.bounce{
-    animation: bounce 800ms linear 0ms 1 forwards;
+.bounce {
+  animation: bounce 800ms linear 0ms 1 forwards;
 }
 
-.frame{
-    position: absolute;
-    top: 50%;
-    left:50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 
-    border: 1px solid rgb(8, 117, 190);
-    height: 20px;
-    width: 20px;
-    animation: frame 600ms linear 1 forwards;
+  border: 1px solid rgb(8, 117, 190);
+  height: 20px;
+  width: 20px;
+  animation: frame 600ms linear 1 forwards;
 }
 
-
-@keyframes bounce{
-    0%{ transform: scale(0.1) }
-    0%{ opacity: 0}
-    20%{ transform: scale(1.5) }
-    40%{ transform: scale(0.6) }
-    60%{ transform: scale(1.4) }
-    80%{ transform: scale(0.8) }
-    100%{ transform: scale(1) }
-    100%{ opacity: 1}
+@keyframes bounce {
+  0% {
+    transform: scale(0.1);
+  }
+  0% {
+    opacity: 0;
+  }
+  20% {
+    transform: scale(1.5);
+  }
+  40% {
+    transform: scale(0.6);
+  }
+  60% {
+    transform: scale(1.4);
+  }
+  80% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-@keyframes frame{
-    0%{ transform: scale(10)}
-    0%{ opacity: 1}
-    0%{border-radius: 10%}
-    100%{ transform: scale(20) }
-    100%{ opacity:0 }
-    100%{border-radius: 20%}
+@keyframes frame {
+  0% {
+    transform: scale(10);
+  }
+  0% {
+    opacity: 1;
+  }
+  0% {
+    border-radius: 10%;
+  }
+  100% {
+    transform: scale(20);
+  }
+  100% {
+    opacity: 0;
+  }
+  100% {
+    border-radius: 20%;
+  }
 }
