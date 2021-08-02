@@ -42,7 +42,7 @@ body {
   width: 20px;
   height: 20px;
   /* border: 1px solid black; */
-  /* background-color: red; */
+  background-color: rgba(255, 0, 0, 0.527);
 }
 
 .bomb {
@@ -61,8 +61,8 @@ body {
   }
 
   100% {
-    transform: translateX(500px) scale(4.5);
-    opacity: 0;
+    transform: translateX(500px) scale(3.5);
+    opacity: 0.7;
   }
 }
 
@@ -70,7 +70,15 @@ body {
   position: absolute;
   width: 10px;
   height: 10px;
-  border: 1px solid black;
+}
+
+.launcher{
+  position: absolute;
+  top: 43px;
+  left: 5px;
+  height: 8px;
+  width: 8px;
+  background-color: black;
 }
 
 .granade {
@@ -78,18 +86,53 @@ body {
   height: 5px;
   width: 5px;
   border-radius: 50%;
-  background-color: rgb(4, 97, 1);
-  animation: granade 700ms linear forwards;
+  background-color: rgb(116, 47, 1);
+  animation: granade 2000ms linear forwards;
 }
 
 @keyframes granade {
+  10%{
+    transform: translateX(10px) scale(2);
+  }
+  50%{
+    transform: translateX(250px) scale(10);
+  }
   90% {
     transform: translateX(495px) scale(1);
     opacity: 1;
+    background-color: rgb(116, 47, 1);
+  }
+  97%{
+    background-color: red;
   }
 
   100% {
-    transform: translateX(500px) scale(4.5);
-    opacity: 0;
+    transform: translateX(500px) scale(15);
+    opacity: 0.5;
+    background-color: yellow;
   }
 }
+
+
+.rock {
+  position: absolute;
+  width: 50px;
+  height: 65px;
+  background-color: grey;
+  animation: rock 4000ms linear forwards;
+}
+
+/* @keyframes rock {
+  0%{
+    transform: rotate3d(0deg, 0deg, 0deg)
+  }
+  30%{
+    transform: rotate3d(360deg, 0deg, 360deg);
+  }
+  70% {
+    transform: rotate3d(-180deg, 0deg, -190deg);
+  }
+  100%{
+    transform: rotateX(360deg) rotateZ(360deg);
+  }
+} */

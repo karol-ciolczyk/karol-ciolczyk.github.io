@@ -3,10 +3,10 @@ const figure = document.querySelector('.tank');
 
 // settings:
 let keysSpecification = {
-  moveLeft: '37',
-  moveUp: '38',
-  moveRight: '39',
-  moveDown: '40',
+  moveLeft: '65',
+  moveUp: '87',
+  moveRight: '68',
+  moveDown: '83',
   shoot: '32',
 };
 let tankSpeed = {speed: 1}
@@ -37,7 +37,7 @@ let howManyClicked = 0;
 ////////////////////////////////////////////////////////////////////////// vehicle stering //
 body.addEventListener('keydown', (event) => {
   keysPressed[event.keyCode] = true;
-  // console.log(keysPressed, 'keyCode is:', event.keyCode);
+  // console.log(keysPressed);
 
   // tanks speed
   let speed = tankSpeed.speed;
@@ -232,7 +232,6 @@ body.addEventListener('keydown', event => {
     div.classList.add('bomb');
     container.append(div);
     body.append(container);
-    console.log(div, container)
 
     setTimeout(function () {
       div.remove();
@@ -243,12 +242,11 @@ body.addEventListener('keydown', event => {
   }
   // granade
   if(event.keyCode === 67){
-    console.log(`ssss`)
-    positionTop = figure.offsetTop - 5;
-    positionLeft = figure.offsetLeft - 5;
+    positionTop = figure.offsetTop;
+    positionLeft = figure.offsetLeft - 40;
     const container = document.createElement('div');
     const div = document.createElement('div');
-    container.style.transform = `rotateZ(${counter}deg) translateX(50px)`;
+    container.style.transform = `rotateZ(${counter}deg)`;
     container.style.top = `${positionTop}px`;
     container.style.left = `${positionLeft}px`;
     container.classList.add('cont-2');
@@ -259,7 +257,7 @@ body.addEventListener('keydown', event => {
     setTimeout(function () {
       div.remove();
       container.remove();
-    }, 1000)
+    }, 2000)
     positionTop = 0;
     positionLeft = 0;
   }
@@ -268,7 +266,7 @@ body.addEventListener('keydown', event => {
 
 body.addEventListener('keyup', event => {
   keysPressed[event.keyCode] = false;
-  console.log(keysPressed, 'keyup:', event.keyCode)
+  // console.log(keysPressed, 'keyup:', event.keyCode)
 
   // tanks speed
   let speed = tankSpeed.speed;
@@ -428,3 +426,62 @@ body.addEventListener('keyup', event => {
 // figure.addEventListener(`mouseup`, () => {
 //     body.removeEventListener('mousemove', grabObject)
 // });
+
+
+body.addEventListener('keydown', event=>{
+  if(event.keyCode === 71 /*"g"*/){
+    const random1 = Math.floor(Math.random() * 800);
+    const random2 = Math.floor(Math.random() * 1000);
+    const randomRotate = Math.floor(Math.random() * 360);
+
+    const div = document.createElement('div');
+    div.classList.add('rock');
+
+
+    div.style.top = `${random1}px`;
+    div.style.left = `${random2}px`;
+    div.style.transform = `rotateZ(${randomRotate}deg) rotateX(${randomRotate}deg)`
+    body.append(div);
+
+    console.log(`position is:`, div.offsetTop, div.offsetLeft);
+    console.log(`size is:`, div.offsetWidth, div.offsetHeight);
+
+
+    const div2 = document.createElement('div');
+    div2.classList.add('cont');
+    div2.style.top = `${div.offsetTop}px`;
+    div2.style.left = `${div.offsetLeft}px`;
+    // div2.style.width = `${div.offsetWidth}px`;
+    // div2.style.height = `${div.offsetHeight}px`;
+
+    body.append(div2);
+
+    let obj = {
+      topStart: div.offsetTop,
+      topEnd: div.offsetTop + div.offsetHeight,
+      leftStart: div.offsetLeft,
+      leftEnd: div.offsetLeft + div.offsetWidth
+    }
+
+    console.log(obj);
+
+
+
+    // a rock's fly
+    // let counter1 = random1;
+    // let conuter2 = random2;
+    // setInterval(function () {
+    //   // console.log(`position is:`, div.style.top, div.style.left);
+    //   counter1 += 0.3
+    //   conuter2 += 0.5
+    //   div.style.top = '';
+    //   div.style.top += `${counter1}px`;
+    //   div.style.left = '';
+    //   div.style.left += `${conuter2}px`;
+    // }, 10);
+  }
+})
+
+body.addEventListener('mousemove', event=>{
+  // console.log(event)
+})
