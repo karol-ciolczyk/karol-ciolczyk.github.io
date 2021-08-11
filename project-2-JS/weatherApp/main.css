@@ -1,75 +1,84 @@
 /************** WEATHER APP **********************/
-body{
-    height: 100%;
-    padding: 70px 0px;
-    position: relative;
-    font-family: 'Roboto', sans-serif;
-    color: rgb(0, 17, 58);
-    background-color: #657AA2;
-    margin: 0 auto;
+body {
+  height: 100%;
+  padding: 70px 0px;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  color: rgb(0, 17, 58);
+  background-color: #657aa2;
+  margin: 0 auto;
 }
 
-.whatCity{
-    padding-bottom: 70px;
-    padding-top: 20px;
+.whatCity {
+  padding-bottom: 70px;
+  padding-top: 20px;
 }
 
-.whatCity input{
-    opacity: 0.5;
-    height: 25px;
-    width: 300px;
+.whatCity input {
+  opacity: 0.5;
+  height: 25px;
+  width: 300px;
 }
 
-.weatherApp-container{
-    position: absolute;
-    background-color: #9AAED9;
-    top: 67px;
-    color: white;
-    width: 400px;
-    height: 586px;
-    border: 1px solid rgba(0, 0, 0, 0.555);
-    border-radius: 20px;
-    box-shadow: 5px 5px 21px 3px rgba(0, 0, 0, 0.6);
-    /* background: url('./img/true.jpg'); */
-    /* background-size: cover; */
+.container {
+  width: 800px;
+  margin: auto;
+  border-radius: 2%;
+  padding: 150px 0px;
+  background: url("./img/petar-jadek-UpFk7QQm33k-unsplash.jpg");
+  background-size: cover;
 }
 
-.list{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 0px;
+.weatherApp-container {
+  background-color: #00000050;
+  top: 67px;
+  color: white;
+  width: 400px;
+  height: 586px;
+  border-radius: 20px;
+  margin: auto;
 }
 
-.list li{
-    display: inline-block;
-
+.list {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0px;
 }
 
-.city{
-    font-weight:200;
-    font-size: 45px;
-    padding-bottom: 50px;
+.whatCity input {
+  height: 40px;
+  font-size: 20px;
 }
 
-.temperature{
-    font-weight:200;
-    letter-spacing: -5px;
-    font-size: 100px;
-    padding-bottom: 35px;
+.list li {
+  display: inline-block;
 }
 
-.condition{
-    padding-bottom: 20px;
-    font-weight: 200px;
+.city {
+  font-weight: 200;
+  font-size: 45px;
+  padding-bottom: 50px;
+}
+
+.temperature {
+  font-weight: 200;
+  letter-spacing: -5px;
+  font-size: 100px;
+  padding-bottom: 35px;
+}
+
+.condition {
+  padding-bottom: 20px;
+  font-weight: 200px;
 }
 
 .icon {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: rgb(255, 255, 255);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
 }
