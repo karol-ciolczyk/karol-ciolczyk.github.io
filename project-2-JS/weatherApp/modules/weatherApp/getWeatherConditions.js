@@ -5,8 +5,10 @@
 //     .catch(err => console.log(err))
 // }
 
-export const getWeatherConditions = function(key){
-    return fetch(`http://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=1c7TBu4MybMcEKxCr30xDolto2UWRYDl`)
-            .then(response => response.json())
-            .catch(err => console.log(err))
-}
+export const getWeatherConditions = function (key) {
+  return fetch(
+    `https://dataservice.accuweather.com/currentconditions/v1/${key}?apikey=1c7TBu4MybMcEKxCr30xDolto2UWRYDl`
+  )
+    .then((response) => response.json())
+    .catch((err) => console.log(err));
+};

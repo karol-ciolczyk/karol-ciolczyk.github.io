@@ -1,7 +1,7 @@
 /************** WEATHER APP **********************/
 body {
   height: 100%;
-  padding: 70px 0px;
+  padding: 20px 0px 70px 0px;
   position: relative;
   font-family: "Roboto", sans-serif;
   color: rgb(0, 17, 58);
@@ -22,15 +22,14 @@ body {
 
 .container {
   width: 800px;
+  background-color: rgb(168, 146, 49);
   margin: auto;
   border-radius: 2%;
   padding: 150px 0px;
-  background: url("./img/petar-jadek-UpFk7QQm33k-unsplash.jpg");
-  background-size: cover;
 }
 
 .weatherApp-container {
-  background-color: #00000050;
+  background-color: #0000005b;
   top: 67px;
   color: white;
   width: 400px;

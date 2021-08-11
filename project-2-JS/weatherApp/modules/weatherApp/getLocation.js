@@ -2,7 +2,7 @@ import { getWeatherConditions } from "./getWeatherConditions.js";
 
 export const getLocation = (city) => {
   fetch(
-    `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=1c7TBu4MybMcEKxCr30xDolto2UWRYDl&q=${city}`
+    `https://dataservice.accuweather.com/locations/v1/cities/search?apikey=1c7TBu4MybMcEKxCr30xDolto2UWRYDl&q=${city}`
   )
     .then((response) => response.json())
     .then((data) => {
@@ -35,7 +35,7 @@ export const getLocation = (city) => {
         const temperature = document.querySelector(".temperature span");
         const condition = document.querySelector(".condition");
         const icon = document.querySelector(".icon img");
-        const appContainer = document.querySelector(".weatherApp-container");
+        const appContainer = document.querySelector(".container");
 
         city.textContent = `${location}`;
         temperature.textContent = `${temp}`;
