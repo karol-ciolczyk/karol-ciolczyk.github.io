@@ -2,7 +2,6 @@ import { clickAndChange } from "./modules/clickAndChange.js";
 import { filterItems } from "./modules/filterItemsFunction.js";
 import { trashItem } from "./modules/trashItemFunction.js";
 import { restoreItemFunction } from "./modules/restoreTrashEventFunction.js";
-import { getLocation } from "./modules/weatherApp/getLocation.js";
 import { addDocument } from "./modules/firebase/addDocument-Firestore.js";
 import { getCollection } from "./modules/firebase/getCollectionFirestore.js";
 import { isEmpty } from "./modules/isEmptyTrashContainer.js";
@@ -139,13 +138,3 @@ trashArea.addEventListener("click", (event) => {
 });
 
 ////////////////////////////////////////////////
-
-const whatCity = document.querySelector(".whatCity");
-const inp = document.querySelector(".whatCity input");
-whatCity.addEventListener("submit", (event) => {
-  event.preventDefault();
-  console.log(inp.value);
-  let city = inp.value;
-
-  getLocation(city);
-});
