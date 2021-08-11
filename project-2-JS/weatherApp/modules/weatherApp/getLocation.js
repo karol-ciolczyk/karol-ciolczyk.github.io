@@ -65,7 +65,7 @@ export const getLocation = (city) => {
           appContainer.style.backgroundSize = `cover`;
         }
       });
-      alert("this time everything is fine");
+      //   alert("this time everything is fine");
     })
     .catch((err) => alert(err));
 };
