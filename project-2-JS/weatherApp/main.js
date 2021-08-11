@@ -7,5 +7,8 @@ whatCity.addEventListener("submit", (event) => {
   console.log(inp.value);
   let city = inp.value;
 
+  alert(
+    "Unfortunately, this request may be blocked due to unsecured (HTTP) accuWeather API resources. Clone the repo to see how it works"
+  );
   getLocation(city);
 });

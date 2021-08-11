@@ -22,7 +22,8 @@ body {
 
 .container {
   width: 800px;
-  background-color: rgb(168, 146, 49);
+  background: url("./img/petar-jadek-UpFk7QQm33k-unsplash.jpg");
+  background-size: cover;
   margin: auto;
   border-radius: 2%;
   padding: 150px 0px;
