@@ -17,7 +17,6 @@ const testFetch = async function () {
 };
 
 testFetch();
-
 animateImage(600);
 
 /** get started opens mobile menu */
