@@ -32,6 +32,11 @@ body {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  backface-visibility: hidden;
 }
 
 .heagin-primary__main {
@@ -40,7 +45,7 @@ body {
   font-weight: 400;
   letter-spacing: 20px;
   display: block;
-  animation: moveInLeft 800ms ease;
+  animation: moveInLeft 1000ms ease;
 }
 .heagin-primary__sub {
   color: #fff;
@@ -48,7 +53,8 @@ body {
   font-weight: 600;
   letter-spacing: 20.3px;
   display: block;
-  animation: moveInBottom 800ms ease;
+  animation: moveInBottom 1000ms ease;
+  margin-bottom: 100px;
 }
 
 @keyframes moveInLeft {
@@ -80,4 +86,29 @@ body {
     transform: translateY(0px);
     opacity: 1;
   }
+}
+
+.btn-white {
+  background-color: #fff;
+  color: rgb(70, 70, 70);
+}
+
+.btn:link,
+.btn:visited {
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 40px;
+  border-radius: 5px;
+  display: inline-block;
+  box-shadow: 2px 5px 16px rgba(0, 0, 0, 0.425);
+  transition: all 150ms;
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 3px 7px 21px rgba(0, 0, 0, 0.432);
+}
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 2px 5px 16px rgba(0, 0, 0, 0.445);
 }
