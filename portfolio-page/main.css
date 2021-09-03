@@ -1,0 +1,83 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgb(70, 70, 70);
+  padding: 30px;
+  font-family: "Open Sans", sans-serif;
+}
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgb(93, 190, 255, 0.7),
+      rgb(64, 179, 255, 0.7)
+    ),
+    url("./files/images/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  position: relative;
+}
+
+.text-box {
+  min-width: 690.13px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.heagin-primary__main {
+  color: #fff;
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: 20px;
+  display: block;
+  animation: moveInLeft 800ms ease;
+}
+.heagin-primary__sub {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 20.3px;
+  display: block;
+  animation: moveInBottom 800ms ease;
+}
+
+@keyframes moveInLeft {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  40% {
+    transform: translateX(10px);
+  }
+  60% {
+    transform: translateX(-5px);
+  }
+  70% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+    transform: translatey(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
