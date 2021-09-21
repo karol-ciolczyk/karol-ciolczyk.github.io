@@ -1,3 +1,8 @@
+$color-primary: #40b3ff;
+$color-secondary: #5dbeff;
+$color-dark-grey: #464646;
+$color-white: #fff;
+
 *,
 *::after,
 *::before {
@@ -11,7 +16,7 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.7;
-  color: rgb(70, 70, 70);
+  color: $color-dark-grey;
   padding: 3rem;
   font-family: "Open Sans", sans-serif;
 }
@@ -20,45 +25,44 @@ body {
   height: 95vh;
   background-image: linear-gradient(
       to right bottom,
-      rgb(93, 190, 255, 0.7),
-      rgb(64, 179, 255, 0.7)
+      rgba($color-secondary, 0.7),
+      rgba($color-primary, 0.7)
     ),
-    url("./files/images/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg");
+    url("../files/images/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg");
   background-size: cover;
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   position: relative;
-}
 
-.header__text-box {
-  min-width: 69.1rem;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+  &__text-box {
+    min-width: 69.1rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
 }
 
 .heading-primary {
+  color: $color-white;
   backface-visibility: hidden;
-}
 
-.heagin-primary--main {
-  color: #fff;
-  font-size: 6.4rem;
-  font-weight: 400;
-  letter-spacing: 2rem;
-  display: block;
-  animation: moveInLeft 1100ms ease;
-}
-.heagin-primary--sub {
-  color: #fff;
-  font-size: 2.8rem;
-  font-weight: 600;
-  letter-spacing: 2rem;
-  display: block;
-  animation: moveInBottom 1000ms ease;
-  margin-bottom: 10rem;
+  &--main {
+    font-size: 6.4rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    display: block;
+    animation: moveInLeft 1100ms ease;
+  }
+  &--sub {
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: 2rem;
+    display: block;
+    animation: moveInBottom 1000ms ease;
+    margin-bottom: 10rem;
+  }
 }
 
 .btn--animated {
@@ -107,48 +111,50 @@ body {
   }
 }
 
-.btn--white {
-  background-color: #fff;
-  color: rgb(70, 70, 70);
-}
+.btn {
+  &--white {
+    background-color: $color-white;
+    color: $color-dark-grey;
+  }
 
-.btn:link,
-.btn:visited {
-  text-decoration: none;
-  font-size: 1.6rem;
-  padding: 1rem 4rem;
-  border-radius: 0.5rem;
-  display: inline-block;
-  box-shadow: 0.2rem 0.5rem 1.6rem rgba(0, 0, 0, 0.425);
-  transition: all 150ms;
-  position: relative;
-}
+  &:link,
+  &:visited {
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 1rem 4rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    box-shadow: 0.2rem 0.5rem 1.6rem rgba(0, 0, 0, 0.425);
+    transition: all 150ms;
+    position: relative;
+  }
 
-.btn:hover {
-  transform: translateY(-0.4rem);
-  box-shadow: 0.3rem 0.7rem 2.1rem rgba(0, 0, 0, 0.432);
-}
-.btn:active {
-  transform: translateY(-0.1rem);
-  box-shadow: 0.2rem 0.5rem 1.6rem rgba(0, 0, 0, 0.445);
-}
+  &:hover {
+    transform: translateY(-0.4rem);
+    box-shadow: 0.3rem 0.7rem 2.1rem rgba(0, 0, 0, 0.432);
 
-.btn::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  background-color: #fff;
-  position: absolute;
-  display: inline-block;
-  top: 0rem;
-  left: 0rem;
-  border-radius: 0.5rem;
-  z-index: -1;
-  opacity: 0.5;
-  transition: all 0.4s;
-}
+    &::after {
+      transform: scale(1.7);
+      opacity: 0;
+    }
+  }
+  &:active {
+    transform: translateY(-0.1rem);
+    box-shadow: 0.2rem 0.5rem 1.6rem rgba(0, 0, 0, 0.445);
+  }
 
-.btn:hover::after {
-  transform: scale(1.7);
-  opacity: 0;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: $color-white;
+    position: absolute;
+    display: inline-block;
+    top: 0rem;
+    left: 0rem;
+    border-radius: 0.5rem;
+    z-index: -1;
+    opacity: 0.5;
+    transition: all 0.4s;
+  }
 }
