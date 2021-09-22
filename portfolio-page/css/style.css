@@ -8,49 +8,6 @@
 html {
   font-size: 62.5%; }
 
-body {
-  font-size: 1.6rem;
-  line-height: 1.7;
-  color: #464646;
-  padding: 3rem;
-  font-family: "Open Sans", sans-serif; }
-
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(93, 190, 255, 0.7), rgba(64, 179, 255, 0.7)), url("../files/images/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg");
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
-  position: relative; }
-  .header__text-box {
-    min-width: 69.1rem;
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center; }
-
-.heading-primary {
-  color: #fff;
-  backface-visibility: hidden; }
-  .heading-primary--main {
-    font-size: 6.4rem;
-    font-weight: 400;
-    letter-spacing: 2rem;
-    display: block;
-    animation: moveInLeft 1100ms ease; }
-  .heading-primary--sub {
-    font-size: 2.8rem;
-    font-weight: 600;
-    letter-spacing: 2rem;
-    display: block;
-    animation: moveInBottom 1000ms ease;
-    margin-bottom: 10rem; }
-
-.btn--animated {
-  animation: moveInBottomButton 600ms linear 0.55s;
-  animation-fill-mode: backwards; }
-
 @keyframes moveInLeft {
   0% {
     transform: translateX(-10rem);
@@ -84,6 +41,10 @@ body {
 .btn--white {
   background-color: #fff;
   color: #464646; }
+
+.btn--animated {
+  animation: moveInBottomButton 600ms linear 0.55s;
+  animation-fill-mode: backwards; }
 
 .btn:link, .btn:visited {
   text-decoration: none;
@@ -119,3 +80,70 @@ body {
   z-index: -1;
   opacity: 0.5;
   transition: all 0.4s; }
+
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(93, 190, 255, 0.7), rgba(64, 179, 255, 0.7)), url("../files/images/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  position: relative; }
+  .header__text-box {
+    min-width: 69.1rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
+
+.row {
+  max-width: 114rem;
+  background-color: #eee;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    background-color: orangered;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem) / 3); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem) / 4); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 * 6rem) / 3) + 6rem); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 * 6rem) / 4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 * 6rem) / 4) + 2 * 6rem); }
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #464646;
+  padding: 3rem;
+  font-family: "Open Sans", sans-serif; }
+
+.heading-primary {
+  color: #fff;
+  backface-visibility: hidden; }
+  .heading-primary--main {
+    font-size: 6.4rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    display: block;
+    animation: moveInLeft 1100ms ease; }
+  .heading-primary--sub {
+    font-size: 2.8rem;
+    font-weight: 600;
+    letter-spacing: 2rem;
+    display: block;
+    animation: moveInBottom 1000ms ease;
+    margin-bottom: 10rem; }

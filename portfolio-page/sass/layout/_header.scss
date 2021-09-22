@@ -1,0 +1,22 @@
+.header {
+  height: 95vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-secondary, 0.7),
+      rgba($color-primary, 0.7)
+    ),
+    url("../files/images/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+  position: relative;
+
+  &__text-box {
+    min-width: 69.1rem;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+}
