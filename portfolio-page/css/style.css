@@ -160,6 +160,31 @@ body {
   box-shadow: 0rem 0.3rem 0.9rem rgba(0, 0, 0, 0.45);
   transform: translate(0rem, -0.1rem); }
 
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.3);
+    position: absolute;
+    z-index: 10;
+    transition: all 200ms;
+    outline-offset: 2rem; }
+    .composition__photo--p1 {
+      top: -1rem; }
+    .composition__photo--p2 {
+      top: 6rem;
+      right: 4rem; }
+    .composition__photo--p3 {
+      top: 12rem;
+      left: 6rem; }
+    .composition__photo:hover {
+      outline: 1rem solid #23a4fa;
+      z-index: 20;
+      transform: scale(1.2) translateY(-0.5rem);
+      box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.55); }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.95); }
+
 .header {
   height: 95vh;
   background-image: linear-gradient(to right bottom, rgba(82, 200, 255, 0.7), rgba(35, 164, 250, 0.7)), url("../files/images/shahadat-rahman-BfrQnKBulYQ-unsplash.jpg");
