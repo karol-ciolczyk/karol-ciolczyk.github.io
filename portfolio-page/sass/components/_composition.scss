@@ -22,13 +22,14 @@
     }
     &--p4 {
       top: 15rem;
-      left: 15rem;
+      right: 10rem;
     }
 
     &:hover {
       outline: 1rem solid $color-primary;
       z-index: 20;
-      transform: scale(1.2) translateY(-0.5rem);
+      // transform: scale(1.2) translateY(-0.5rem);
+      width: 85%;
       box-shadow: 0rem 1rem 2rem rgba($color-black, 0.55);
     }
   }
