@@ -26,3 +26,20 @@ body {
     margin-bottom: 10rem;
   }
 }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-decoration: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, $color-secondary, $color-primary);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: 0.2rem;
+  transition: all 300ms;
+
+  &:hover {
+    transform: translate(0rem, -1rem);
+    text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.25);
+  }
+}

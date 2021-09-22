@@ -16,14 +16,14 @@
     padding: 1rem 4rem;
     border-radius: 0.5rem;
     display: inline-block;
-    box-shadow: 0.2rem 0.5rem 1.6rem rgba(0, 0, 0, 0.425);
+    box-shadow: 0.2rem 0.5rem 1.6rem rgba($color-dark-grey, 0.425);
     transition: all 150ms;
     position: relative;
   }
 
   &:hover {
     transform: translateY(-0.4rem);
-    box-shadow: 0.3rem 0.7rem 2.1rem rgba(0, 0, 0, 0.432);
+    box-shadow: 0.3rem 0.7rem 2.1rem rgba($color-dark-grey, 0.432);
 
     &::after {
       transform: scale(1.7);
