@@ -88,8 +88,18 @@ body {
     transform: translate(0rem, -1rem);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.25); }
 
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #535353; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
 .btn--white {
-  background-color: #ffd560;
+  background-color: #f3ba1c;
   color: #535353; }
 
 .btn--animated {
@@ -121,7 +131,7 @@ body {
   content: "";
   width: 100%;
   height: 100%;
-  background-color: #ffd560;
+  background-color: #f3ba1c;
   position: absolute;
   display: inline-block;
   top: 0rem;
@@ -130,6 +140,25 @@ body {
   z-index: -1;
   opacity: 0.5;
   transition: all 0.4s; }
+
+.btn-text:link, .btn-text:visited {
+  color: #23a4fa;
+  font-size: 1.6rem;
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px solid #23a4fa;
+  padding: 4px;
+  transition: all 200ms; }
+
+.btn-text:hover {
+  background-color: #23a4fa;
+  color: #fff;
+  box-shadow: 0rem 0.5rem 1.3rem rgba(0, 0, 0, 0.3);
+  transform: translate(0rem, -0.4rem); }
+
+.btn-text:active {
+  box-shadow: 0rem 0.3rem 0.9rem rgba(0, 0, 0, 0.45);
+  transform: translate(0rem, -0.1rem); }
 
 .header {
   height: 95vh;
