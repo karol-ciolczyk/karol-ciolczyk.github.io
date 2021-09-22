@@ -172,11 +172,14 @@ body {
     .composition__photo--p1 {
       top: -1rem; }
     .composition__photo--p2 {
-      top: 6rem;
-      right: 4rem; }
+      top: 5rem;
+      right: 6rem; }
     .composition__photo--p3 {
-      top: 12rem;
-      left: 6rem; }
+      top: 10rem;
+      left: -3rem; }
+    .composition__photo--p4 {
+      top: 15rem;
+      left: 15rem; }
     .composition__photo:hover {
       outline: 1rem solid #23a4fa;
       z-index: 20;
