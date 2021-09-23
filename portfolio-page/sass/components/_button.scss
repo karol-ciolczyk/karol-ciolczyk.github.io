@@ -1,7 +1,7 @@
 .btn {
   &--white {
     background-color: $color-tertiary;
-    color: $color-dark-grey;
+    color: $color-white;
   }
 
   &--animated {
@@ -13,6 +13,7 @@
   &:visited {
     text-decoration: none;
     font-size: 1.6rem;
+    font-weight: 600;
     padding: 1rem 4rem;
     border-radius: 0.5rem;
     display: inline-block;

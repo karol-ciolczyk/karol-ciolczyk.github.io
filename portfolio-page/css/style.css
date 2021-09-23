@@ -100,7 +100,7 @@ body {
 
 .btn--white {
   background-color: #f3ba1c;
-  color: #535353; }
+  color: #fff; }
 
 .btn--animated {
   animation: moveInBottomButton 600ms linear 0.55s;
@@ -109,6 +109,7 @@ body {
 .btn:link, .btn:visited {
   text-decoration: none;
   font-size: 1.6rem;
+  font-weight: 600;
   padding: 1rem 4rem;
   border-radius: 0.5rem;
   display: inline-block;
@@ -151,8 +152,9 @@ body {
   transition: all 200ms; }
 
 .btn-text:hover {
-  background-color: #23a4fa;
+  background-color: #f3ba1c;
   color: #fff;
+  border-bottom: 1px solid #f3ba1c;
   box-shadow: 0rem 0.5rem 1.3rem rgba(0, 0, 0, 0.3);
   transform: translate(0rem, -0.4rem); }
 
@@ -164,7 +166,7 @@ body {
   position: relative; }
   .composition__photo {
     width: 55%;
-    box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.3);
+    box-shadow: 0rem 1rem 2rem rgba(0, 0, 0, 0.4);
     position: absolute;
     z-index: 10;
     transition: all 200ms;
