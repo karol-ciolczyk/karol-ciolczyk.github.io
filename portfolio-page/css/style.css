@@ -155,11 +155,11 @@ body {
   background-color: #f3ba1c;
   color: #fff;
   border-bottom: 1px solid #f3ba1c;
-  box-shadow: 0rem 0.5rem 1.3rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0rem 0.5rem 1.5rem rgba(0, 0, 0, 0.3);
   transform: translate(0rem, -0.4rem); }
 
 .btn-text:active {
-  box-shadow: 0rem 0.3rem 0.9rem rgba(0, 0, 0, 0.45);
+  box-shadow: 0rem 0.4rem 1.1rem rgba(0, 0, 0, 0.3);
   transform: translate(0rem, -0.1rem); }
 
 .composition {

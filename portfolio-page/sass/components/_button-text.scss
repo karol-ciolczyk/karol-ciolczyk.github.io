@@ -14,12 +14,12 @@
     background-color: $color-tertiary;
     color: $color-white;
     border-bottom: 1px solid $color-tertiary;
-    box-shadow: 0rem 0.5rem 1.3rem rgba($color-black, 0.3);
+    box-shadow: 0rem 0.5rem 1.5rem rgba($color-black, 0.3);
     transform: translate(0rem, -0.4rem);
   }
 
   &:active {
-    box-shadow: 0rem 0.3rem 0.9rem rgba($color-black, 0.45);
+    box-shadow: 0rem 0.4rem 1.1rem rgba($color-black, 0.3);
     transform: translate(0rem, -0.1rem);
   }
 }
